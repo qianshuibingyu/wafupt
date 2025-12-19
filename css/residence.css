@@ -1,0 +1,356 @@
+/* ===== 面包屑导航 ===== */
+.breadcrumb-nav {
+    width: 100%;
+    background: rgba(255, 255, 255, .95);
+    position: relative;
+    z-index: 10;
+}
+
+.breadcrumb-inner {
+    margin-top: 130px !important;
+    max-width: 1500px;
+    /* 与分割线、底部文字同一 max-width */
+    margin: 50px auto 0;
+    /* 居中，上下留白 50px */
+    padding: 0 5%;
+    /* 关键：百分比留白 → 随页面等比例变化 */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+    color: #000;
+    /* 未选中项为黑色 */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item:hover,
+.breadcrumb-item:focus {
+    color: #1a73e8;
+    /* 移入时变为蓝色 */
+    outline: none;
+    text-decoration: none;
+}
+
+.breadcrumb-current {
+    text-decoration: none;
+    color: #1a73e8;
+    /* 当前项为蓝色 */
+    font-weight: 500;
+    white-space: nowrap;
+    /* 也可加 aria-current="page" 语义在 HTML 中已设置 */
+}
+
+.breadcrumb-separator {
+    color: #999;
+    user-select: none;
+    line-height: 1;
+}
+
+
+
+
+/* 新增：所有产品区域 */
+.all-products {
+    padding: 60px 0;
+    background: #f7f7f7;
+}
+
+.all-products .container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+}
+
+/* 区块标题 */
+.section-header {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.section-header h2 {
+    font-size: 1.9rem;
+    margin: 0 0 6px;
+    font-weight: 700;
+}
+
+.section-header p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* 网格布局：四列，间距尽量贴近图片风格 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.thumb-wrap {
+    width: 100%;
+    padding-top: 62%;
+    /* 纵横比控制，图片区域保持一致高度 */
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #eaeaea;
+}
+
+.product-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-title {
+    font-size: 1rem;
+    margin: 12px 6px 6px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.product-desc {
+    font-size: 0.92rem;
+    color: #666;
+    margin: 0 6px 6px;
+    flex-grow: 0;
+    line-height: 1.4;
+}
+
+/* 总容器 */
+.product-all {
+    width: 100%;
+    /* 如需保持原有横向内距，可保留 */
+    box-sizing: border-box;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.product-title {
+    height: 80px;
+    font-size: 2.2rem;
+    line-height: 60px;
+    border-bottom: 2px solid #E5E7EB;
+    font-weight: 700;
+    margin: 0 0 20px;
+    padding-left: 6px;
+}
+
+/* 整体网格：每行两个 item */
+.product-box {
+
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 28px;
+    /* 行间距和列间距，使两列之间有适当空隙 */
+}
+
+/* 单个 item：图片左、文本右的结构 */
+.product-item {
+    width: 1500px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(175, 155, 155, 0.471);
+    height: 400px;
+    padding: 12px;
+    gap: 16px;
+    text-decoration: none;
+}
+
+/* 左侧图片区域 */
+.item-imgbox {
+
+    width: 40%;
+    min-width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    border-radius: 6px;
+}
+
+/* 右侧文字区域 */
+.item-textbox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 4px 0;
+    justify-content: space-around;
+    /* 确保内容和按钮合理分布 */
+}
+
+.item-name {
+    font-size: 1.8rem;
+    margin: 0 0 6px;
+    color: #333;
+    font-weight: 700;
+}
+
+.item-features {
+    margin: 0;
+    padding: 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.item-features li {
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    /* 确保按钮与内容之间有间隔 */
+}
+
+.button-primary {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
+}
+
+.button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(26, 115, 232, 0.5);
+}
+
+/* ==========================================================
+   移动端适配（直接在原文件底部追加即可）
+   断点：≥768px 视为平板/PC，<768px 视为手机
+   ========================================================== */
+
+/* -------------- 1. 面包屑 -------------- */
+@media (max-width: 767.98px) {
+    
+
+    .breadcrumb-inner {
+        margin-top: 20px !important;
+        /* 撑满两边 */
+        font-size: 0.95rem;
+        /* 字号缩小 */
+        gap: 6px;
+    }
+}
+
+/* -------------- 2. 四列卡片网格（all-products 区域） -------------- */
+@media (max-width: 767.98px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 手机两列 */
+        gap: 16px;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+        /* 标题小一点 */
+    }
+
+    .section-header p {
+        font-size: 0.85rem;
+    }
+}
+
+/* -------------- 3. 图文左右产品列表（product-all 区域） -------------- */
+@media (max-width: 767.98px) {
+
+    /* 3-1 整体宽度 & 间距 */
+    .product-item {
+        width: 100%;
+        /* 不再写死 1500px */
+        max-width: 100%;
+        flex-direction: column;
+        /* 上下堆叠 */
+        height: auto;
+        /* 高度由内容决定 */
+        padding: 0px;
+    }
+
+    /* 3-2 图片区域 */
+    .item-imgbox {
+        width: 100%;
+        min-width: 0;
+        height: 0;
+        padding-top: 62%;
+        /* 保持 16:10 左右比例 */
+        position: relative;
+    }
+
+    .item-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* 3-3 文字区域 */
+    .item-textbox {
+        padding: 25px;
+    }
+
+    .item-name {
+        font-size: 1.3rem;
+    }
+
+    .item-features li {
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* 3-4 按钮 */
+    .button {
+        margin-top: 12px;
+        padding: 8px 18px;
+        font-size: 0.95rem;
+    }
+}
+
+/* -------------- 4. 横屏小手机再微调 -------------- */
+@media (max-width: 374px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        /* 极小屏单列 */
+    }
+}

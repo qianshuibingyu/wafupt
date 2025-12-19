@@ -1,0 +1,293 @@
+/* =========  联系我们  ========= */
+body {
+    background: rgb(247, 249, 252);
+}
+
+.contact-section {
+    padding: 30px 0px;
+    /* 调整整体高度 */
+}
+
+.contact-containerbox {
+    display: flex;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* 调整阴影 */
+
+    /* 限制最大宽度 */
+    margin: 0 auto;
+}
+
+.contact-info {
+    flex: 1;
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: white;
+    padding: 40px;
+    /* 调整内边距 */
+}
+
+.contact-info h2 {
+    font-size: 2.1rem;
+    /* 调整标题大小 */
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 19px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+.contact-details {
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    /* 调整间距 */
+}
+
+.contact-icon {
+    width: 50px;
+    /* 调整图标大小 */
+    height: 50px;
+    margin-right: 10px;
+    margin-top: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+
+.contact-icon .icon-img {
+    width: 50px;
+    height: 50px;
+}
+
+.contactbox-text h2 {
+    margin-top: 5px;
+    font-size: 1.5rem !important;
+    /* 调整文本大小 */
+    margin-bottom: 5px;
+}
+
+.contactbox-text p {
+   margin: 0 !important;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 40px;
+    /* 调整内边距 */
+}
+
+.form-title {
+    font-size: 1.5rem;
+    color: #1a365d;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    /* 调整间距 */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.required::after {
+    content: "*";
+    color: #e53e3e;
+    margin-left: 4px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    /* 调整输入框内边距 */
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    /* 调整字体大小 */
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+textarea.form-control {
+    min-height: 100px;
+    /* 调整最小高度 */
+    resize: vertical;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    /* 调整按钮内边距 */
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(6, 153, 225, 0.4);
+}
+
+/* ===== 面包屑导航 ===== */
+.breadcrumb-nav {
+
+    width: 100%;
+    background: rgb(247, 249, 252);
+    position: relative;
+    z-index: 10;
+    color: #000;
+    /* 默认文本颜色，未选中项为黑色 */
+}
+
+.breadcrumb-inner {
+    margin-top: 130px;
+
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+    color: #000;
+    /* 未选中项为黑色 */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item:hover,
+.breadcrumb-item:focus {
+    color: #1a73e8;
+    /* 移入时变为蓝色 */
+    outline: none;
+    text-decoration: none;
+}
+
+.breadcrumb-current {
+    text-decoration: none;
+    color: #1a73e8;
+    /* 当前项为蓝色 */
+    font-weight: 500;
+    white-space: nowrap;
+    /* 也可加 aria-current="page" 语义在 HTML 中已设置 */
+}
+
+.breadcrumb-separator {
+    color: #999;
+    user-select: none;
+    line-height: 1;
+}
+
+/* ===== 移动端适配 ===== */
+@media (max-width: 767px) {
+    .contact-containerbox {
+        flex-direction: column;
+    }
+
+    .contact-info {
+        padding: 25px 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .contact-info p {
+        font-size: 16px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .contact-item {
+        margin-bottom: 20px;
+    }
+
+    .contact-icon {
+        width: 44px;
+        height: 44px;
+        margin-right: 12px;
+    }
+
+    .contact-icon .icon-img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contactbox-text h2 {
+        font-size: 1.3rem;
+    }
+
+    .contactbox-text p {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+    .form-title {
+        font-size: 1.3rem;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-control {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    textarea.form-control {
+        min-height: 120px;
+    }
+
+    .submit-btn {
+        padding: 14px 25px;
+    }
+
+    .breadcrumb-inner {
+        margin-top: 0;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 1rem;
+        gap: 6px;
+    }
+
+    .breadcrumb-item,
+    .breadcrumb-current,
+    .breadcrumb-separator {
+        font-size: 14px;
+    }
+}

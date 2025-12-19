@@ -1,0 +1,773 @@
+/* ===== 全局基础 ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+}
+
+/* ===== 布局框架 ===== */
+.wafu-tech-article {
+    width: 100%;
+    padding: 30px 200px;
+    display: flex;
+    gap: 25px;
+}
+
+.wafu-main-content {
+    flex: 1 1 70%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+    border: 1px solid #f0f0f0;
+    padding: 40px;
+}
+
+.wafu-side-bar {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ===== 文章头 ===== */
+.wafu-article-title {
+    font-size: 2rem;
+    margin: 0 0 10px;
+    line-height: 1.3;
+    color: #333;
+}
+
+.wafu-article-meta {
+    font-size: .9rem;
+    color: #666;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.wafu-article-tags {
+    display: flex;
+    gap: 6px;
+}
+
+.wafu-tag {
+    font-style: normal;
+    background: #f0f6ff;
+    color: #007bff;
+    font-size: .8rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ===== 正文 ===== */
+.wafu-article-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.wafu-heading-2 {
+    margin: 30px 0 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+.wafu-list {
+    padding-left: 20px;
+    margin: 0 0 15px;
+}
+
+.wafu-list-item {
+    margin-bottom: 8px;
+}
+
+.wafu-image-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.wafu-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.wafu-image-caption {
+    font-size: .9rem;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ===== 文章底 ===== */
+.wafu-article-footer {
+    border-top: 1px solid #dfdfdf;
+    margin-top: 25px;
+    padding-top: 25px;
+}
+
+.wafu-share-section {
+    margin-bottom: 20px;
+}
+
+.wafu-share-title {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.wafu-share-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.wafu-share-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f5f7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background .3s;
+}
+
+
+/* 圆形图标按钮基础样式 */
+.share-round {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform .3s ease;
+}
+
+.share-round:hover {
+    transform: translateY(-2px);
+}
+
+.share-round.twitter {
+    background: #000000;
+}
+
+.share-round.twitter .icon-twitter {
+    width: 20px;
+    height: 20px;
+    background: url(../icons/X-select.svg) no-repeat center / contain;
+}
+
+.share-round.facebook {
+    background: #1877f2;
+}
+
+.share-round.facebook .icon-facebook {
+    width: 20px;
+    height: 20px;
+    background: url(../icons/facebook.svg) no-repeat center / contain;
+}
+
+.wafu-share-btn:hover {
+    background: #e9ecef;
+}
+
+.wafu-related-tags {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.wafu-tag-item {
+    background: #f0f0f0;
+    color: #333;
+    font-size: .9rem;
+    padding: 6px 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.wafu-tag-item:hover {
+    background: #1a6dcc;
+    color: #fff;
+}
+
+.wafu-article-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.wafu-nav-prev,
+.wafu-nav-next {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 45%;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.wafu-nav-next {
+    margin-left: auto;
+    text-align: right;
+}
+
+.wafu-nav-arrow {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.wafu-nav-label {
+    font-size: .9rem;
+    color: #666;
+}
+
+/* ===== 侧边栏通用卡片 ===== */
+.wafu-about-card,
+.wafu-related-articles,
+.wafu-hot-products,
+.wafu-consult-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+    border: 1px solid #f0f0f0;
+}
+
+.wafu-side-title {
+    font-size: 1.2rem;
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+/* ===== 品牌区 ===== */
+.wafu-brand-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    display: block;
+    border: 2px solid #f0f0f0;
+}
+
+.wafu-brand-name {
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.wafu-brand-desc {
+    font-size: .9rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.wafu-more-link {
+    padding: 8px 20px;
+    background: #1a6dcc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: .9rem;
+    transition: background .3s;
+    margin: 0 auto;
+    display: block;
+    width: max-content;
+}
+
+.wafu-more-link:hover {
+    background: #1559a8;
+}
+
+/* ===== 相关文章 ===== */
+.wafu-related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wafu-related-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.wafu-related-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.wafu-related-link {
+    display: block;
+    font-size: .9rem;
+    color: #333;
+    text-decoration: none;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    transition: color .3s;
+}
+
+.wafu-related-link:hover {
+    color: #1a6dcc;
+}
+
+.wafu-related-date {
+    font-size: .8rem;
+    color: #999;
+}
+
+/* ===== 热门产品 ===== */
+.wafu-product-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.wafu-product-link {
+    padding: 8px 0;
+    color: #555;
+    font-size: .9rem;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: color .3s;
+}
+
+.wafu-product-link:last-child {
+    border-bottom: none;
+}
+
+.wafu-product-link:hover {
+    color: #1a6dcc;
+}
+
+/* ===== 咨询卡片 ===== */
+.wafu-consult-card {
+    background: linear-gradient(135deg, #4a9df5 0%, #1a6dcc 100%);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(26, 109, 204, .3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #4a9df5;
+}
+
+.wafu-consult-title {
+    font-size: 1.4rem;
+    margin: 0 0 15px;
+    font-weight: 600;
+}
+
+.wafu-consult-desc {
+    font-size: .9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    opacity: .9;
+}
+
+.wafu-consult-btn {
+    display: inline-block;
+    background: #fff;
+    color: #1a6dcc;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: .95rem;
+    margin-bottom: 20px;
+    transition: all .3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+    text-decoration: none;
+}
+
+.wafu-consult-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, .15);
+}
+
+.wafu-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: .85rem;
+    opacity: .9;
+}
+
+.wafu-contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* ===== 面包屑导航 ===== */
+.breadcrumb-nav {
+
+    width: 100%;
+    background-color: #f5f7fa;
+
+    position: relative;
+    z-index: 10;
+    color: #000;
+    /* 默认文本颜色，未选中项为黑色 */
+}
+
+.breadcrumb-inner {
+
+    margin-top: 120px;
+    width: 50%;
+    max-width: 1400px;
+    margin-left: 200px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+    color: #000;
+    /* 未选中项为黑色 */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item:hover,
+.breadcrumb-item:focus {
+    color: #1a73e8;
+    /* 移入时变为蓝色 */
+    outline: none;
+    text-decoration: none;
+}
+
+.breadcrumb-current {
+    text-decoration: none;
+    color: #1a73e8;
+    /* 当前项为蓝色 */
+    font-weight: 500;
+}
+
+.breadcrumb-separator {
+    color: #999;
+    user-select: none;
+    line-height: 1;
+}
+
+/* =========================================================
+   移动端补充样式（全站 kebab-case 命名统一）
+   ========================================================= */
+
+@media (max-width: 1200px) {
+    .wafu-tech-article {
+        padding: 0 100px;
+    }
+
+    .breadcrumb-inner {
+        margin-top: 0;
+        margin-left: 100px;
+        width: 70%;
+    }
+}
+
+@media (max-width: 992px) {
+    .wafu-tech-article {
+        padding: 0 50px;
+    }
+
+    .breadcrumb-inner {
+        margin-top: 0;
+        margin-left: 50px;
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* ---- 布局 ---- */
+    .wafu-tech-article {
+        flex-direction: column;
+        padding: 0 20px;
+        margin: 20px 0;
+    }
+
+    .wafu-main-content {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .wafu-side-bar {
+        width: 100%;
+    }
+
+    /* ---- 面包屑 ---- */
+    .breadcrumb-inner {
+        margin-top: 0;
+        margin-left: 20px;
+        width: calc(100% - 40px);
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+
+    /* ---- 标题与正文 ---- */
+    .wafu-article-title {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .wafu-article-meta {
+        font-size: 0.85rem;
+        justify-content: center;
+    }
+
+    .wafu-article-body {
+        font-size: 0.95rem;
+    }
+
+    .wafu-heading-2 {
+        font-size: 1.3rem;
+        margin-top: 20px;
+    }
+
+    /* ---- 图片 ---- */
+    .wafu-image-box {
+        margin: 15px 0;
+        padding: 10px;
+    }
+
+    .wafu-image {
+        max-width: 100% !important;
+    }
+
+    .wafu-image-caption {
+        font-size: 0.85rem;
+    }
+
+    /* ---- 分享/标签 ---- */
+    .wafu-share-section {
+        justify-content: center;
+    }
+
+    .wafu-share-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .wafu-tag-list {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .wafu-tag-item {
+        padding: 5px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* ---- 文章导航 ---- */
+    .wafu-article-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .wafu-nav-prev,
+    .wafu-nav-next {
+        max-width: 100%;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    /* ---- 侧边栏卡片 ---- */
+    .wafu-about-card,
+    .wafu-related-articles,
+    .wafu-hot-products {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .wafu-brand-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .wafu-side-title {
+        font-size: 1.1rem;
+    }
+
+    /* ---- 咨询卡片 ---- */
+    .wafu-consult-card {
+        padding: 20px 15px;
+    }
+
+    .wafu-consult-title {
+        font-size: 1.2rem;
+    }
+
+    .wafu-consult-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .wafu-contact-info {
+        font-size: 0.8rem;
+    }
+
+    /* ---- 圆形分享按钮 ---- */
+    .share-round {
+        width: 36px;
+        height: 36px;
+    }
+
+    .share-round .icon-weibo,
+    .share-round .icon-facebook {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* 超小屏 */
+@media (max-width: 480px) {
+    .wafu-tech-article {
+        padding: 0 15px;
+        margin: 15px 0;
+    }
+
+    .wafu-main-content {
+        padding: 15px;
+    }
+
+    .breadcrumb-inner {
+        margin-top: 0;
+
+        margin-left: 15px;
+        width: calc(100% - 30px);
+        font-size: 0.8rem;
+
+    }
+
+    .wafu-article-title {
+        font-size: 1.4rem;
+    }
+
+    .wafu-article-meta {
+        font-size: 0.8rem;
+    }
+
+    .wafu-article-body {
+        font-size: 0.9rem;
+    }
+
+    .wafu-heading-2 {
+        font-size: 1.2rem;
+    }
+
+    .wafu-image-box {
+        margin: 10px 0;
+        padding: 8px;
+    }
+
+    .wafu-share-buttons {
+        gap: 8px;
+    }
+
+    .wafu-tag-item {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+    }
+
+    .wafu-about-card,
+    .wafu-related-articles,
+    .wafu-hot-products {
+        padding: 12px;
+    }
+
+    .wafu-brand-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .wafu-side-title {
+        font-size: 1.1rem;
+    }
+
+    .wafu-consult-card {
+        padding: 15px 12px;
+    }
+
+    .wafu-consult-btn {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
+}
+
+/* 横屏手机 */
+@media (max-width: 768px) and (orientation: landscape) {
+    .wafu-tech-article {
+        flex-direction: row;
+    }
+
+    .wafu-main-content {
+        width: 65%;
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .wafu-side-bar {
+        width: 35%;
+    }
+
+    .breadcrumb-inner {
+        margin-top: 0;
+    }
+}
+
+/* 平板 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .wafu-tech-article {
+        padding: 0 50px;
+    }
+
+    .breadcrumb-inner {
+        margin-top: 0;
+        margin-left: 50px;
+        width: 80%;
+    }
+
+    .wafu-main-content {
+        width: 65%;
+    }
+
+    .wafu-side-bar {
+        width: 35%;
+    }
+}
+
+/* 通用图片防溢出 */
+img {
+    max-width: 100%;
+    height: auto;
+}

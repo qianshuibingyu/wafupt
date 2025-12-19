@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+
+<url>
+ <loc>https://wafuen.com/</loc>
+ <priority>1.0</priority>
+ <lastmod>2025-12-17</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products</loc>
+ <priority>0.9</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/about</loc>
+ <priority>0.8</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/applicable</loc>
+ <priority>0.8</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/news</loc>
+ <priority>0.8</priority>
+ <lastmod>2025-12-18</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/resource</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/contact</loc>
+ <priority>0.6</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-019</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-026</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-010</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-016</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-F8</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-F6</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-F4</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-F3</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-X8</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-MY4</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-MY6</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/products/product-Q7</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/applicable/residence</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-10</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/applicable/office</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-10</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/applicable/apartment</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-10</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/applicable/hotel</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-10</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/applicable/dormitory</loc>
+ <priority>0.7</priority>
+ <lastmod>2025-12-10</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/resource/technology</loc>
+ <priority>0.6</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/resource/question</loc>
+ <priority>0.6</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/resource/technology-six</loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/resource/technology-five</loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/resource/technology-four</loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/resource/technology-three</loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/resource/technology-two</loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/resource/technology-one </loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/news/news-five</loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-17</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/news/news-four</loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-17</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/news/news-three</loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/news/news-two</loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/news/news-one</loc>
+ <priority>0.5</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>yearly</changefreq>
+</url>
+
+<url>
+ <loc>https://wafuen.com/sitemap</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-09</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+</urlset>

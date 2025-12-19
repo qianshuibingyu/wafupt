@@ -1,0 +1,52 @@
+/* 面包屑导航容器：左右留白百分比，等比例缩放 */
+.breadcrumb-nav {
+  width: 100%;
+  background: rgba(255, 255, 255, .95);
+  position: relative;
+  z-index: 10;
+}
+
+.breadcrumb-inner {
+  margin-top: 50px;
+  max-width: 1200px;
+  /* 与分割线、底部文字同一 max-width */
+  margin: 50px auto 0;
+  /* 居中，上下留白 50px */
+  padding: 0 5%;
+  /* 关键：百分比留白 → 随页面等比例变化 */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+  color: #000;
+  /* 未选中项为黑色 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-item:hover,
+.breadcrumb-item:focus {
+  color: #1a73e8;
+  /* 移入时变为蓝色 */
+  outline: none;
+  text-decoration: none;
+}
+
+.breadcrumb-current {
+  text-decoration: none;
+  color: #1a73e8;
+  /* 当前项为蓝色 */
+  font-weight: 500;
+  white-space: nowrap;
+  /* 也可加 aria-current="page" 语义在 HTML 中已设置 */
+}
+
+.breadcrumb-separator {
+  color: #999;
+  user-select: none;
+  line-height: 1;
+}
