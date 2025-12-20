@@ -203,7 +203,7 @@
   padding: 50px 0 0 0;
   background: #f7f9fc;
   max-width: 1450px;
-  height: 98%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   border-radius: 12px;
@@ -294,7 +294,7 @@
 /* =========  发展历程  ========= */
 .history-section {
   width: 100%;
-  padding: 100px 0 40px 0;
+  padding: 150px 0 40px 0;
   background: #f7f9fc;
 }
 
@@ -1157,7 +1157,6 @@
 .section-header {
   text-align: center;
   margin: 0 auto 28px;
-  max-width: 980px;
 }
 
 .section-header h2 {

@@ -1,275 +1,230 @@
-<!-- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
 
 <url>
- <loc>https://wafuen.com/</loc>
- <priority>1.0</priority>
- <lastmod>2025-12-17</lastmod>
- <changefreq>weekly</changefreq>
+  <loc>https://wafuen.com/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products</loc>
- <priority>0.9</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/about</loc>
- <priority>0.8</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/about</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/about"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/about"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/applicable</loc>
- <priority>0.8</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/applicable</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/applicable"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/applicable"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/news</loc>
- <priority>0.8</priority>
- <lastmod>2025-12-18</lastmod>
- <changefreq>weekly</changefreq>
+  <loc>https://wafuen.com/news</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/news"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/resource</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/resource</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/contact</loc>
- <priority>0.6</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/contact</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/contact"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/contact"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-019</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-010</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-010"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-010"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-026</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-026</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-026"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-026"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-010</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-019</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-019"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-019"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-016</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-016</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-016"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-016"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-F8</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-F8</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-F8"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-F8"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-F6</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-F6</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-F6"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-F6"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-F4</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-F4</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-F4"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-F4"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-F3</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-F3</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-F3"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-F3"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-X8</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-X8</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-X8"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-X8"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-MY4</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-MY4</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-MY4"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-MY4"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-MY6</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-MY6</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-MY6"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-MY6"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/products/product-Q7</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/products/product-Q7</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-Q7"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-Q7"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/applicable/residence</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-10</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/applicable/residence</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/applicable/residence"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/applicable/residence"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/applicable/office</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-10</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/applicable/office</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/applicable/office"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/applicable/office"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/applicable/apartment</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-10</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/applicable/apartment</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/applicable/apartment"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/applicable/apartment"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/applicable/hotel</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-10</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/applicable/hotel</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/applicable/hotel"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/applicable/hotel"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/applicable/dormitory</loc>
- <priority>0.7</priority>
- <lastmod>2025-12-10</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/applicable/dormitory</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/applicable/dormitory"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/applicable/dormitory"/>
+</url>
+
+<!-- ✅ resource 页面 -->
+<url>
+  <loc>https://wafuen.com/resource/technology</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/resource/technology</loc>
- <priority>0.6</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>weekly</changefreq>
+  <loc>https://wafuen.com/resource/question</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/question"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/question"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/resource/question</loc>
- <priority>0.6</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
+  <loc>https://wafuen.com/resource/technology-six</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-six"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology-six"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/resource/technology-six</loc>
- <priority>0.5</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/resource/technology-five</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-five"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology-five"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/resource/technology-five</loc>
- <priority>0.5</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/resource/technology-four</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-four"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology-four"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/resource/technology-four</loc>
- <priority>0.5</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/resource/technology-three</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-three"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology-three"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/resource/technology-three</loc>
- <priority>0.5</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/resource/technology-two</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-two"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology-two"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/resource/technology-two</loc>
- <priority>0.5</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/resource/technology-one</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-one"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology-one"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/resource/technology-one </loc>
- <priority>0.5</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/news/news-five</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news/news-five"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/news/news-five"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/news/news-five</loc>
- <priority>0.5</priority>
- <lastmod>2025-12-17</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/news/news-four</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news/news-four"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/news/news-four"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/news/news-four</loc>
- <priority>0.5</priority>
- <lastmod>2025-12-17</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/news/news-three</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news/news-three"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/news/news-three"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/news/news-three</loc>
- <priority>0.5</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/news/news-two</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news/news-two"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/news/news-two"/>
 </url>
 
 <url>
- <loc>https://wafuen.com/news/news-two</loc>
- <priority>0.5</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
+  <loc>https://wafuen.com/news/news-one</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news/news-one"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/news/news-one"/>
 </url>
 
-<url>
- <loc>https://wafuen.com/news/news-one</loc>
- <priority>0.5</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>yearly</changefreq>
-</url>
-
-<url>
- <loc>https://wafuen.com/sitemap</loc>
- <priority>0.3</priority>
- <lastmod>2025-12-09</lastmod>
- <changefreq>monthly</changefreq>
-</url>
-
-</urlset> -->
+</urlset>
