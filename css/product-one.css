@@ -15,7 +15,7 @@ body {
 }
 
 .prod-inner {
-    max-width: 1200px;
+    max-width: 1300px;
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -89,6 +89,7 @@ body {
     color: #999;
     margin-left: 2px;
 }
+
 .prod-params {
     list-style: none;
     padding: 0;
@@ -156,7 +157,7 @@ body {
 }
 
 .intro-inner {
-    max-width: 1200px;
+    max-width: 1300px;
     width: 90%;
     margin: 0 auto;
     background: #fff;
@@ -450,7 +451,7 @@ body {
 }
 
 .breadcrumb-inner {
-    max-width: 1350px;
+    max-width: 1450px;
     /* 与分割线、底部文字同一 max-width */
     margin: 130px auto 0;
     /* 居中，上下留白 50px */
