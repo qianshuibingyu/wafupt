@@ -291,10 +291,31 @@
   background: #f0f7ff;
 }
 
+.Company-section {
+  width: 100%;
+  padding: 130px 0 0px 0;
+  background: #f7f9fc;
+}
+
+.Company-inner {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Company-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+
 /* =========  发展历程  ========= */
 .history-section {
   width: 100%;
-  padding: 150px 0 40px 0;
+  padding: 50px 0 40px 0;
   background: #f7f9fc;
 }
 
@@ -972,6 +993,11 @@
 
   }
 
+  .Company-section {
+    padding: 40px 0 40px 0;
+
+  }
+
   /* 通用：防止横向溢出 */
   body,
   html {
@@ -1000,12 +1026,13 @@
     right: 8px;
   }
 
-  
+
   .carousel-caption {
     left: 40px;
     bottom: 30px;
     padding: 15px;
   }
+
   /* ===== 关于我们 ===== */
   .indexAbout {
     height: auto;
@@ -1250,6 +1277,11 @@
 
   }
 
+  .Company-section {
+    padding: 0px 0 30px 0;
+
+  }
+
   .section-header {
     margin: 0 auto 20px;
     padding: 0 20px;
@@ -1349,6 +1381,11 @@
   }
 
   .history-section {
+    padding: 40px 0 40px 0;
+
+  }
+
+  .Company-section {
     padding: 40px 0 40px 0;
 
   }
@@ -1498,7 +1535,10 @@
     padding: 0px 0 20px 0;
 
   }
+  .Company-section {
+    padding: 0px 0 20px 0;
 
+  }
   .about-content {
     margin-left: 0px;
     background: #fff;
@@ -1545,6 +1585,7 @@
 
   .section-header h2,
   .history-title,
+  .Company-title,
   .company-tour-title,
   .partner-case-title,
   .equipment-title,
@@ -1580,6 +1621,7 @@
 
   .section-header h2,
   .history-title,
+  .Company-title,
   .company-tour-title,
   .partner-case-title,
   .equipment-title,
