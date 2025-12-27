@@ -16,10 +16,86 @@
   <link rel="alternate" hreflang="x-default" href="https://wafuen.com/products/product-F4" />
   <link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-F4" />
   <link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-F4" />
+  <link rel="alternate" hreflang="pt" href="https://wafulockpt.com/products/product-F4" />
+
 </head>
 
 <body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index" class="nav-logo">
+        <img src="../images/logo.png" alt="Logotipo WAFU">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Botão do menu móvel">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-list" id="navList">
+        <li class="nav-item">
+          <a href="../index" class="nav-link">Início</a>
+        </li>
 
+        <li class="nav-item dropdown">
+          <a href="../products" class="nav-link active">Produtos</a>
+          <ul class="dropdown-menu">
+            <li><a href="../products#product-RemoteLocks" class="dropdown-link">Fechadura Remota
+                Invisível</a></li>
+            <li><a href="../products#product-HandleLocks" class="dropdown-link">Fechadura com Maçaneta</a>
+            </li>
+            <li><a href="../products#product-PanelLocks" class="dropdown-link">Fechadura de Placa
+                Frontal</a>
+            </li>
+            <li><a href="../products#product-CameraLocks" class="dropdown-link">Fechadura com Câmara de Olho
+                Mágico</a></li>
+            <li><a href="../products#product-KnobLocks" class="dropdown-link">Fechadura de Botão
+                Esférico</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a href="../applicable" class="nav-link">Cenários de Aplicação</a>
+          <ul class="dropdown-menu">
+            <li><a href="../applicable/residence" class="dropdown-link">Residência</a></li>
+            <li><a href="../applicable/office" class="dropdown-link">Escritório</a></li>
+            <li><a href="../applicable/apartment" class="dropdown-link">Apartamento</a></li>
+            <li><a href="../applicable/hotel" class="dropdown-link">Hotel</a></li>
+            <li><a href="../applicable/dormitory" class="dropdown-link">Dormitório Escolar</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="../about" class="nav-link">Sobre Nós</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a href="../resource" class="nav-link">Centro de Recursos</a>
+          <ul class="dropdown-menu">
+            <li><a href="../resource/technology" class="dropdown-link">Artigos Técnicos</a></li>
+            <li><a href="../resource/question" class="dropdown-link">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="../news" class="nav-link ">Centro de Notícias</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <span class="nav-link">Idioma</span>
+          <ul class="dropdown-menu">
+            <li><a href="https://wafuen.com/" class="dropdown-link">English</a></li>
+            <li><a href="https://wafulockes.com/" class="dropdown-link">Español</a></li>
+            <li><a href="https://wafulockpt.com/" class="dropdown-link">Português</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="../contact" class="nav-link">Contacte-nos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <nav class="breadcrumb-nav" aria-label="Breadcrumb">
     <div class="breadcrumb-inner">
       <a href="../index" class="breadcrumb-item" aria-label="Voltar à Página Inicial">Início</a>
@@ -152,7 +228,16 @@
         <img data-src="../images/F4/a12.png" alt="WF-F4 visão geral dos parâmetros do produto" class="lazy">
       </div>
     </section>
+    <h2 class="product-section-title">Apresentação de Produtos </h2>
 
+    <div style="max-width: 1000px; margin: auto; margin-top: 50px;">
+      <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+        <iframe src="https://www.youtube.com/embed/J3UwumX886k" title="Product Video" loading="lazy" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+        </iframe>
+      </div>
+    </div>
     <section class="application-scenarios">
       <h2 class="scenarios-title">Cenários de Aplicação Principais</h2>
       <div class="scenarios-inner">
@@ -199,9 +284,130 @@
       </div>
     </section>
 
+    <div class="float-kefu">
+      <div class="kefu-item wechat" tabindex="0">
+        <img src="../icons/whatsapp.svg" alt="WhatsApp" class="kefu-icon">
+        <div class="kefu-popup wechat-popup">
+          <img src="../images/whatsapp.png" alt="Código QR do WhatsApp" class="qr-code">
+          <p>WhatsApp:</p>
+          <p>+86 19501835094</p>
+        </div>
+      </div>
 
+      <div class="kefu-item phone" tabindex="0">
+        <img src="../icons/icon-phone.svg" alt="telefone" class="kefu-icon">
+        <div class="kefu-popup phone-popup">
+          <p>Telefone: +86 19501835094</p>
+        </div>
+      </div>
+
+      <div class="kefu-item email" tabindex="0">
+        <img src="../icons/icon-email.svg" alt="email" class="kefu-icon">
+        <div class="kefu-popup email-popup">
+          <p>Email: wafutechnology@outlook.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-top" id="backTop" title="Voltar ao topo">
+      <img src="../icons/icon-backTop.svg" alt="Voltar ao topo">
+    </div>
   </main>
+  <footer class="footer">
+    <div class="footer-content">
 
+      <section class="footer-col">
+        <h2 class="footer-title">WAFU Smart</h2>
+        <p class="footer-text">
+          Fundada em 2013, a Shenzhen Huafu Intelligent Technology Co., Ltd. tem-se dedicado à I&D e fabrico
+          de
+          fechaduras inteligentes há 13 anos, servindo mais de 8.000 clientes em todo o mundo e tornando-se um
+          fornecedor líder no setor. Somos especializados em investigação, produção e serviços de fechaduras
+          inteligentes e dispositivos relacionados, oferecendo soluções seguras para casas, apartamentos,
+          hotéis,
+          escritórios e todos os cenários.
+        </p>
+        <div class="footer-socials" aria-label="Redes sociais">
+          <a href="https://wa.me/8619501835094?text=Hello&phone=8619501835094" class="social-icon whatsapp"
+            aria-label="whatsapp" title="whatsapp" target="_blank"></a>
+          <a href="https://www.instagram.com/smartlockwafu/" class="social-icon ins" aria-label="Instagram"
+            title="Instagram" target="_blank"></a>
+          <a href="https://x.com/wafu_smartlock" class="social-icon x" aria-label="X" title="X" target="_blank"></a>
+          <a href="https://www.facebook.com/profile.php?id=61584021737303" class="social-icon facebook"
+            aria-label="facebook" title="facebook" target="_blank"></a>
+          <a href="https://www.tiktok.com/@wafu_smartlock" class="social-icon tiktok" aria-label="tiktok" title="tiktok"
+            target="_blank"></a>
+          <a href="https://www.youtube.com/@WAFUSmartlock" class="social-icon Youtube" aria-label="Youtube"
+            title="Youtube" target="_blank"></a>
+        </div>
+      </section>
+
+      <section class="footer-col">
+        <h2 class="footer-title">Links Rápidos</h2>
+        <ul class="footer-list">
+          <li><a href="../index">Início</a></li>
+          <li><a href="../products">Produtos</a></li>
+          <li><a href="../applicable">Cenários de Aplicação</a></li>
+          <li><a href="../about">Sobre Nós</a></li>
+          <li><a href="../resource">Centro de Recursos</a></li>
+          <li><a href="../news">Centro de Notícias</a></li>
+          <li><a href="../contact">Contacte-nos</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col">
+        <h2 class="footer-title">Produtos</h2>
+        <ul class="footer-list">
+          <li><a href="../products#product-RemoteLocks">Fechadura Remota Invisível</a></li>
+          <li><a href="../products#product-HandleLocks">Fechadura com Maçaneta</a></li>
+          <li><a href="../products#product-PanelLocks">Fechadura de Placa Frontal</a></li>
+          <li><a href="../products#product-CameraLocks">Fechadura com Câmara de Olho Mágico</a></li>
+          <li><a href="../products#product-KnobLocks">Fechadura de Botão Esférico</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col">
+        <h2 class="footer-title">Contacte-nos</h2>
+        <ul class="footer-contact">
+          <li class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true">📍</span>
+            2F, Edifício 6, Parque Eco-Industrial Sha-Yi, 496 Chuangcheng Rd, Shajing, Bao’an, Shenzhen,
+            China
+          </li>
+          <li class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true">📞</span>
+            +86 19501835094
+          </li>
+          <li class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true">✉️</span>
+            wafutechnology@outlook.com
+          </li>
+          <li class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true">✉️</span>
+            wafutechnology@gmail.com
+          </li>
+          <li class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true">🕒</span>
+            Seg–Sáb: 9:00–18:00 (GMT+8)
+          </li>
+          <li class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true"></span>
+            Seg–Sáb: 2:00–11:00 (CET)
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <div class="footer-separator"></div>
+
+    <div class="footer-bottom-wrapper">
+      <div class="footer-bottom">
+        <span>© 2025 Shenzhen Huafu Intelligent Technology Co., Ltd. Todos os direitos reservados.</span>
+        <a href="../sitemap" class="footer-sitemap">Mapa do Site</a>
+      </div>
+    </div>
+  </footer>
   <script src="../js/all.js"></script>
   <script src="../js/email.min.js"></script>
 </body>
