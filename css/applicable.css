@@ -21,6 +21,7 @@
     /* 关键：完整显示，不裁剪 */
     filter: brightness(0.55);
     /* 保证文字可读 */
+    object-fit: cover;
     z-index: 1;
 }
 
