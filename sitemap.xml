@@ -187,6 +187,13 @@
 </url>
 
 <url>
+  <loc>https://wafulockpt.com/resource/technology-seven</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-seven"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology-seven"/>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://wafulockpt.com/resource/technology-seven"/>
+</url>
+
+<url>
   <loc>https://wafulockpt.com/resource/technology-six</loc>
   <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-six"/>
   <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology-six"/>
