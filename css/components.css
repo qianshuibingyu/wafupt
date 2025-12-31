@@ -622,7 +622,6 @@ textarea.form-control {
 /* 通用占位 */
 img.lazy {
   opacity: 0;
-  transition: opacity .3s;
 }
 
 img.lazy.loaded {
