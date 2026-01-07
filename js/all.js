@@ -6,11 +6,6 @@
         initCarousel();        // 自动轮播（全功能）
         initSimpleCarousel();  // 极简手动轮播
         initBackToTop();
-        if (typeof emailjs !== 'undefined') {
-            initContactForm();
-        } else {
-            return;
-        }
 
     });
 
@@ -240,49 +235,8 @@
         });
     }
 
-    // 功能4：联系表单
-    function initContactForm() {
-        emailjs.init('kiY7Ni8dk8ID8Mn47');
 
-        const form = document.getElementById('contactForm');
-        if (!form) return;
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const name = form.name?.value.trim() || '';
-            const phone = form.phone?.value.trim() || '';
-            const email = form.email?.value.trim() || '';
-            const product = form.product?.value.trim() || '';
-            const scenario = form.scenario?.value.trim() || '';
-            const message = form.message?.value.trim() || '';
-
-            if (!name || !phone) {
-                alert('请填写姓名/公司名和电话。');
-                return;
-            }
-
-            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                alert('请填写正确的邮箱地址，或留空。');
-                return;
-            }
-
-            emailjs.send('service_vs616cb', 'template_u99zynh', {
-                from_name: name,
-                from_email: email,
-                name,
-                phone,
-                product,
-                scenario,
-                message
-            }).then(() => {
-                alert('信息已发送，我们会尽快与您联系。');
-                form.reset();
-            }).catch(err => {
-                alert('发送失败，请稍后再试。');
-            });
-        });
-    }
 
     function initLazyLoad() {
         const imageObserver = new IntersectionObserver((entries, observer) => {

@@ -26,10 +26,56 @@
         gtag('js', new Date());
         gtag('config', 'AW-17790114591');
     </script>
-
-    <!-- Conversion Event -->
     <script>
-        gtag('event', 'conversion', { 'send_to': 'AW-17790114591/ekBxCL3w59YbEJ-2_qJC' });
+        document.addEventListener("DOMContentLoaded", function () {
+
+            emailjs.init('kiY7Ni8dk8ID8Mn47');
+
+            const form = document.getElementById('contactForm');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const product = document.getElementById('product').value.trim();
+                const scenario = document.getElementById('scenario').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!name || !phone) {
+                    alert('Por favor, preencha o nome/nome da empresa e o número de telefone.');
+                    return;
+                }
+
+                if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert('Por favor, insira um endereço de e-mail válido ou deixe em branco.');
+                    return;
+                }
+
+                emailjs.send('service_vs616cb', 'template_u99zynh', {
+                    from_name: name,
+                    from_email: email,
+                    name,
+                    phone,
+                    product,
+                    scenario,
+                    message
+                }).then(() => {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-17790114591/sru_CO2zh94bEJ-2_qJC',
+                        'value': 1.0,
+                        'currency': 'CNY'
+                    });
+
+                    alert('As informações foram enviadas. Entraremos em contato o mais breve possível.');
+                    form.reset();
+
+                }).catch(() => {
+                    alert('Falha no envio. Por favor, tente novamente mais tarde.');
+                });
+            });
+        });
     </script>
 </head>
 
