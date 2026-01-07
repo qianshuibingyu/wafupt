@@ -24,10 +24,56 @@
     gtag('js', new Date());
     gtag('config', 'AW-17790114591');
   </script>
-
-  <!-- Conversion Event -->
   <script>
-    gtag('event', 'conversion', { 'send_to': 'AW-17790114591/ekBxCL3w59YbEJ-2_qJC' });
+    document.addEventListener("DOMContentLoaded", function () {
+
+      emailjs.init('kiY7Ni8dk8ID8Mn47');
+
+      const form = document.getElementById('contactForm');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const product = document.getElementById('product').value.trim();
+        const scenario = document.getElementById('scenario').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !phone) {
+          alert('Por favor, preencha o nome/nome da empresa e o número de telefone.');
+          return;
+        }
+
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          alert('Por favor, insira um endereço de e-mail válido ou deixe em branco.');
+          return;
+        }
+
+        emailjs.send('service_vs616cb', 'template_u99zynh', {
+          from_name: name,
+          from_email: email,
+          name,
+          phone,
+          product,
+          scenario,
+          message
+        }).then(() => {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17790114591/ujr9CP-_iN4bEJ-2_qJC',
+            'value': 1.0,
+            'currency': 'CNY'
+          });
+
+          alert('As informações foram enviadas. Entraremos em contato o mais breve possível.');
+          form.reset();
+
+        }).catch(() => {
+          alert('Falha no envio. Por favor, tente novamente mais tarde.');
+        });
+      });
+    });
   </script>
 </head>
 
@@ -280,6 +326,96 @@
           </a>
         </div>
 
+      </div>
+    </section>
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-container">
+
+          <div class="contact-info">
+            <h2>Contacte-nos</h2>
+            <p>Quer necessite de branding OEM ou personalização funcional ODM, a nossa equipa de projeto
+              entrará em contacto consigo dentro de 24 horas após o envio do formulário e fornecerá uma
+              solução completa e personalizada de fechadura inteligente.</p>
+
+            <div class="contact-details">
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <img data-src="./icons/Address.svg" alt="Endereço" class="icon-img lazy">
+                </div>
+                <div class="contact-text">
+                  <h3>Endereço</h3>
+                  <p>2F, Edifício 6, Parque Eco-Industrial Sha-Yi, 496 Chuangcheng</p>
+                  <p>Rd,Subdistrito de Shajing, Distrito de Bao’an, Shenzhen, China</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <img data-src="./icons/icon-phone.svg" alt="Telefone" class="icon-img lazy">
+                </div>
+                <div class="contact-text">
+                  <h3>Telefone</h3>
+                  <p>+86 19501835094 (mesmo número para WhatsApp)</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <img data-src="./icons/icon-email.svg" alt="Email" class="icon-img lazy">
+                </div>
+                <div class="contact-text">
+                  <h3>Email</h3>
+                  <p>wafutechnology@outlook.com<br>wafutechnology@gmail.com</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h2 class="form-title">Consulta Gratuita</h2>
+
+            <form id="contactForm">
+
+              <div class="form-group">
+                <label for="name" class="required">Nome / Empresa</label>
+                <input type="text" id="name" class="form-control" placeholder="Insira o seu nome ou empresa" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="required">Telefone</label>
+                <input type="tel" id="phone" class="form-control" placeholder="Insira o número de telefone" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Insira o endereço de email">
+              </div>
+
+              <div class="form-group">
+                <label for="product">Produto de Interesse</label>
+                <input type="text" id="product" class="form-control" placeholder="ex.: fechadura remota invisível">
+              </div>
+
+              <div class="form-group">
+                <label for="scenario">Cenário de Aplicação</label>
+                <textarea id="scenario" class="form-control"
+                  placeholder="Descreva brevemente onde e como pretende usar a fechadura"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Mensagem / Requisitos Especiais</label>
+                <textarea id="message" class="form-control" placeholder="Alguma pergunta ou pedido..."></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Enviar Mensagem</button>
+
+            </form>
+          </div>
+
+        </div>
       </div>
     </section>
     <div class="float-kefu">
