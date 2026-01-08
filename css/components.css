@@ -743,32 +743,23 @@ img.lazy.loaded {
   }
 }
 
+
+@media (max-width: 1250px) {
+
+  .nav-link {
+    padding: 25px 8px;
+    font-size: 16px;
+  }
+}
+
+
 /* 平板端样式 */
 @media (max-width: 1024px) {
   .nav-container {
     height: 80px;
-    padding: 0 15px;
+    padding: 0 50px;
   }
 
-
-
-  .nav-link {
-    padding: 25px 12px;
-    font-size: 13px;
-  }
-}
-
-/* 移动端样式 */
-@media (max-width: 768px) {
-  body {
-    padding-top: 80px;
-  }
-
-  .nav-container {
-    height: 80px;
-    padding: 0 15px;
-    max-width: 100%;
-  }
 
   /* 显示汉堡菜单按钮 */
   .nav-toggle {
@@ -882,6 +873,21 @@ img.lazy.loaded {
   .nav-toggle.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
   }
+}
+
+/* 移动端样式 */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+
+  .nav-container {
+    height: 80px;
+    padding: 0 15px;
+    max-width: 100%;
+  }
+
+
 }
 
 /* 小屏手机优化 */
