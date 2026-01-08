@@ -236,6 +236,13 @@
 </url>
 
 <url>
+  <loc>https://wafulockpt.com/news/news-six</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news/news-six"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/news/news-six"/>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://wafulockpt.com/news/news-six"/>
+</url>
+
+<url>
   <loc>https://wafulockpt.com/news/news-five</loc>
   <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news/news-five"/>
   <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/news/news-five"/>
