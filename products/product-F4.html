@@ -17,65 +17,67 @@
   <link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-F4" />
   <link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-F4" />
   <link rel="alternate" hreflang="pt" href="https://wafulockpt.com/products/product-F4" />
-    <!-- Google Ads Global Tag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790114591"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'AW-17790114591');
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+  <link rel="alternate" hreflang="de" href="https://wafulockde.com/products/product-F4" />
 
-            emailjs.init('kiY7Ni8dk8ID8Mn47');
+  <!-- Google Ads Global Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790114591"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-17790114591');
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
 
-            const form = document.getElementById('contactForm');
+      emailjs.init('kiY7Ni8dk8ID8Mn47');
 
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
+      const form = document.getElementById('contactForm');
 
-                const name = document.getElementById('name').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const product = document.getElementById('product').value.trim();
-                const scenario = document.getElementById('scenario').value.trim();
-                const message = document.getElementById('message').value.trim();
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-                if (!name || !phone) {
-                    alert('Por favor, preencha o nome/nome da empresa e o número de telefone.');
-                    return;
-                }
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const product = document.getElementById('product').value.trim();
+        const scenario = document.getElementById('scenario').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-                if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    alert('Por favor, insira um endereço de e-mail válido ou deixe em branco.');
-                    return;
-                }
+        if (!name || !phone) {
+          alert('Por favor, preencha o nome/nome da empresa e o número de telefone.');
+          return;
+        }
 
-                emailjs.send('service_vs616cb', 'template_u99zynh', {
-                    from_name: name,
-                    from_email: email,
-                    name,
-                    phone,
-                    product,
-                    scenario,
-                    message
-                }).then(() => {
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-17790114591/ujr9CP-_iN4bEJ-2_qJC',
-                        'value': 1.0,
-                        'currency': 'CNY'
-                    });
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          alert('Por favor, insira um endereço de e-mail válido ou deixe em branco.');
+          return;
+        }
 
-                    alert('As informações foram enviadas. Entraremos em contato o mais breve possível.');
-                    form.reset();
+        emailjs.send('service_vs616cb', 'template_u99zynh', {
+          from_name: name,
+          from_email: email,
+          name,
+          phone,
+          product,
+          scenario,
+          message
+        }).then(() => {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17790114591/ujr9CP-_iN4bEJ-2_qJC',
+            'value': 1.0,
+            'currency': 'CNY'
+          });
 
-                }).catch(() => {
-                    alert('Falha no envio. Por favor, tente novamente mais tarde.');
-                });
-            });
+          alert('As informações foram enviadas. Entraremos em contato o mais breve possível.');
+          form.reset();
+
+        }).catch(() => {
+          alert('Falha no envio. Por favor, tente novamente mais tarde.');
         });
-    </script>
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -144,7 +146,8 @@
           <ul class="dropdown-menu">
             <li><a href="https://wafuen.com/" class="dropdown-link">English</a></li>
             <li><a href="https://wafulockes.com/" class="dropdown-link">Español</a></li>
-            <li><a href="https://wafulockpt.com/" class="dropdown-link">Português</a></li>
+            <li><a href="https://wafulockpt.com/" class="dropdown-link">Portugiesisch</a></li>
+            <li><a href="https://wafulockde.com/" class="dropdown-link">Deutsch</a></li>
           </ul>
         </li>
 
@@ -468,7 +471,7 @@
           <a href="https://www.instagram.com/smartlockwafu/" class="social-icon ins" aria-label="Instagram"
             title="Instagram" target="_blank"></a>
           <a href="https://x.com/wafu_smartlock" class="social-icon x" aria-label="X" title="X" target="_blank"></a>
-          <a href="https://www.facebook.com/profile.php?id=61584021737303" class="social-icon facebook"
+          <a href="https://www.facebook.com/profile.php?id=61585785047002" class="social-icon facebook"
             aria-label="facebook" title="facebook" target="_blank"></a>
           <a href="https://www.tiktok.com/@wafu_smartlock" class="social-icon tiktok" aria-label="tiktok" title="tiktok"
             target="_blank"></a>
