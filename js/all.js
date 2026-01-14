@@ -35,7 +35,7 @@
 
             link.addEventListener('click', function (e) {
                 // 只在移动端处理
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= 1024) {
                     const linkRect = this.getBoundingClientRect();
                     const clickX = e.clientX - linkRect.left;
                     const linkWidth = linkRect.width;

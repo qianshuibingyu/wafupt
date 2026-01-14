@@ -744,7 +744,7 @@ img.lazy.loaded {
 }
 
 
-@media (max-width: 1250px) {
+@media (max-width: 1328px) {
 
   .nav-link {
     padding: 25px 8px;
@@ -752,6 +752,13 @@ img.lazy.loaded {
   }
 }
 
+@media (max-width: 1124px) {
+
+  .nav-link {
+    padding: 25px 8px;
+    font-size: 14px;
+  }
+}
 
 /* 平板端样式 */
 @media (max-width: 1024px) {
