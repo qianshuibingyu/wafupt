@@ -284,7 +284,7 @@ body {
     line-height: 1.5;
     color: #555;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .wafu-more-link {
@@ -486,7 +486,7 @@ body {
     }
 
     .breadcrumb-inner {
-        margin-top: 0;
+        margin-bottom: 20px;
         margin-left: 100px;
         width: 70%;
     }
@@ -498,7 +498,6 @@ body {
     }
 
     .breadcrumb-inner {
-        margin-top: 0;
         margin-left: 50px;
         width: 80%;
     }
@@ -752,7 +751,6 @@ body {
     }
 
     .breadcrumb-inner {
-        margin-top: 0;
         margin-left: 50px;
         width: 80%;
     }

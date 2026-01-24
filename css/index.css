@@ -5,16 +5,13 @@
   box-sizing: border-box;
 }
 
-
 /* ===== 轮播图 ===== */
 .carousel {
   margin-top: 90px;
   position: relative;
   overflow: hidden;
   width: 100%;
-
   height: 700px;
-
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -38,20 +35,22 @@
   opacity: 1;
 }
 
+
+
+/* 图片保持在下面 */
 .carousel-item img {
   width: 100%;
   height: 100%;
-  display: block;
-  object-fit: cover;
+  z-index: 1;
+  position: relative;
 }
 
-/* 标题容器：左下角浮动 */
 .carousel-caption {
   position: absolute;
   left: 150px;
-  bottom: 75px;
+  bottom: 100px;
   z-index: 2;
-  max-width: 650px;
+  max-width: 600px;
   padding: 20px 25px;
   border-radius: 8px;
   animation: fadeInUp 0.8s ease-out;
@@ -59,13 +58,12 @@
 
 .carousel-caption h1 {
   margin: 0;
-  font-size: 45px;
+  font-size: 48px;
   font-weight: 600;
   color: #fff;
   line-height: 1.3;
 }
 
-/* 轮播指示器 */
 .carousel-indicators {
   position: absolute;
   bottom: 20px;
@@ -94,7 +92,6 @@
   background: rgba(255, 255, 255, 0.8);
 }
 
-/* 导航按钮 */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -127,7 +124,6 @@
   right: 20px;
 }
 
-/* 动画效果 */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -140,120 +136,87 @@
   }
 }
 
-/* 移动端适配 */
-@media (max-width: 768px) {
-  .carousel {
-    margin-top: -10px !important;
-    height: 300px !important;
-    border-radius: 0;
-  }
-
-  .carousel-caption {
-    left: 20px;
-    bottom: 20px;
-    padding: 15px;
-    max-width: calc(100% - 40px);
-  }
-
-  .carousel-caption h1 {
-    font-size: 20px;
-  }
-
-  .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-
-  .carousel-btn.prev {
-    display: none;
-  }
-
-  .carousel-btn.next {
-    display: none;
-  }
-
-  .indicator {
-    width: 10px;
-    height: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel {
-    height: 300px !important;
-  }
-
-  .carousel-caption h1 {
-    font-size: 18px !important;
-  }
-}
-
-/* 关于我们部分 */
+/* ===== 关于我们部分 - 修复移动端问题 ===== */
 .section-about {
   width: 100%;
-  height: 700px;
+  min-height: 700px;
   background: #f7f9fc;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 60px 0 0 0;
 }
 
 .about-container {
-  padding: 50px 0 0 0;
+  padding: 0;
   background: #f7f9fc;
-  max-width: 1450px;
-  height: 100%;
+  max-width: 1500px;
+  width: 92%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
+  align-items: stretch;
+  /* ★ 让左右两边等高 */
+  gap: 40px;
   border-radius: 12px;
 }
 
 .about-image {
-  width: 50%;
-  height: 100%;
+  flex: 1;
+  min-width: 0;
+  /* 防止flex item溢出 */
 }
 
-.about-image-img {
+.about-image>div {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  /* ★ 视频容器跟随右侧高度 */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.about-image iframe {
+  width: 100%;
+  height: 100%;
+  /* ★ iframe 填满容器 */
+  object-fit: cover;
+  /* ★ 让视频更自然 */
 }
 
 .about-content {
-  height: 100%;
-  margin-left: 50px;
   flex: 1;
-  padding: 20px 30px;
+  min-width: 0;
+  /* 防止flex item溢出 */
+  padding: 40px;
   background: #fff;
   border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .about-text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .about-title {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: 2rem;
   font-weight: 700;
   color: #111;
   line-height: 1.2;
+  margin-bottom: 10px;
 }
 
 .about-paragraph {
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: #444;
 }
 
-.about-paragraph strong {
-  color: #222;
-}
 
 .about-buttons {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -263,32 +226,273 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 32px;
-  border-radius: 999px;
+  padding: 14px 32px;
+  border-radius: 50px;
   font-weight: 500;
-  transition: all .3s;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
   text-decoration: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 .button-primary {
-  background: rgb(26, 115, 232);
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
   color: #fff;
-  box-shadow: 0 4px 14px rgba(93, 173, 226, .4);
+  box-shadow: 0 4px 14px rgba(26, 115, 232, 0.4);
 }
 
 .button-primary:hover {
-  background: rgb(13, 71, 161);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(26, 115, 232, 0.5);
 }
 
 .button-secondary {
   background: #fff;
-  color: rgb(26, 115, 232);
-  border: 2px solid rgb(26, 115, 232);
+  color: #1a73e8;
+  border: 2px solid #1a73e8;
 }
 
 .button-secondary:hover {
   background: #f0f7ff;
+  transform: translateY(-3px);
+}
+
+/* ========= 移动端响应式修复 ========= */
+@media (max-width: 1024px) {
+  .section-about {
+    padding: 40px 0;
+    min-height: auto;
+  }
+
+  .about-container {
+    width: 95%;
+    gap: 30px;
+  }
+
+  .about-content {
+    padding: 30px;
+  }
+
+  .about-paragraph {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-about {
+    padding: 30px 0;
+    height: auto;
+  }
+
+  .about-container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    gap: 0;
+    padding: 0;
+  }
+
+  .about-image {
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 0;
+  }
+
+
+  .about-content {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0;
+    padding: 30px 20px;
+    box-shadow: none;
+    border-top: 1px solid #eaeaea;
+  }
+
+  .about-text {
+    gap: 18px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .about-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .about-buttons {
+    margin-top: 25px;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-image>div {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+    /* 关键：让 iframe 根据 padding-bottom 形成高度 */
+  }
+
+  .about-image iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-about {
+    padding: 20px 0;
+  }
+
+  .about-image {
+    padding: 15px;
+    padding-bottom: 0;
+  }
+
+  .about-content {
+    padding: 25px 15px;
+  }
+
+  .about-title {
+    font-size: 1.6rem;
+  }
+
+  .about-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .about-buttons {
+    margin-top: 20px;
+    gap: 12px;
+  }
+
+  .button {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-title {
+    font-size: 1.4rem;
+  }
+
+  .about-paragraph {
+    font-size: 0.85rem;
+  }
+
+  .about-buttons {
+    gap: 10px;
+  }
+}
+
+/* 修复其他部分在移动端的标题字体大小 */
+@media (max-width: 768px) {
+
+  .section-header h2,
+  .history-title,
+  .Company-title,
+  .company-tour-title,
+  .partner-case-title,
+  .equipment-title,
+  .news-header h2,
+  .advantages-title,
+  .certification-title,
+  .partners-title,
+  .faq-title {
+    font-size: 1.8rem !important;
+    line-height: 1.3;
+    padding: 0 15px;
+    margin: 0 auto 15px;
+  }
+
+  .section-header p,
+  .history-intro,
+  .company-tour-intro,
+  .partner-case-intro,
+  .equipment-intro,
+  .news-header p,
+  .advantages-subtitle,
+  .certification-subtitle,
+  .faq-subtitle {
+    font-size: 0.95rem !important;
+    line-height: 1.6;
+    padding: 0 15px;
+    margin: 0 auto 25px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .section-header h2,
+  .history-title,
+  .Company-title,
+  .company-tour-title,
+  .partner-case-title,
+  .equipment-title,
+  .news-header h2,
+  .advantages-title,
+  .certification-title,
+  .partners-title,
+  .faq-title {
+    font-size: 1.5rem !important;
+  }
+
+  .section-header p,
+  .history-intro,
+  .company-tour-intro,
+  .partner-case-intro,
+  .equipment-intro,
+  .news-header p,
+  .advantages-subtitle,
+  .certification-subtitle,
+  .faq-subtitle {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* 修复新闻部分的移动端显示 */
+@media (max-width: 768px) {
+  .news-item {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .news-item-image {
+    height: 200px;
+  }
+
+  .news-item-content {
+    padding: 20px;
+  }
+
+  .news-item-title {
+    font-size: 1.2rem;
+  }
 }
 
 .Company-section {
@@ -310,7 +514,6 @@
   color: #111;
   margin-bottom: 20px;
 }
-
 
 /* =========  发展历程  ========= */
 .history-section {
@@ -341,20 +544,17 @@
   margin-bottom: 60px;
 }
 
-/* 时间轴容器 */
 .timeline {
   position: relative;
   padding-left: 30px;
   border-left: 3px solid #5dade2;
 }
 
-/* 单个节点 */
 .timeline-item {
   position: relative;
   margin-bottom: 50px;
 }
 
-/* 圆点 */
 .timeline-dot {
   position: absolute;
   left: -42px;
@@ -367,7 +567,6 @@
   box-shadow: 0 0 0 3px #5dade2;
 }
 
-/* 内容卡片 */
 .timeline-content {
   background: #fff;
   padding: 25px 30px;
@@ -399,7 +598,6 @@
 /* =========  公司实景  ========= */
 .company-tour-section {
   width: 100%;
-
   background: #f7f9fc;
   text-align: center;
 }
@@ -437,7 +635,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   height: 250px;
-  /* 调整图片高度 */
 }
 
 .image-item:hover {
@@ -448,7 +645,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* 确保图片填充整个容器 */
   border-radius: 12px;
   transition: transform 0.3s ease;
 }
@@ -486,8 +682,6 @@
 
 .partner-case-title {
   font-size: 2.8rem;
-
-  /* 增大标题字体 */
   font-weight: 700;
   color: #111;
   margin-bottom: 20px;
@@ -495,7 +689,6 @@
 
 .partner-case-intro {
   font-size: 1.2rem;
-  /* 增大介绍字体 */
   line-height: 1.8;
   color: #444;
   margin-bottom: 40px;
@@ -504,9 +697,7 @@
 .partner-case-images {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  /* 增大图片宽度 */
   gap: 30px;
-  /* 增大图片间距 */
 }
 
 .partner-item {
@@ -519,15 +710,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   padding: 20px;
-  /* 增大内边距 */
 }
-
 
 .partner-logo img {
   border-radius: 20px;
   width: 330px;
   height: 200px;
-  /* 增大Logo尺寸 */
   margin: 20px 0;
 }
 
@@ -537,37 +725,29 @@
 
 .partner-image img:hover {
   transform: scale(1.1);
-  /* 增大悬停缩放效果 */
 }
 
 .partner-caption {
   padding: 15px;
-  /* 增大标题内边距 */
   font-size: 1.2rem;
-  /* 增大标题字体 */
-
   color: #444;
-
   z-index: 1;
 }
 
-/* =========  高精度气密性检测设备  ========= */
 .high-precision-equipment-section {
   width: 100%;
-
   background: #f7f9fc;
   text-align: center;
 }
 
 .equipment-inner {
   width: 80%;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 80px 0 0 0;
 }
 
 .equipment-title {
-
   font-size: 2.8rem;
   font-weight: 700;
   color: #111;
@@ -595,8 +775,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   padding: 20px;
+  text-decoration: none;
 }
-
 
 .equipment-image {
   width: 100%;
@@ -641,9 +821,9 @@
 /* 新闻中心 */
 .news-section {
   width: 100%;
-
   background: #f7f9fc;
   text-align: center;
+  padding: 65px 0;
 }
 
 .news-header h2 {
@@ -669,18 +849,15 @@
   font-weight: 600;
   color: #070707;
   margin-top: 20px;
-
   margin-bottom: 20px;
   width: 100%;
   max-width: 1220px;
-  /* 和 .news-list 的最大宽度一致 */
   padding-left: 10px;
   text-align: left;
 }
 
 .news-subtitle-description {
   font-size: 1rem;
-  /* 小标题描述字体大小 */
   color: #666;
   margin-bottom: 20px;
 }
@@ -721,7 +898,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-
 }
 
 .news-item-content {
@@ -733,7 +909,6 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: #333;
-
   text-decoration: none;
 }
 
@@ -769,7 +944,6 @@
   background-color: #0056b3;
 }
 
-/* 查看更多按钮样式 */
 .news-item-more {
   margin-top: 30px;
   text-align: center;
@@ -794,14 +968,13 @@
 /* =========  技术优势  ========= */
 .tech-advantages-section {
   width: 100%;
-
   background: #f7f9fc;
   text-align: center;
 }
 
 .advantages-container {
   width: 80%;
-  padding: 80px 0 0 0;
+  padding: 0px 0 0 0;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -810,7 +983,7 @@
   font-size: 2.8rem;
   font-weight: 700;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .advantages-subtitle {
@@ -825,8 +998,6 @@
   justify-content: center;
   gap: 20px;
   margin-top: 40px;
-  /* 添加底部间距 */
-
 }
 
 .advantage-item {
@@ -845,7 +1016,6 @@
 }
 
 .advantage-icon {
-
   font-size: 2rem;
   margin-bottom: 10px;
 }
@@ -854,7 +1024,6 @@
   width: 45px;
   height: 45px;
 }
-
 
 .advantage-title {
   font-size: 1.5rem;
@@ -880,7 +1049,6 @@
 .certification-container {
   width: 90%;
   max-width: 1400px;
-  /* 调整最大宽度 */
   margin: 0 auto;
 }
 
@@ -913,7 +1081,6 @@
   margin-bottom: 20px;
 }
 
-
 .certification-image {
   width: 100%;
   height: 400px;
@@ -921,7 +1088,6 @@
   max-height: 800px;
   display: block;
 }
-
 
 .certification-caption {
   padding: 20px;
@@ -969,213 +1135,13 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   margin-bottom: 20px;
-  /* 底部间距 */
   max-width: 100%;
-  /* 确保图片宽度不超过容器 */
-
-  /* 保持图片比例 */
   object-fit: cover;
-  /* 保持图片比例 */
 }
 
 .partner-image:hover {
   transform: scale(1.1);
-  /* 鼠标悬停时放大 */
 }
-
-/* =====================================================
-   移动端补丁：≤768px 生效，桌面端完全不受影响
-   ===================================================== */
-
-@media (max-width: 1024px) {
-  .carousel-caption h1{
-    font-size: 25px;
-  }
-  .history-section {
-    padding: 40px 0 40px 0;
-
-  }
-
-  .Company-section {
-    padding: 40px 0 40px 0;
-
-  }
-
-  /* 通用：防止横向溢出 */
-  body,
-  html {
-    overflow-x: hidden;
-    width: 100%;
-  }
-
-  /* ===== 轮播图 ===== */
-  .carousel {
-    margin-top: 80px;
-    height: 60vh;
-    /* 由 750px → 60% 视口高度 */
-  }
-
-  .carousel-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 22px;
-  }
-
-  .carousel-btn.prev {
-    left: 8px;
-  }
-
-  .carousel-btn.next {
-    right: 8px;
-  }
-
-
-  .carousel-caption {
-    left: 40px;
-    bottom: 30px;
-    padding: 15px;
-  }
-
-  /* ===== 关于我们 ===== */
-  .indexAbout {
-    height: auto;
-    padding: 40px 0;
-  }
-
-  .indexAboutBox {
-    width: 92%;
-    height: auto;
-    flex-direction: column;
-  }
-
-  .indexAboutBoxLeft {
-    width: 100%;
-    height: 220px;
-  }
-
-  .indexAboutBoxRight {
-    padding: 24px 16px;
-  }
-
-  .about-btns {
-    gap: 12px;
-  }
-
-  .btn {
-    padding: 10px 24px;
-    font-size: 0.95rem;
-  }
-
-  /* ===== 发展历程 ===== */
-  .history-inner {
-    width: 92%;
-  }
-
-  .timeline {
-    padding-left: 20px;
-  }
-
-  .timeline-dot {
-    left: -32px;
-    width: 14px;
-    height: 14px;
-  }
-
-  .timeline-content {
-    padding: 18px 20px;
-  }
-
-  /* ===== 公司实景 ===== */
-  .company-tour-inner {
-    width: 92%;
-  }
-
-  .image-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 12px;
-  }
-
-  .image-item {
-    height: 160px;
-  }
-
-  /* ===== 合作案例 ===== */
-  .partner-case-inner {
-    width: 92%;
-  }
-
-  .partner-case-images {
-    grid-template-columns: 1fr;
-    /* 单列 */
-    gap: 20px;
-  }
-
-  .partner-logo img {
-    width: 100%;
-    height: auto;
-    max-height: 160px;
-    object-fit: cover;
-  }
-
-  /* ===== 高精度设备 ===== */
-  .equipment-inner {
-    width: 92%;
-  }
-
-  .equipment-images {
-    grid-template-columns: 1fr;
-    /* 单列 */
-    gap: 20px;
-  }
-
-  /* ===== 新闻中心 ===== */
-  .news-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .news-item {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  /* ===== 技术优势 ===== */
-  .advantages-container {
-    width: 92%;
-  }
-
-  .advantage-item {
-    width: 100%;
-    /* 单列 */
-  }
-
-  /* ===== 认证与专利 ===== */
-  .certification-container {
-    width: 92%;
-  }
-
-  .certification-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .certification-item {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  /* ===== 合作伙伴 ===== */
-  .partners-container {
-    width: 92%;
-  }
-
-  .partner-image {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  }
-}
-
 
 /* 适用场景 */
 .scenes-section {
@@ -1187,6 +1153,7 @@
 .section-header {
   text-align: center;
   margin: 0 auto 28px;
+  max-width: 980px;
 }
 
 .section-header h2 {
@@ -1220,6 +1187,7 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .scene-card:hover {
@@ -1261,419 +1229,16 @@
   outline: none;
 }
 
-
-/* 新增：按钮容器 */
 .button-footer {
   display: flex;
   justify-content: center;
   margin-top: 40px;
 }
 
-/* ========= 移动端适配 ========footer-bottom= */
-@media (max-width: 768px) {
-  .scenes-section {
-    padding: 30px 0 40px;
-  }
-
-  .history-section {
-    padding: 0px 0 30px 0;
-
-  }
-
-  .Company-section {
-    padding: 0px 0 30px 0;
-
-  }
-
-  .section-header {
-    margin: 0 auto 20px;
-    padding: 0 20px;
-  }
-
-  .section-header h2 {
-    font-size: 1.6rem;
-  }
-
-  .section-header p {
-    font-size: 0.9rem;
-  }
-
-  .scenes-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    width: 92%;
-  }
-
-  .scene-card {
-    border-radius: 12px;
-  }
-
-  .card-image {
-    height: 200px;
-  }
-
-  .card-content {
-    padding: 14px 16px 16px;
-  }
-
-  .card-title {
-    font-size: 1.05rem;
-  }
-
-  .card-desc {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .scenes-section {
-    padding: 20px 0 30px;
-  }
-
-  .section-header {
-    margin: 0 auto 15px;
-  }
-
-  .section-header h2 {
-    font-size: 1.4rem;
-  }
-
-  .section-header p {
-    font-size: 0.85rem;
-  }
-
-  .scenes-grid {
-    gap: 16px;
-    width: 94%;
-  }
-
-  .card-image {
-    height: 180px;
-  }
-
-  .card-content {
-    padding: 12px 14px 14px;
-  }
-
-  .card-title {
-    font-size: 1rem;
-  }
-
-  .card-desc {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .scenes-grid {
-    grid-template-columns: 1fr;
-    width: 92%;
-  }
-}
-
-@media (max-width: 1024px) {
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-}
-
-@media (max-width: 640px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
-
-  .history-section {
-    padding: 40px 0 40px 0;
-
-  }
-
-  .Company-section {
-    padding: 40px 0 40px 0;
-
-  }
-}
-
-@media (max-width: 1024px) {
-  .section-about {
-
-    height: auto;
-    min-height: auto;
-    padding: 40px 0;
-    display: block;
-  }
-
-  .about-container {
-    padding: 0;
-    max-width: 100%;
-    height: auto;
-    flex-direction: column;
-    border-radius: 0;
-    margin: 0;
-    width: 100%;
-  }
-
-  .about-image {
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
-  }
-
-  .about-image-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    object-fit: cover;
-  }
-
-  .about-content {
-    margin-left: 0px;
-
-    flex: none;
-    padding: 40px 20px;
-    width: 100%;
-    background: #fff;
-  }
-
-  .about-text {
-    gap: 15px;
-    text-align: center;
-  }
-
-  .about-title {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-
-  .about-paragraph {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: left;
-  }
-
-  .about-buttons {
-    margin-top: 20px;
-    justify-content: center;
-    gap: 15px;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .section-about {
-
-    height: auto;
-    min-height: auto;
-    padding: 40px 0;
-    display: block;
-  }
-
-  .about-container {
-    padding: 0;
-    max-width: 100%;
-    height: auto;
-    flex-direction: column;
-    border-radius: 0;
-    margin: 0;
-    width: 100%;
-  }
-
-  .about-image {
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
-  }
-
-  .about-image-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    object-fit: cover;
-  }
-
-  .about-content {
-    margin-left: 0px;
-    flex: none;
-    padding: 40px 20px;
-    width: 100%;
-    background: #fff;
-  }
-
-  .about-text {
-    gap: 15px;
-    text-align: center;
-  }
-
-  .about-title {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-
-  .about-paragraph {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: left;
-  }
-
-  .about-buttons {
-    margin-top: 20px;
-    justify-content: center;
-    gap: 15px;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-about {
-    padding: 30px 0;
-  }
-
-  .about-image {
-    height: 250px;
-  }
-
-  .history-section {
-    padding: 0px 0 20px 0;
-
-  }
-
-  .Company-section {
-    padding: 0px 0 40px 0;
-
-  }
-
-  .about-content {
-    margin-left: 0px;
-    background: #fff;
-
-    padding: 30px 15px;
-  }
-
-  .about-title {
-    font-size: 1.6rem;
-  }
-
-  .about-paragraph {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .about-buttons {
-    gap: 10px;
-  }
-
-  .button {
-    width: 100%;
-    max-width: 280px;
-    padding: 12px 20px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .about-image {
-    height: 200px;
-  }
-
-  .about-title {
-    font-size: 1.4rem;
-  }
-
-  .about-paragraph {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .section-header h2,
-  .history-title,
-  .Company-title,
-  .company-tour-title,
-  .partner-case-title,
-  .equipment-title,
-  .news-header h2,
-  .advantages-title,
-  .certification-title,
-  .partners-title {
-    font-size: 1.6rem !important;
-    line-height: 1.3;
-    padding: 0 20px;
-    margin: 0 auto 12px;
-    text-align: center;
-  }
-
-  .section-header p,
-  .history-intro,
-  .company-tour-intro,
-  .partner-case-intro,
-  .equipment-intro,
-  .news-header p,
-  .advantages-subtitle,
-  .certification-subtitle {
-    font-size: 0.9rem !important;
-    line-height: 1.5;
-    color: #6b7280;
-    padding: 0 20px;
-    margin: 0 auto 30px;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .section-header h2,
-  .history-title,
-  .Company-title,
-  .company-tour-title,
-  .partner-case-title,
-  .equipment-title,
-  .news-header h2,
-  .advantages-title,
-  .certification-title,
-  .partners-title {
-    font-size: 1.4rem !important;
-    padding: 0 15px;
-  }
-
-  .section-header p,
-  .history-intro,
-  .company-tour-intro,
-  .partner-case-intro,
-  .equipment-intro,
-  .news-header p,
-  .advantages-subtitle,
-  .certification-subtitle {
-    font-size: 0.85rem !important;
-    padding: 0 15px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .partners-grid {
-    gap: 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  .partners-grid {
-    gap: 40px;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .partners-grid {
-    gap: 30px;
-  }
-}
-
 /* FAQ 样式 */
 .faq-section {
   width: 100%;
-  padding: 20px 0;
+  padding: 80px 0 10px 0;
   background: #f7f9fc;
   text-align: center;
 }
@@ -1737,7 +1302,6 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 .faq-icon {
   width: 20px;
   height: 20px;
@@ -1755,8 +1319,6 @@
   text-align: left;
 }
 
-
-/* 显示答案 */
 .faq-item.active .faq-answer {
   display: block;
 }
@@ -1765,8 +1327,324 @@
   transform: rotate(180deg);
 }
 
-/* 移动端适配 */
+/* ========= 移动端适配 ========= */
+@media (max-width: 1024px) {
+  .carousel-caption h1 {
+    font-size: 22px;
+  }
+
+  .history-section,
+  .Company-section {
+    padding: 40px 0;
+  }
+
+  .carousel {
+    margin-top: 80px;
+    height: 60vh;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+
+  .carousel-btn.prev {
+    left: 8px;
+  }
+
+  .carousel-btn.next {
+    right: 8px;
+  }
+
+  .carousel-caption {
+    left: 40px;
+    bottom: 30px;
+    padding: 15px;
+  }
+
+  .section-about {
+    height: auto;
+    min-height: auto;
+    padding: 40px 0;
+    display: block;
+  }
+
+  .about-container {
+    padding: 0;
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  .about-image-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+  }
+
+  .about-content {
+    margin-left: 0px;
+    flex: none;
+    padding: 40px 20px;
+    width: 100%;
+    background: #fff;
+  }
+
+  .about-text {
+    gap: 15px;
+    text-align: center;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .about-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .about-buttons {
+    margin-top: 20px;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .history-inner,
+  .company-tour-inner,
+  .partner-case-inner,
+  .equipment-inner,
+  .advantages-container {
+    width: 92%;
+  }
+
+  .equipment-inner {
+    padding: 20px 0 0 0 !important;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline-dot {
+    left: -32px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-content {
+    padding: 18px 20px;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .image-item {
+    height: 160px;
+  }
+
+  .partner-case-images,
+  .equipment-images {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .partner-logo img {
+    width: 100%;
+    height: auto;
+    max-height: 160px;
+    object-fit: cover;
+  }
+
+  .news-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news-item {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .advantage-item {
+    width: 100%;
+  }
+
+  .certification-container {
+    width: 92%;
+  }
+
+  .certification-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .certification-item {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .partners-container {
+    width: 92%;
+  }
+
+  .partner-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .partners-grid {
+    gap: 60px;
+  }
+
+  .scenes-grid {
+    grid-template-columns: 1fr;
+    width: 92%;
+  }
+}
+
 @media (max-width: 768px) {
+  .carousel {
+    margin-top: -10px !important;
+    height: 300px !important;
+    border-radius: 0;
+  }
+
+  .carousel-caption {
+    left: 20px;
+    bottom: 20px;
+    padding: 15px;
+    max-width: calc(100% - 40px);
+  }
+
+  .carousel-caption h1 {
+    font-size: 20px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .carousel-btn.prev,
+  .carousel-btn.next {
+    display: none;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .section-header h2,
+  .history-title,
+  .Company-title,
+  .company-tour-title,
+  .partner-case-title,
+  .equipment-title,
+  .news-header h2,
+  .advantages-title,
+  .certification-title,
+  .partners-title {
+    font-size: 1.6rem !important;
+    line-height: 1.3;
+    padding: 0 20px;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+
+  .section-header p,
+  .history-intro,
+  .company-tour-intro,
+  .partner-case-intro,
+  .equipment-intro,
+  .news-header p,
+  .advantages-subtitle,
+  .certification-subtitle {
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+    color: #6b7280;
+    padding: 0 20px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+
+  .certification-section {
+    padding: 0;
+  }
+
+  .scenes-section {
+    padding: 30px 0 40px;
+  }
+
+  .history-section,
+  .Company-section {
+    padding: 0px 0 30px 0;
+  }
+
+  .section-header {
+    margin: 0 auto 20px;
+    padding: 0 20px;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-header p {
+    font-size: 0.9rem;
+  }
+
+  .scenes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 92%;
+  }
+
+  .scene-card {
+    border-radius: 12px;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-content {
+    padding: 14px 16px 16px;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+  }
+
+  .card-desc {
+    font-size: 0.9rem;
+  }
+
   .faq-section {
     padding: 60px 0;
   }
@@ -1794,9 +1672,131 @@
     padding: 0 20px 20px;
     font-size: 0.95rem;
   }
+
+  .partners-grid {
+    gap: 40px;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
+  .carousel {
+    height: 300px !important;
+  }
+
+  .carousel-caption h1 {
+    font-size: 18px !important;
+  }
+
+  .section-about {
+    padding: 30px 0;
+  }
+
+  .about-image {
+    height: 250px;
+  }
+
+  .history-section {
+    padding: 0px 0 20px 0;
+  }
+
+  .Company-section {
+    padding: 0px 0 40px 0;
+  }
+
+  .about-content {
+    margin-left: 0px;
+    background: #fff;
+    padding: 30px 15px;
+  }
+
+  .about-title {
+    font-size: 1.6rem;
+  }
+
+  .about-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .about-buttons {
+    gap: 10px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .section-header h2,
+  .history-title,
+  .Company-title,
+  .company-tour-title,
+  .partner-case-title,
+  .equipment-title,
+  .news-header h2,
+  .advantages-title,
+  .certification-title,
+  .partners-title {
+    font-size: 1.8rem !important;
+    padding: 0 15px;
+  }
+
+  .section-header p,
+  .history-intro,
+  .company-tour-intro,
+  .partner-case-intro,
+  .equipment-intro,
+  .news-header p,
+  .advantages-subtitle,
+  .certification-subtitle {
+    font-size: 0.85rem !important;
+    padding: 0 15px;
+  }
+
+  .scenes-section {
+    padding: 20px 0 30px;
+  }
+
+  .section-header {
+    margin: 0 auto 15px;
+  }
+
+  .section-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .section-header p {
+    font-size: 0.85rem;
+  }
+
+  .scenes-grid {
+    gap: 16px;
+    width: 94%;
+  }
+
+  .card-image {
+    height: 180px;
+  }
+
+  .card-content {
+    padding: 12px 14px 14px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
   .faq-section {
     padding: 40px 0;
   }
@@ -1818,19 +1818,40 @@
     padding: 0 18px 18px;
     font-size: 0.9rem;
   }
+
+  .partners-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 360px) {
+  .carousel {
+    height: 200px !important;
+  }
+
+  .about-image {
+    height: 200px;
+  }
+
+  .about-title {
+    font-size: 1.4rem;
+  }
+
+  .about-paragraph {
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 400px) {
   .news-subtitle {
-    visibility: visible !important;
-
+    display: block !important;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 1220px) {
   .news-subtitle {
-    visibility: hidden;
-
+    display: none;
   }
 }
 
