@@ -1,0 +1,16 @@
+# 不上传 Node 依赖
+node_modules/
+
+# 不上传构建脚本
+js/add-hreflang.js
+js/generate-sitemap.js
+# 不上传 npm 配置文件
+package.json
+package-lock.json
+
+# 不上传日志
+npm-debug.log
+
+# 不上传系统文件
+.DS_Store
+Thumbs.db
