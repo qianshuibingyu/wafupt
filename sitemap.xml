@@ -249,6 +249,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://wafulockde.com/resource/question"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://wafulockfr.com/resource/question"/>
   </url>
+  <url>
+    <loc>https://wafulockpt.com/resource/technology-twelve</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-twelve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology-twelve"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://wafulockpt.com/resource/technology-twelve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wafulockde.com/resource/technology-twelve"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wafulockfr.com/resource/technology-twelve"/>
+  </url>
     <url>
     <loc>https://wafulockpt.com/resource/technology-eleven</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-eleven"/>
