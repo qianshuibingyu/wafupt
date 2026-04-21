@@ -72,6 +72,12 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://wafulockde.com/contact"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://wafulockfr.com/contact"/>
   </url>
+    <url>
+    <loc>https://wafulockpt.com/news/news-ten</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news/news-ten"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/news/news-ten"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://wafulockpt.com/news/news-ten"/>
+  </url>
   <url>
     <loc>https://wafulockpt.com/news/news-nine</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news/news-nine"/>
