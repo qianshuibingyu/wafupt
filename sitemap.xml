@@ -262,6 +262,26 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://wafulockde.com/resource/question"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://wafulockfr.com/resource/question"/>
   </url>
+  <url>
+    <loc>https://wafulockpt.com/resource/invisible-lock-certification</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/invisible-lock-certification"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wafulockde.com/resource/invisible-lock-certification"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://wafulockpt.com/resource/invisible-lock-certification"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/invisible-lock-certification"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wafulockfr.com/resource/invisible-lock-certification"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://wafulockit.com/resource/invisible-lock-certification"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://wafulockru.com/resource/invisible-lock-certification"/>
+  </url>
+  <url>
+    <loc>https://wafulockpt.com/resource/technology-twentyone</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-twentyone"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wafulockde.com/resource/technology-twentyone"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://wafulockpt.com/resource/technology-twentyone"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/technology-twentyone"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wafulockfr.com/resource/technology-twentyone"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://wafulockit.com/resource/technology-twentyone"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://wafulockru.com/resource/technology-twentyone"/>
+  </url>
     <url>
     <loc>https://wafulockpt.com/resource/technology-twenty</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/resource/technology-twenty"/>

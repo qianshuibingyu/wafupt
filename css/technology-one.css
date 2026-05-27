@@ -112,6 +112,42 @@ body {
     text-align: center;
 }
 
+/* ===== 对比表格 ===== */
+.wafu-comparison-table {
+    overflow-x: auto;
+    margin: 20px 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wafu-comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+    min-width: 520px;
+}
+
+.wafu-comparison-table th {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    color: #333;
+    vertical-align: top;
+}
+
+.wafu-comparison-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    color: #555;
+    vertical-align: top;
+}
+
+.wafu-comparison-table tr:hover {
+    background-color: #fafafa;
+}
+
 /* ===== 文章底 ===== */
 .wafu-article-footer {
     border-top: 1px solid #dfdfdf;
@@ -187,14 +223,35 @@ body {
 }
 
 .wafu-related-tags {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
 }
 
+.wafu-related-tags-title {
+    flex: 0 0 auto;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.wafu-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    align-self: flex-start;
+    gap: 10px;
+    flex: 1 1 200px;
+    min-width: 0;
+}
+
 .wafu-tag-item {
+    display: inline-block;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    height: auto;
     background: #f0f0f0;
     color: #333;
     font-size: .9rem;
@@ -202,6 +259,9 @@ body {
     border-radius: 15px;
     text-decoration: none;
     transition: all .3s;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
 }
 
 .wafu-tag-item:hover {
@@ -577,14 +637,26 @@ body {
         gap: 10px;
     }
 
+    .wafu-related-tags {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
     .wafu-tag-list {
-        justify-content: center;
+        justify-content: flex-start;
         gap: 8px;
+        width: 100%;
+        flex: 0 0 auto;
     }
 
     .wafu-tag-item {
         padding: 5px 12px;
         font-size: 0.85rem;
+    }
+
+    .wafu-article-tags {
+        justify-content: center;
     }
 
     /* ---- 文章导航 ---- */
