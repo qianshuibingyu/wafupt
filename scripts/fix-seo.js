@@ -1,0 +1,534 @@
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = path.join(__dirname, '..');
+const SITE = 'https://wafulockpt.com';
+
+// Longest-first phrase fixes for mojibake (UTF-8 misread as GBK)
+const PHRASE_FIXES = [
+  ['鈥渦m鈥慼贸spede鈥憉m鈥慶贸digo鈥?', 'um-hóspede-um-código'],
+  ['um鈥慼贸spede鈥憉m鈥慶贸digo', 'um-hóspede-um-código'],
+  ['palavras鈥憄asse', 'palavras-passe'],
+  ['Palavra鈥慞asse', 'Palavra-passe'],
+  ['palavra鈥慞asse', 'palavra-passe'],
+  ['palavra鈥憄asse', 'palavra-passe'],
+  ['Palavra鈥慞asse', 'Palavra-passe'],
+  ['ultra鈥慴aixo', 'ultra-baixo'],
+  ['ultra鈥慳mplo', 'ultra-amplo'],
+  ['cross鈥慴order', 'cross-border'],
+  ['anti鈥慹xplos茫o', 'anti-explosão'],
+  ['anti鈥慹xplosão', 'anti-explosão'],
+  ['anti鈥憊iola莽茫o', 'anti-violação'],
+  ['anti鈥憊iolação', 'anti-violação'],
+  ['anti鈥慶贸pia', 'anti-cópia'],
+  ['anti鈥慶ópia', 'anti-cópia'],
+  ['mant茅m鈥憇e', 'mantém-se'],
+  ['super鈥慳mpla', 'super-ampla'],
+  ['Multi鈥慍en谩rio', 'Multi-Cenário'],
+  ['Multi鈥慜p莽玫es', 'Multi-Opções'],
+  ['Voltar 脿 P谩gina', 'Voltar à Página'],
+  ['Voltar 脿 p谩gina', 'Voltar à página'],
+  ['Seg鈥揝谩b', 'Seg–Sáb'],
+  ['9:00鈥?8:00', '9:00–18:00'],
+  ['2:00鈥?1:00', '2:00–11:00'],
+  ['35鈥?10 mm', '35–110 mm'],
+  ['35鈥?5 mm', '35–55 mm'],
+  ['6鈥?0 d', '6–10 d'],
+  ['1,2鈥?,9 m', '1,2–1,9 m'],
+  ['20 %鈥?5 %', '20%–85%'],
+  ['Bao鈥檃n', "Bao'an"],
+  ['check鈥慽n', 'check-in'],
+  ['check鈥憃ut', 'check-out'],
+  ['walk鈥慽ns', 'walk-ins'],
+  ['back鈥慹nd', 'back-end'],
+  ['Type鈥慍', 'Type-C'],
+  ['Wi鈥慒i', 'Wi-Fi'],
+  ['WF鈥慩8', 'WF-X8'],
+  ['WF鈥慚Y6', 'WF-MY6'],
+  ['WF鈥慚Y4', 'WF-MY4'],
+  ['WF鈥慒8', 'WF-F8'],
+  ['WF鈥慒4', 'WF-F4'],
+  ['WF鈥慟7', 'WF-Q7'],
+  ['WF鈥?26', 'WF-026'],
+  ['WF鈥?19', 'WF-019'],
+  ['WF鈥?16', 'WF-016'],
+  ['5鈥慹m鈥?:', '5-em-1:'],
+  ['鈥渃aixa preta鈥?', '"caixa preta"'],
+  ['鈭?', '≤'],
+  ['鈮?,5', '≤0,5'],
+  ['120掳', '120°'],
+  ['鈥?', '›'],
+  ['袪褍褋褋泻懈й', 'Русский'],
+  ['Solu莽玫es', 'Soluções'],
+  ['solu莽玫es', 'soluções'],
+  ['Aplica莽茫o', 'Aplicação'],
+  ['aplica莽茫o', 'aplicação'],
+  ['Instala莽茫o', 'Instalação'],
+  ['instala莽茫o', 'instalação'],
+  ['instala莽玫es', 'instalações'],
+  ['modifica莽玫es', 'modificações'],
+  ['Substitui莽茫o', 'Substituição'],
+  ['substitui莽茫o', 'substituição'],
+  ['Renova莽茫o', 'Renovação'],
+  ['renova莽茫o', 'renovação'],
+  ['remo莽茫o', 'remoção'],
+  ['Remo莽茫o', 'Remoção'],
+  ['autoriza莽玫es', 'autorizações'],
+  ['Autoriza莽玫es', 'Autorizações'],
+  ['prote莽茫o', 'proteção'],
+  ['Prote莽茫o', 'Proteção'],
+  ['dupla prote莽茫o', 'dupla proteção'],
+  ['classifica莽茫o', 'classificação'],
+  ['investiga莽茫o', 'investigação'],
+  ['produ莽茫o', 'produção'],
+  ['forma莽茫o', 'formação'],
+  ['gradua莽茫o', 'graduação'],
+  ['elimina莽茫o', 'eliminação'],
+  ['Emiss茫o', 'Emissão'],
+  ['emiss茫o', 'emissão'],
+  ['expira莽茫o', 'expiração'],
+  ['opera莽茫o', 'operação'],
+  ['manuten莽茫o', 'manutenção'],
+  ['relistagem', 'relistagem'],
+  ['encripta莽茫o', 'encriptação'],
+  ['liga莽茫o', 'ligação'],
+  ['Liga莽茫o', 'Ligação'],
+  ['compatibilidade', 'compatibilidade'],
+  ['Dura莽茫o', 'Duração'],
+  ['dura莽茫o', 'duração'],
+  ['perfura莽茫o', 'perfuração'],
+  ['perfura莽茫o', 'perfuração'],
+  ['confian莽a', 'confiança'],
+  ['disfar莽adas', 'disfarçadas'],
+  ['certifica莽茫o', 'certificação'],
+  ['Certifica莽茫o', 'Certificação'],
+  ['Minist茅rio', 'Ministério'],
+  ['Seguran莽a', 'Segurança'],
+  ['seguran莽a', 'segurança'],
+  ['P煤blica', 'Pública'],
+  ['interfer锚ncia', 'interferência'],
+  ['eletromagn茅tica', 'eletromagnética'],
+  ['resist锚ncia', 'resistência'],
+  ['Resist锚ncia', 'Resistência'],
+  ['experi锚ncia', 'experiência'],
+  ['emerg锚ncia', 'emergência'],
+  ['Emerg锚ncia', 'Emergência'],
+  ['Autonomia', 'Autonomia'],
+  ['autonomia', 'autonomia'],
+  ['Cole莽茫o', 'Coleção'],
+  ['cole莽茫o', 'coleção'],
+  ['fam铆lias', 'famílias'],
+  ['fam铆lia', 'família'],
+  ['membros da fam铆lia', 'membros da família'],
+  ['h谩bitos', 'hábitos'],
+  ['H谩bitos', 'Hábitos'],
+  ['h贸spedes', 'hóspedes'],
+  ['hot茅is', 'hotéis'],
+  ['Hot茅is', 'Hotéis'],
+  ['hot茅is', 'hotéis'],
+  ['recep莽茫o', 'recepção'],
+  ['Recep莽茫o', 'Recepção'],
+  ['opera莽茫o sem recep莽茫o', 'operação sem receção'],
+  ['propriet谩rio', 'proprietário'],
+  ['telem贸vel', 'telemóvel'],
+  ['Telem贸vel', 'Telemóvel'],
+  ['telem贸vel', 'telemóvel'],
+  ['log铆stico', 'logístico'],
+  ['Log铆stico', 'Logístico'],
+  ['log铆stica', 'logística'],
+  ['cil铆ndrica', 'cilíndrica'],
+  ['Cil铆ndrica', 'Cilíndrica'],
+  ['di谩rios', 'diários'],
+  ['Di谩rios', 'Diários'],
+  ['di谩rio', 'diário'],
+  ['Di谩rio', 'Diário'],
+  ['est谩', 'está'],
+  ['n茫o', 'não'],
+  ['N茫o', 'Não'],
+  ['s茫o', 'são'],
+  ['S茫o', 'São'],
+  ['茅', 'é'],
+  ['s茅rie', 'série'],
+  ['S茅rie', 'Série'],
+  ['m茅todos', 'métodos'],
+  ['M茅todos', 'Métodos'],
+  ['m茅todo', 'método'],
+  ['m茅dia', 'média'],
+  ['M茅dia', 'Média'],
+  ['M茅dio', 'Médio'],
+  ['m茅dio', 'médio'],
+  ['com茅rcio', 'comércio'],
+  ['dom茅stico', 'doméstico'],
+  ['est茅tica', 'estética'],
+  ['Est茅tica', 'Estética'],
+  ['t茅cnicos', 'técnicos'],
+  ['T茅cnicos', 'Técnicos'],
+  ['T茅cnico', 'Técnico'],
+  ['t茅cnico', 'técnico'],
+  ['biom茅trico', 'biométrico'],
+  ['Biom茅trico', 'Biométrico'],
+  ['Am茅rica', 'América'],
+  ['Am茅ricas', 'Américas'],
+  ['Asi谩tico', 'Asiático'],
+  ['asi谩tico', 'asiático'],
+  ['asi谩tico', 'asiático'],
+  ['pa铆ses', 'países'],
+  ['Pa铆ses', 'Países'],
+  ['pa铆s', 'país'],
+  ['n铆vel', 'nível'],
+  ['N铆vel', 'Nível'],
+  ['dispon铆vel', 'disponível'],
+  ['Dispon铆vel', 'Disponível'],
+  ['dispon铆veis', 'disponíveis'],
+  ['compat铆vel', 'compatível'],
+  ['Compat铆vel', 'Compatível'],
+  ['compat铆veis', 'compatíveis'],
+  ['invis铆vel', 'invisível'],
+  ['Invis铆vel', 'Invisível'],
+  ['invis铆veis', 'invisíveis'],
+  ['ajust谩vel', 'ajustável'],
+  ['Ajust谩vel', 'Ajustável'],
+  ['autom谩tica', 'automática'],
+  ['Autom谩tica', 'Automática'],
+  ['autom谩tico', 'automático'],
+  ['Autom谩tico', 'Automático'],
+  ['tempor谩ria', 'temporária'],
+  ['Tempor谩ria', 'Temporária'],
+  ['tempor谩rias', 'temporárias'],
+  ['Tempor谩rias', 'Temporárias'],
+  ['tempor谩rio', 'temporário'],
+  ['din芒mica', 'dinâmica'],
+  ['Din芒mica', 'Dinâmica'],
+  ['din芒micas', 'dinâmicas'],
+  ['din芒mico', 'dinâmico'],
+  ['m谩gico', 'mágico'],
+  ['M谩gico', 'Mágico'],
+  ['m谩gica', 'mágica'],
+  ['m谩ximo', 'máximo'],
+  ['M谩ximo', 'Máximo'],
+  ['m谩xima', 'máxima'],
+  ['r谩pida', 'rápida'],
+  ['R谩pida', 'Rápida'],
+  ['r谩pido', 'rápido'],
+  ['R谩pido', 'Rápido'],
+  ['R谩pida', 'Rápida'],
+  ['impress茫o', 'impressão'],
+  ['Impress茫o', 'Impressão'],
+  ['impress玫es', 'impressões'],
+  ['Impress玫es', 'Impressões'],
+  ['d铆gitos', 'dígitos'],
+  ['D铆gitos', 'Dígitos'],
+  ['d铆gito', 'dígito'],
+  ['princ铆pio', 'princípio'],
+  ['Princ铆pio', 'Princípio'],
+  ['Edif铆cio', 'Edifício'],
+  ['edif铆cio', 'edifício'],
+  ['Not铆cias', 'Notícias'],
+  ['not铆cias', 'notícias'],
+  ['In铆cio', 'Início'],
+  ['in铆cio', 'início'],
+  ['Vis茫o', 'Visão'],
+  ['vis茫o', 'visão'],
+  ['vis玫es', 'visões'],
+  ['expans铆vel', 'expansível'],
+  ['Expans铆vel', 'Expansível'],
+  ['Expans铆vel', 'Expansível'],
+  ['canh茫o', 'canhão'],
+  ['orif铆cio', 'orifício'],
+  ['Orif铆cio', 'Orifício'],
+  ['a莽o', 'aço'],
+  ['A莽o', 'Aço'],
+  ['a莽o/', 'aço/'],
+  ['madeira/a莽o', 'madeira/aço'],
+  ['padr茫o', 'padrão'],
+  ['Padr茫o', 'Padrão'],
+  ['tr锚s', 'três'],
+  ['Tr锚s', 'Três'],
+  ['茅pocas', 'épocas'],
+  ['脡pocas', 'Épocas'],
+  ['mon莽茫o', 'monção'],
+  ['Mon莽茫o', 'Monção'],
+  ['l铆der', 'líder'],
+  ['L铆der', 'Líder'],
+  ['fornecedor l铆der', 'fornecedor líder'],
+  ['煤nico', 'único'],
+  ['煤nica', 'única'],
+  ['煤nicas', 'únicas'],
+  ['脗ngulo', 'Ângulo'],
+  ['脗', 'Â'],
+  ['instant芒nea', 'instantânea'],
+  ['Instant芒nea', 'Instantânea'],
+  ['instant芒neo', 'instantâneo'],
+  ['m贸dulo', 'módulo'],
+  ['M贸dulo', 'Módulo'],
+  ['Bot茫o', 'Botão'],
+  ['bot茫o', 'botão'],
+  ['Ma莽aneta', 'Maçaneta'],
+  ['ma莽aneta', 'maçaneta'],
+  ['Esf茅rico', 'Esférico'],
+  ['esf茅rico', 'esférico'],
+  ['C芒mara', 'Câmara'],
+  ['c芒mara', 'câmara'],
+  ['mec芒nica', 'mecânica'],
+  ['Mec芒nica', 'Mecânica'],
+  ['mec芒nico', 'mecânico'],
+  ['Resid锚ncia', 'Residência'],
+  ['resid锚ncia', 'residência'],
+  ['Escrit贸rio', 'Escritório'],
+  ['escrit贸rio', 'escritório'],
+  ['escrit贸rios', 'escritórios'],
+  ['Dormit贸rio', 'Dormitório'],
+  ['dormit贸rio', 'dormitório'],
+  ['N贸s', 'Nós'],
+  ['n贸s', 'nos'],
+  ['Sobre N贸s', 'Sobre Nós'],
+  ['Cen谩rios', 'Cenários'],
+  ['cen谩rios', 'cenários'],
+  ['Portugu锚s', 'Português'],
+  ['portugu锚s', 'português'],
+  ['Espa帽ol', 'Español'],
+  ['Fran莽ais', 'Français'],
+  ['fran莽ais', 'français'],
+  ['Bot茫o do menu m贸vel', 'Botão do menu móvel'],
+  ['bot茫o do menu m贸vel', 'botão do menu móvel'],
+  ['pain茅is', 'painéis'],
+  ['Pain茅is', 'Painéis'],
+  ['ap贸s', 'após'],
+  ['Ap贸s', 'Após'],
+  ['c贸digos', 'códigos'],
+  ['C贸digos', 'Códigos'],
+  ['c贸digo', 'código'],
+  ['C贸digo', 'Código'],
+  ['garantem', 'garantem'],
+  ['decora莽茫o', 'decoração'],
+  ['Decora莽茫o', 'Decoração'],
+  ['qualifica莽茫o', 'qualificação'],
+  ['gera莽茫o', 'geração'],
+  ['Gera莽茫o', 'Geração'],
+  ['reencaminhamento', 'reencaminhamento'],
+  ['Reencaminhamento', 'Reencaminhamento'],
+  ['Solu莽玫es de', 'Soluções de'],
+  ['Solu莽玫es WAFU', 'Soluções WAFU'],
+  ['Solu莽玫es Residenciais', 'Soluções Residenciais'],
+  ['Solu莽玫es residenciais', 'Soluções residenciais'],
+  ['Solu莽玫es para', 'Soluções para'],
+  ['Solu莽玫es de Fechaduras', 'Soluções de Fechaduras'],
+  ['Solu莽玫es WAFU de', 'Soluções WAFU de'],
+  ['Solu莽玫es WAFU de fechaduras', 'Soluções WAFU de fechaduras'],
+  ['Solu莽玫es de Fechaduras Inteligentes', 'Soluções de Fechaduras Inteligentes'],
+  ['Solu莽玫es de Fechaduras Inteligentes para', 'Soluções de Fechaduras Inteligentes para'],
+  ['Solu莽玫es de Fechaduras Inteligentes Residenciais', 'Soluções de Fechaduras Inteligentes Residenciais'],
+  ['Solu莽玫es de Fechaduras Inteligentes para Hot茅is', 'Soluções de Fechaduras Inteligentes para Hotéis'],
+  ['Solu莽玫es de Fechaduras Inteligentes para Apartamentos', 'Soluções de Fechaduras Inteligentes para Apartamentos'],
+  ['Solu莽玫es de Fechaduras Inteligentes para Escrit贸rios', 'Soluções de Fechaduras Inteligentes para Escritórios'],
+  ['Solu莽玫es de Fechaduras Inteligentes para Dormit贸rios', 'Soluções de Fechaduras Inteligentes para Dormitórios'],
+  ['C贸digo QR do WhatsApp', 'Código QR do WhatsApp'],
+  ['C贸digo QR', 'Código QR'],
+  ['C贸digo', 'Código'],
+  ['FAQ Oficial WAFU: autonomia 鈮?2 meses', 'FAQ Oficial WAFU: autonomia ≥12 meses'],
+  ['autonomia 鈮?2 meses', 'autonomia ≥12 meses'],
+  ['autonomia 鈮?00 dias', 'autonomia ≥200 dias'],
+  ['autonomia 鈮?2', 'autonomia ≥12'],
+  ['garantem 鈮?2', 'garantem ≥12'],
+  ['Abertura esquerda/direita ajust谩vel, compat铆vel com portas de 35鈥?5 mm; autonomia 鈮?2', 'Abertura esquerda/direita ajustável, compatível com portas de 35–55 mm; autonomia ≥12'],
+  ['鈥?', '–'],
+  ['鈥?', '—'],
+  [' 鈥?', ' –'],
+  ['鈥?ideal', ' – ideal'],
+  ['App 鈥?', 'App –'],
+  [' 鈥?tr锚s', ' – três'],
+  [' 鈥?sete', ' – sete'],
+  [' 鈥?cobre', ' – cobre'],
+  [' 鈥?sem', ' – sem'],
+  [' 鈥?opera', ' – opera'],
+  [' 鈥?gest', ' – gest'],
+  [' 鈥?99', ' – 99'],
+  ['鈥?/span>', '›</span>'],
+  ['\ufeff', ''],
+];
+
+// Multi-char and numeric fixes applied after phrase map
+const POST_PHRASE_FIXES = [
+  ['ultra鈥憀onga', 'ultra-longa'],
+  ['Palavra鈥憄asse', 'Palavra-passe'],
+  ['palavra鈥憄asse', 'palavra-passe'],
+  ['鈩?', '°C'],
+  ['›/span>', '›</span>'],
+  ['袪褍褋褋泻懈й', 'Русский'],
+  ['馃搷', '📍'],
+  ['馃摓', '📞'],
+  ['鉁夛笍', '✉️'],
+  ['馃晵', '🕒'],
+  ['漏', '©'],
+  ['≥2 meses', '≥12 meses'],
+  ['garantem ≥2', 'garantem ≥12'],
+  ['≥,5 s', '≤0,5 s'],
+  ['≥00 N', '≥500 N'],
+  ['≥00 dias', '≥200 dias'],
+  ['≥00 ciclos', '≥500 ciclos'],
+  ['-30~70掳C', '-30~70°C'],
+  ['60 鈩?', '60 °C'],
+  ['desbloqueio 脿 escolha', 'desbloqueio à escolha'],
+  ['dedicado 脿 I', 'dedicado à I'],
+  ['enviado 脿 logística', 'enviado à logística'],
+  ['oferecendo 脿s famílias', 'oferecendo às famílias'],
+  ['ao tocar 脿 campainha', 'ao tocar à campainha'],
+  ['Um-H贸spede', 'Um-Hóspede'],
+  ['gest茫o', 'gestão'],
+  ['Gest茫o', 'Gestão'],
+  ['rece莽茫o', 'receção'],
+  ['cart茫o', 'cartão'],
+  ['cart玫es', 'cartões'],
+  ['interrup莽玫es', 'interrupções'],
+  ['interven莽茫o', 'intervenção'],
+  ['personaliza莽茫o', 'personalização'],
+  ['atualiza莽茫o', 'atualização'],
+  ['Encripta莽茫o', 'Encriptação'],
+  ['encripta莽茫o', 'encriptação'],
+  ['Alimenta莽茫o', 'Alimentação'],
+  ['solu莽茫o', 'solução'],
+  ['exporta莽茫o', 'exportação'],
+  ['mudan莽as', 'mudanças'],
+  ['constru莽茫o', 'construção'],
+  ['ocupa莽茫o', 'ocupação'],
+  ['compara莽茫o', 'comparação'],
+  ['falsifica莽玫es', 'falsificações'],
+  ['gera莽玫es', 'gerações'],
+  ['anfitri玫es', 'anfitriões'],
+  ['intrus玫es', 'intrusões'],
+  ['Carca莽a', 'Carcaça'],
+  ['for莽a', 'força'],
+  ['servi莽os', 'serviços'],
+  ['crian莽as', 'crianças'],
+  ['esfor莽o', 'esforço'],
+  ['cont铆nuo', 'contínuo'],
+  ['flex铆veis', 'flexíveis'],
+  ['v铆deo', 'vídeo'],
+  ['v铆deos', 'vídeos'],
+  ['l铆tio', 'lítio'],
+  ['recarreg谩vel', 'recarregável'],
+  ['personaliz谩vel', 'personalizável'],
+  ['port谩til', 'portátil'],
+  ['pr谩tica', 'prática'],
+  ['v谩rios', 'vários'],
+  ['hor谩rios', 'horários'],
+  ['h谩 ', 'há '],
+  ['milh茫o', 'milhão'],
+  ['ecr茫', 'ecrã'],
+  ['log贸tipo', 'logótipo'],
+  ['multil铆ngues', 'multilingues'],
+  ['secund谩rias', 'secundárias'],
+  ['avan莽ada', 'avançada'],
+  ['m贸vel', 'móvel'],
+  ['efici锚ncia', 'eficiência'],
+  ['p煤blica', 'pública'],
+  ['recepcionistas', 'rececionistas'],
+];
+
+// Single-character GBK mojibake → Portuguese (safe on this site)
+const CHAR_FIXES = [
+  ['茅', 'é'], ['铆', 'í'], ['莽', 'ç'], ['茫', 'ã'], ['玫', 'õ'],
+  ['谩', 'á'], ['煤', 'ú'], ['贸', 'ó'], ['锚', 'ê'], ['芒', 'â'],
+  ['脿', 'à'], ['脳', '×'], ['掳', '°'], ['帽', 'ñ'],
+];
+
+function fixEncoding(text) {
+  let out = text;
+  for (const [bad, good] of PHRASE_FIXES) {
+    out = out.split(bad).join(good);
+  }
+  for (const [bad, good] of POST_PHRASE_FIXES) {
+    out = out.split(bad).join(good);
+  }
+  for (const [bad, good] of CHAR_FIXES) {
+    out = out.split(bad).join(good);
+  }
+  return out;
+}
+
+function generateRedirects(htmlFiles) {
+  const lines = [
+    '# HTTPS + apex domain',
+    'https://www.wafulockpt.com/* https://wafulockpt.com/:splat 301',
+    'http://wafulockpt.com/* https://wafulockpt.com/:splat 301',
+    'http://www.wafulockpt.com/* https://wafulockpt.com/:splat 301',
+    '',
+    '# Extensionless URLs (Cloudflare Pages rewrite)',
+  ];
+  for (const full of htmlFiles) {
+    const rel = path.relative(ROOT, full).replace(/\\/g, '/');
+    if (rel === 'index.html') continue;
+    const urlPath = '/' + rel.replace(/\.html$/, '');
+    lines.push(`${urlPath} /${rel} 200`);
+  }
+  fs.writeFileSync(path.join(ROOT, '_redirects'), lines.join('\n') + '\n', 'utf8');
+  console.log('Generated _redirects with', lines.length - 7, 'rewrite rules');
+}
+
+function fileToCanonical(relPath) {
+  const normalized = relPath.replace(/\\/g, '/');
+  if (normalized === 'index.html') return `${SITE}/`;
+  const withoutExt = normalized.replace(/\.html$/, '');
+  return `${SITE}/${withoutExt}`;
+}
+
+function normalizeFavicon(html) {
+  return html.replace(
+    /<link rel="icon"[^>]*href="[^"]*favicon\.png"[^>]*>/gi,
+    '<link rel="icon" type="image/png" href="/images/favicon.png">'
+  ).replace(
+    /<link rel="icon" href="[^"]*favicon\.png"[^>]*>/gi,
+    '<link rel="icon" type="image/png" href="/images/favicon.png">'
+  );
+}
+
+function addCanonical(html, canonicalUrl) {
+  if (/rel="canonical"/i.test(html)) {
+    return html.replace(/<link rel="canonical"[^>]*>/i, `<link rel="canonical" href="${canonicalUrl}">`);
+  }
+  const tag = `    <link rel="canonical" href="${canonicalUrl}">\n`;
+  if (html.includes('<meta charset="UTF-8">')) {
+    return html.replace('<meta charset="UTF-8">', `<meta charset="UTF-8">\n${tag.trim()}`);
+  }
+  return html;
+}
+
+function walkHtml(dir, list = []) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory() && entry.name !== 'node_modules' && entry.name !== 'scripts') {
+      walkHtml(full, list);
+    } else if (entry.isFile() && entry.name.endsWith('.html')) {
+      list.push(full);
+    }
+  }
+  return list;
+}
+
+// 1. Fix encoding in all HTML files
+const htmlFiles = walkHtml(ROOT);
+for (const full of htmlFiles) {
+  const rel = path.relative(ROOT, full).replace(/\\/g, '/');
+  const before = fs.readFileSync(full, 'utf8');
+  const after = fixEncoding(before);
+  if (before !== after) {
+    fs.writeFileSync(full, after, 'utf8');
+    console.log('Encoding fixed:', rel);
+  }
+}
+
+// 2. Favicon + canonical for all HTML
+for (const full of htmlFiles) {
+  const rel = path.relative(ROOT, full).replace(/\\/g, '/');
+  let html = fs.readFileSync(full, 'utf8');
+  const original = html;
+  html = normalizeFavicon(html);
+  html = addCanonical(html, fileToCanonical(rel));
+  if (html !== original) {
+    fs.writeFileSync(full, html, 'utf8');
+    console.log('SEO updated:', rel);
+  }
+}
+
+generateRedirects(htmlFiles);
+console.log('Done. Processed', htmlFiles.length, 'HTML files.');
