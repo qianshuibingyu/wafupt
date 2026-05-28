@@ -446,25 +446,6 @@ function fixEncoding(text) {
   return out;
 }
 
-function generateRedirects(htmlFiles) {
-  const lines = [
-    '# HTTPS + apex domain',
-    'https://www.wafulockpt.com/* https://wafulockpt.com/:splat 301',
-    'http://wafulockpt.com/* https://wafulockpt.com/:splat 301',
-    'http://www.wafulockpt.com/* https://wafulockpt.com/:splat 301',
-    '',
-    '# Extensionless URLs (Cloudflare Pages rewrite)',
-  ];
-  for (const full of htmlFiles) {
-    const rel = path.relative(ROOT, full).replace(/\\/g, '/');
-    if (rel === 'index.html') continue;
-    const urlPath = '/' + rel.replace(/\.html$/, '');
-    lines.push(`${urlPath} /${rel} 200`);
-  }
-  fs.writeFileSync(path.join(ROOT, '_redirects'), lines.join('\n') + '\n', 'utf8');
-  console.log('Generated _redirects with', lines.length - 7, 'rewrite rules');
-}
-
 function fileToCanonical(relPath) {
   const normalized = relPath.replace(/\\/g, '/');
   if (normalized === 'index.html') return `${SITE}/`;
@@ -530,5 +511,4 @@ for (const full of htmlFiles) {
   }
 }
 
-generateRedirects(htmlFiles);
 console.log('Done. Processed', htmlFiles.length, 'HTML files.');
