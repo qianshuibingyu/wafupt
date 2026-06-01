@@ -177,7 +177,7 @@
 
 /* 未选中图标 */
 .social-icon.whatsapp {
-  background-image: url(/icons/whatsapp-unselect.svg);
+  background-image: url(../icons/whatsapp-unselect.svg);
 }
 
 /* 选中状态 */
@@ -185,12 +185,12 @@
 .social-icon.whatsapp:focus {
   background-color: #4CAF50;
   /* 红色背景 */
-  background-image: url(/icons/whatsapp.svg);
+  background-image: url(../icons/whatsapp.svg);
 }
 
 /* 未选中图标 */
 .social-icon.Youtube {
-  background-image: url(/icons/Youtube-unselect.svg);
+  background-image: url(../icons/Youtube-unselect.svg);
 }
 
 /* 选中状态 */
@@ -198,12 +198,12 @@
 .social-icon.Youtube:focus {
   background-color: #FF0033;
   /* 红色背景 */
-  background-image: url(/icons/Youtube-select.svg);
+  background-image: url(../icons/Youtube-select.svg);
 }
 
 /* 未选中图标 */
 .social-icon.tiktok {
-  background-image: url(/icons/tiktok.svg);
+  background-image: url(../icons/tiktok.svg);
 }
 
 /* 选中状态 */
@@ -211,13 +211,13 @@
 .social-icon.tiktok:focus {
   background-color: #000000;
   /* 红色背景 */
-  background-image: url(/icons/tiktok-select.svg);
+  background-image: url(../icons/tiktok-select.svg);
 }
 
 
 /* 未选中图标 */
 .social-icon.ins {
-  background-image: url(/icons/instagram-unselect.svg);
+  background-image: url(../icons/instagram-unselect.svg);
 }
 
 /* 选中状态 */
@@ -225,12 +225,12 @@
 .social-icon.ins:focus {
   background-color: #E1306C;
   /* 红色背景 */
-  background-image: url(/icons/instagram-select.svg);
+  background-image: url(../icons/instagram-select.svg);
 }
 
 /* 未选中图标 */
 .social-icon.x {
-  background-image: url(/icons/X-unselect.svg);
+  background-image: url(../icons/X-unselect.svg);
 }
 
 /* 选中状态 */
@@ -238,12 +238,12 @@
 .social-icon.x:focus {
   background-color: #000;
   /* 红色背景 */
-  background-image: url(/icons/X-select.svg);
+  background-image: url(../icons/X-select.svg);
 }
 
 /* 未选中图标 */
 .social-icon.facebook {
-  background-image: url(/icons/facebook-unselect.svg);
+  background-image: url(../icons/facebook-unselect.svg);
 }
 
 /* 选中状态 */
@@ -252,7 +252,7 @@
   background-color: #1877f2;
   ;
   /* 红色背景 */
-  background-image: url(/icons/facebook.svg);
+  background-image: url(../icons/facebook.svg);
 }
 
 /* 中间两列链接 */

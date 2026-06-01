@@ -1,4 +1,28 @@
-# 最小化配置 - 先保证网站能访问
+# Cloudflare Pages — extensionless URLs: functions/_middleware.js
+
 https://www.wafulockpt.com/* https://wafulockpt.com/:splat 301
 http://wafulockpt.com/* https://wafulockpt.com/:splat 301
 http://www.wafulockpt.com/* https://wafulockpt.com/:splat 301
+
+/robot.txt /robots.txt 301
+
+/resource/technology-twentyone /resource/invisible-lock-line 301
+/resource/technology-twentyone.html /resource/invisible-lock-line 301
+/resource/technology-twenty /resource/invisible-lock-guide 301
+/resource/technology-twenty.html /resource/invisible-lock-guide 301
+/resource/technology-nineteen /resource/rental-invisible-lock 301
+/resource/technology-nineteen.html /resource/rental-invisible-lock 301
+/resource/technology-eighteen /resource/invisible-battery-life 301
+/resource/technology-eighteen.html /resource/invisible-battery-life 301
+/resource/technology-seventeen /resource/invisible-lock-troubleshooting 301
+/resource/technology-seventeen.html /resource/invisible-lock-troubleshooting 301
+/resource/technology-sixteen /resource/anti_pry-invisible-lock 301
+/resource/technology-sixteen.html /resource/anti_pry-invisible-lock 301
+/resource/technology-fifteen /resource/invisible-supply-chain 301
+/resource/technology-fifteen.html /resource/invisible-supply-chain 301
+/resource/technology-fourteen /resource/bulk-invisible-lock 301
+/resource/technology-fourteen.html /resource/bulk-invisible-lock 301
+/resource/technology-thirteen /resource/invisible-lock-ODM 301
+/resource/technology-thirteen.html /resource/invisible-lock-ODM 301
+/resource/technology-twelve /resource/invisible-lock-tech 301
+/resource/technology-twelve.html /resource/invisible-lock-tech 301
