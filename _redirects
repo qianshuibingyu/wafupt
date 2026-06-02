@@ -1,5 +1,4 @@
-# Cloudflare Pages — extensionless URLs: functions/_middleware.js
-
+# 最小化配置 - 先保证网站能访问
 https://www.wafulockpt.com/* https://wafulockpt.com/:splat 301
 http://wafulockpt.com/* https://wafulockpt.com/:splat 301
 http://www.wafulockpt.com/* https://wafulockpt.com/:splat 301
