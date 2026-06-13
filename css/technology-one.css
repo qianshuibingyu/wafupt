@@ -74,6 +74,22 @@ body {
     color: #555;
 }
 
+.wafu-article-body a,
+.wafu-article-body a:link,
+.wafu-article-body a:visited {
+    color: #1a73e8;
+    text-decoration: underline;
+    text-decoration-color: rgba(26, 115, 232, 0.35);
+    text-underline-offset: 2px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.wafu-article-body a:hover,
+.wafu-article-body a:focus {
+    color: #0d47a1;
+    text-decoration-color: rgba(13, 71, 161, 0.55);
+}
+
 .wafu-heading-2 {
     margin: 30px 0 10px;
     padding-bottom: 10px;
@@ -94,20 +110,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px 0;
+    margin: 24px auto;
     border-radius: 8px;
     padding: 15px;
+    width: 70%;
+    max-width: 70%;
+    text-align: center;
 }
 
 .wafu-image-box picture {
-    display: flex;
-    justify-content: center;
+    display: block;
     width: 100%;
 }
 
 .wafu-image {
     display: block;
-    max-width: 50%;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     margin: 0 auto;
     border-radius: 8px;
@@ -116,8 +135,9 @@ body {
 .wafu-image-caption {
     font-size: .9rem;
     color: #666;
-    margin-top: 10px;
+    margin-top: 12px;
     text-align: center;
+    width: 100%;
 }
 
 /* ===== 对比表格 ===== */
@@ -296,23 +316,58 @@ body {
 .wafu-article-nav {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
     margin-top: 20px;
 }
 
 .wafu-nav-prev,
 .wafu-nav-next {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
-    max-width: 45%;
+    gap: 6px 8px;
+    flex: 0 1 calc(50% - 12px);
+    max-width: calc(50% - 12px);
     color: #0066cc;
     text-decoration: none;
     font-weight: 500;
+    line-height: 1.4;
+}
+
+.wafu-nav-prev {
+    justify-content: flex-start;
 }
 
 .wafu-nav-next {
     margin-left: auto;
+    justify-content: flex-end;
     text-align: right;
+}
+
+.wafu-nav-content {
+    display: contents;
+}
+
+.wafu-nav-text {
+    flex: 0 0 100%;
+    width: 100%;
+    font-weight: 500;
+}
+
+.wafu-nav-prev .wafu-nav-text {
+    text-align: left;
+}
+
+.wafu-nav-next .wafu-nav-text {
+    order: -1;
+    text-align: right;
+}
+
+.wafu-nav-label,
+.wafu-nav-arrow {
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .wafu-nav-arrow {
@@ -638,12 +693,15 @@ body {
 
     /* ---- 图片 ---- */
     .wafu-image-box {
-        margin: 15px 0;
+        margin: 15px auto;
         padding: 10px;
+        width: 70%;
+        max-width: 70%;
     }
 
     .wafu-image {
-        max-width: 100% !important;
+        width: 100%;
+        max-width: 100%;
     }
 
     .wafu-image-caption {
@@ -691,9 +749,22 @@ body {
 
     .wafu-nav-prev,
     .wafu-nav-next {
+        flex: 1 1 100%;
         max-width: 100%;
-        justify-content: flex-start !important;
-        text-align: left !important;
+    }
+
+    .wafu-nav-prev {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .wafu-nav-next {
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+    .wafu-nav-next .wafu-nav-text {
+        text-align: right;
     }
 
     /* ---- 侧边栏卡片 ---- */
@@ -781,8 +852,10 @@ body {
     }
 
     .wafu-image-box {
-        margin: 10px 0;
+        margin: 10px auto;
         padding: 8px;
+        width: 70%;
+        max-width: 70%;
     }
 
     .wafu-share-buttons {

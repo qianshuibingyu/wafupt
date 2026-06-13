@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabricante de Fechaduras Inteligentes OEM/ODM | Site Oficial da WAFU</title>
+    <title>Fabricante OEM/ODM de Fechaduras Inteligentes | Site Oficial WAFU fechadura invisível</title>
 
     <meta name="keywords"
         content="fabricante de fechaduras inteligentes, fornecedor de fechaduras inteligentes, fechadura invisível, fechadura inteligente OEM, fechadura inteligente ODM, fechadura remota, fechadura no atacado, fechadura de entrada sem chave">
@@ -24,13 +24,13 @@
 <link rel="alternate" hreflang="x-default" href="https://wafuen.com/">
     <meta property="og:site_name" content="WAFU Smart Lock">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Fabricante de Fechaduras Inteligentes OEM/ODM | Site Oficial da WAFU">
+    <meta property="og:title" content="Fabricante OEM/ODM de Fechaduras Inteligentes">
     <meta property="og:description" content="A WAFU é um fabricante profissional OEM/ODM de fechaduras invisíveis com controlo remoto. Há 13 anos somos especializados em fornecer fechaduras de entrada sem chave de alto valor para marcas globais e distribuidores atacadistas.">
     <meta property="og:url" content="https://wafulockpt.com/">
     <meta property="og:image" content="https://wafulockpt.com/images/webp/carousel-first.webp">
     <meta property="og:locale" content="pt_PT">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Fabricante de Fechaduras Inteligentes OEM/ODM | Site Oficial da WAFU">
+    <meta name="twitter:title" content="Fabricante OEM/ODM de Fechaduras Inteligentes">
     <meta name="twitter:description" content="A WAFU é um fabricante profissional OEM/ODM de fechaduras invisíveis com controlo remoto. Há 13 anos somos especializados em fornecer fechaduras de entrada sem chave de alto valor para marcas globais e distribuidores atacadistas.">
     <meta name="twitter:image" content="https://wafulockpt.com/images/webp/carousel-first.webp">
 <script type="application/ld+json">
@@ -56,74 +56,51 @@
 
 
 
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/components.css">
+    <link rel="preload" href="./images/webp/mobile/carousel-first.webp" as="image" type="image/webp" fetchpriority="high" media="(max-width: 768px)">
+    <link rel="preload" href="./images/webp/carousel-first.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width: 769px)">
+    <link rel="stylesheet" href="./css/critical.css?v=20260618">
+    <link rel="stylesheet" href="./css/index.css?v=20260618">
+    <link rel="stylesheet" href="./css/components.css?v=20260618" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="./css/components.css?v=20260618">
+    </noscript>
+    <style>
+        /* About 布局兜底：防止 CDN/浏览器缓存旧 index.css 导致桌面左右颠倒 */
+        @media (min-width:959px){
+            .about-container{display:grid!important;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr)!important;grid-template-rows:auto auto!important;gap:0 26px!important;max-width:1480px;width:94%;margin:0 auto}
+            .about-video-col{grid-column:1!important;grid-row:1/span 2!important}
+            .about-title{grid-column:2!important;grid-row:1!important}
+            .about-body{grid-column:2!important;grid-row:2!important}
+        }
+        @media (max-width:958px){
+            .about-container{display:flex!important;flex-direction:column!important}
+        }
+    </style>
 
 
 
 
 
 
-
-<!-- Google tag (gtag.js) -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-17790114591"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'AW-17790114591');
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            emailjs.init('kiY7Ni8dk8ID8Mn47');
-
-            const form = document.getElementById('contactForm');
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                const name = document.getElementById('name').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const product = document.getElementById('product').value.trim();
-                const scenario = document.getElementById('scenario').value.trim();
-                const message = document.getElementById('message').value.trim();
-
-                if (!name || !phone) {
-                    alert('Por favor, preencha o nome/nome da empresa e o número de telefone.');
-                    return;
-                }
-
-                if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    alert('Por favor, insira um endereço de e-mail válido ou deixe em branco.');
-                    return;
-                }
-
-                emailjs.send('service_vs616cb', 'template_u99zynh', {
-                    from_name: name,
-                    from_email: email,
-                    name,
-                    phone,
-                    product,
-                    scenario,
-                    message
-                }).then(() => {
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-17790114591/ujr9CP-_iN4bEJ-2_qJC',
-                        'value': 1.0,
-                        'currency': 'CNY'
-                    });
-
-                    alert('As informações foram enviadas. Entraremos em contacto o mais breve possível.');
-                    form.reset();
-
-                }).catch(() => {
-                    alert('Falha no envio. Por favor, tente novamente mais tarde.');
-                });
-            });
-        });
-    </script></head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790114591"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+    });
+    gtag('config', 'AW-17790114591', {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false
+    });
+</script>
+</head>
 
 <body>
     <nav class="navbar">
@@ -210,8 +187,10 @@
                 <div class="carousel-item active">
                     <a href="./products" class="carousel-link">
                         <picture>
+                            <source media="(max-width: 768px)" srcset="./images/webp/mobile/carousel-first.webp" type="image/webp">
                             <source srcset="./images/webp/carousel-first.webp" type="image/webp">
-                            <img src="./images/webp/carousel-first.png" alt="Fundo do Produto">
+                            <img src="./images/webp/carousel-first.webp" alt="Vitrine de fechaduras inteligentes invisíveis com impressão digital"
+                                width="1920" height="700" fetchpriority="high" decoding="async" sizes="100vw">
                         </picture>
                     </a>
                 </div>
@@ -219,8 +198,10 @@
                 <div class="carousel-item">
                     <a href="./products/product-026" class="carousel-link">
                         <picture>
-                            <source srcset="./images/webp/carousel-second.webp" type="image/webp">
-                            <img src="./images/webp/carousel-second.png" alt="Fundo WAFU‑026">
+                            <source media="(max-width: 768px)" data-srcset="./images/webp/mobile/carousel-second.webp" type="image/webp">
+                            <source data-srcset="./images/webp/carousel-second.webp" type="image/webp">
+                            <img data-src="./images/webp/carousel-second.webp" alt="Fundo WAFU-026 fechadura inteligente"
+                                width="1920" height="700" decoding="async" sizes="100vw">
                         </picture>
                     </a>
                 </div>
@@ -228,8 +209,10 @@
                 <div class="carousel-item">
                     <a href="./products/product-X8" class="carousel-link">
                         <picture>
-                            <source srcset="./images/webp/carousel-third.webp" type="image/webp">
-                            <img src="./images/webp/carousel-third.png" alt="Fundo WAFU‑X8">
+                            <source media="(max-width: 768px)" data-srcset="./images/webp/mobile/carousel-third.webp" type="image/webp">
+                            <source data-srcset="./images/webp/carousel-third.webp" type="image/webp">
+                            <img data-src="./images/webp/carousel-third.webp" alt="Fundo WAFU-X8 fechadura inteligente"
+                                width="1920" height="700" decoding="async" sizes="100vw">
                         </picture>
                     </a>
                 </div>
@@ -237,8 +220,10 @@
                 <div class="carousel-item">
                     <a href="./about" class="carousel-link">
                         <picture>
-                            <source srcset="./images/webp/carousel-fourth.webp" type="image/webp">
-                            <img src="./images/webp/carousel-fourth.png" alt="Fundo Sobre Nós">
+                            <source media="(max-width: 768px)" data-srcset="./images/webp/mobile/carousel-fourth.webp" type="image/webp">
+                            <source data-srcset="./images/webp/carousel-fourth.webp" type="image/webp">
+                            <img data-src="./images/webp/carousel-fourth.webp" alt="Sobre nós — fabricante de fechaduras inteligentes WAFU"
+                                width="1920" height="700" decoding="async" sizes="100vw">
                         </picture>
                     </a>
                 </div>
@@ -259,57 +244,108 @@
 
         <section class="section-about">
             <div class="about-container">
-                <div class="about-image">
-                    <div style="position: relative; width: 100%; height: 100%; overflow: hidden;">
-                        <iframe src="https://www.youtube.com/embed/hELR6VahPPU" title="Vídeo do Produto" loading="lazy"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                        </iframe>
+                <h1 class="about-title">WAFU Smart Lock · Fabricante e Fábrica OEM/ODM</h1>
+
+                <div class="about-video-col">
+                    <div class="about-video-main">
+                        <div class="about-video-player" id="aboutVideoPlayer" tabindex="0"
+                            aria-label="Vídeo de produto WAFU. Prima Enter para ecrã completo, Esc para sair.">
+                            <div class="video-facade video-facade--about" id="aboutVideoFacade"
+                                data-youtube-id="hELR6VahPPU" role="button"
+                                tabindex="0" aria-label="Reproduzir vídeo de produto WAFU">
+                                <img data-src="https://i.ytimg.com/vi/hELR6VahPPU/mqdefault.jpg" alt="Vídeo de produto WAFU"
+                                    width="320" height="180" decoding="async">
+                                <span class="video-facade-play" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-video-more-below" id="aboutVideoMoreBelow">
+                        <div class="about-video-more-panel" id="aboutVideoMorePanel" role="region"
+                            aria-label="Vídeos de @WAFUSmartlock">
+                            <p class="about-video-more-head">
+                                <a href="https://www.youtube.com/@WAFUSmartlock/videos" target="_blank"
+                                    rel="noopener noreferrer">@WAFUSmartlock</a>
+                                <span> · Canal oficial</span>
+                            </p>
+                            <div class="about-video-more-list" id="aboutVideoMoreList">
+                                <button type="button" class="about-video-more-item is-active"
+                                    data-video-id="hELR6VahPPU" data-video-title="Fabricante WAFU Smart Lock">
+                                    <img data-src="https://i.ytimg.com/vi/hELR6VahPPU/mqdefault.jpg" alt="Fabricante WAFU Smart Lock"
+                                        width="120" height="68" decoding="async">
+                                    <span>Fabricante WAFU Smart Lock</span>
+                                </button>
+                                <button type="button" class="about-video-more-item" data-video-id="tyw1WjrDXvo"
+                                    data-video-title="WF-019 Fechadura Remota Invisível">
+                                    <img data-src="https://i.ytimg.com/vi/tyw1WjrDXvo/mqdefault.jpg" alt="WF-019 Fechadura Remota Invisível"
+                                        width="120" height="68" decoding="async">
+                                    <span>WF-019 Fechadura Remota Invisível</span>
+                                </button>
+                                <button type="button" class="about-video-more-item" data-video-id="PlI8ldlDi7g"
+                                    data-video-title="WF-X8 Fechadura Inteligente com Olho Mágico">
+                                    <img data-src="https://i.ytimg.com/vi/PlI8ldlDi7g/mqdefault.jpg" alt="WF-X8 Fechadura Inteligente com Olho Mágico"
+                                        width="120" height="68" decoding="async">
+                                    <span>WF-X8 Fechadura Inteligente com Olho Mágico</span>
+                                </button>
+                                <button type="button" class="about-video-more-item" data-video-id="0XrpZx5B7TY"
+                                    data-video-title="WF-026 Fechadura Anti-Roubo Oculta">
+                                    <img data-src="https://i.ytimg.com/vi/0XrpZx5B7TY/mqdefault.jpg" alt="WF-026 Fechadura Anti-Roubo Oculta"
+                                        width="120" height="68" decoding="async">
+                                    <span>WF-026 Fechadura Anti-Roubo Oculta</span>
+                                </button>
+                                <button type="button" class="about-video-more-item" data-video-id="X8NiO3qqBcM"
+                                    data-video-title="WF-F8 Fechadura com Maçaneta de Impressão Digital">
+                                    <img data-src="https://i.ytimg.com/vi/X8NiO3qqBcM/mqdefault.jpg" alt="WF-F8 Fechadura com Maçaneta de Impressão Digital"
+                                        width="120" height="68" decoding="async">
+                                    <span>WF-F8 Fechadura com Maçaneta de Impressão Digital</span>
+                                </button>
+                                <button type="button" class="about-video-more-item" data-video-id="S5pfuflcCN8"
+                                    data-video-title="WF-F6 Fechadura com Maçaneta de Impressão Digital">
+                                    <img data-src="https://i.ytimg.com/vi/S5pfuflcCN8/mqdefault.jpg" alt="WF-F6 Fechadura com Maçaneta de Impressão Digital"
+                                        width="120" height="68" decoding="async">
+                                    <span>WF-F6 Fechadura com Maçaneta de Impressão Digital</span>
+                                </button>
+                                <button type="button" class="about-video-more-item" data-video-id="ZTvMtXE29oQ"
+                                    data-video-title="WF-MY4 Fechadura com Olho Mágico 3D">
+                                    <img data-src="https://i.ytimg.com/vi/ZTvMtXE29oQ/mqdefault.jpg" alt="WF-MY4 Fechadura com Olho Mágico 3D"
+                                        width="120" height="68" decoding="async">
+                                    <span>WF-MY4 Fechadura com Olho Mágico 3D</span>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="about-video-more-trigger" id="aboutVideoMoreTrigger"
+                            aria-expanded="false" aria-controls="aboutVideoMorePanel">
+                            <span class="about-video-more-trigger-icon" aria-hidden="true"></span>
+                            <span class="about-video-more-trigger-label">Mais vídeos</span>
+                            <img class="about-video-more-trigger-thumb" id="aboutVideoMoreThumb"
+                                data-src="https://i.ytimg.com/vi/hELR6VahPPU/mqdefault.jpg" alt="Fabricante WAFU Smart Lock" width="44" height="32"
+                                decoding="async">
+                        </button>
                     </div>
                 </div>
 
-                <div class="about-content">
-                    <div class="about-text">
-                        <h1 class="about-title">Fabricante OEM/ODM de Fechadura Remota Invisível</h1>
-
+                <div class="about-body">
                         <p class="about-paragraph">
-                            A <strong>Shenzhen Huafu Intelligent Technology Co., Ltd.</strong> possui mais de 13 anos de
-                            experiência em P&amp;D e fabricação de fechaduras inteligentes. Como um <strong>fabricante
-                                profissional
-                                de fechaduras inteligentes OEM/ODM</strong>, focamos em fornecer <strong>fechaduras
-                                remotas
-                                invisíveis</strong>, <strong>fechaduras de entrada sem chave</strong> e <strong>soluções
-                                de
-                                fechaduras para atacado</strong> para marcas globais, importadores e distribuidores.
+                            A <strong>WAFU Smart Lock</strong> possui mais de 13 anos de
+                            experiência em P&amp;D e fabricação de fechaduras inteligentes. Como <strong>fabricante
+                                profissional OEM/ODM de fechaduras inteligentes</strong>, focamos em fornecer soluções de alto valor em <a href="./products/product-019">fechadura remota invisível</a> e fechaduras inteligentes por grosso para marcas globais, importadores e distribuidores.
                         </p>
 
                         <p class="about-paragraph">
-                            Somos especializados no desenvolvimento de <strong>fechaduras inteligentes
-                                personalizadas</strong>,
-                            integrando controlo remoto sem fio, reconhecimento biométrico e tecnologias avançadas de
-                            segurança.
-                            Nossa linha de produtos inclui fechaduras remotas invisíveis, fechaduras de entrada sem
-                            chave,
-                            fechaduras inteligentes de maçaneta e outras <strong>soluções de segurança
-                                inteligente</strong>
-                            projetadas para residências, apartamentos, hotéis e projetos comerciais.
+                            Somos especializados no desenvolvimento de <strong>fechaduras inteligentes personalizadas</strong>, integrando controlo remoto sem fios, reconhecimento biométrico e tecnologias avançadas de segurança inteligente. A nossa gama inclui fechaduras remotas invisíveis, fechaduras com maçaneta, fechaduras com câmara de olho mágico e outras soluções B2B de <strong>segurança inteligente</strong> para residências, apartamentos, hotéis e projetos comerciais.
                         </p>
 
                         <p class="about-paragraph">
-                            Com forte capacidade de engenharia e um sistema de fabricação ágil, a WAFU oferece
-                            <strong>serviços OEM/ODM de fechaduras inteligentes</strong> que suportam personalização de
-                            marca e
-                            produção em grande escala. Como um <strong>fornecedor confiável de fechaduras
-                                inteligentes</strong>,
-                            entregamos qualidade consistente, preços competitivos e soluções escaláveis de fechaduras
-                            para
-                            mercados globais.
+                            Com sólidas capacidades de engenharia e um sistema de fabrico ágil, fornecemos
+                            <strong>serviços OEM/ODM para fechaduras inteligentes</strong> que suportam a personalização
+                            de marca e a produção em série. Como <strong>fornecedor fiável de fechaduras inteligentes</strong>, oferecemos qualidade consistente,
+                            preços competitivos e soluções escaláveis para o mercado global.
                         </p>
 
-                    </div>
+                        <p class="about-paragraph">
+                            <strong>Recursos B2B:</strong> como escolher um fabricante de fechaduras invisíveis, guia de encomendas por grosso, certificação CE/FCC, guia de parceria OEM/ODM e visão geral da tecnologia de fechaduras invisíveis — consulte o nosso <a href="./resource/technology">Centro de Recursos</a>.
+                        </p>
                 </div>
-
             </div>
         </section>
 
@@ -325,58 +361,53 @@
                 <div class="equipment-images">
 
                     <a href="./products/product-019" class="equipment-item">
-                        <img data-src="./images/product-019.jpg" alt="Aparência da Fechadura Remota Invisível"
+                        <img data-src="./images/product-019.jpg" alt="Fechadura remota invisível WF-019"
                             class="equipment-image lazy">
                         <div class="equipment-description">
                             <h3>WF-019 Fechadura Remota Invisível</h3>
-                            <p>
-                                Instalação invisível com criptografia RF de nível militar, controlo remoto 360° e
-                                bateria de longa duração — ideal para residências e propriedades de aluguel.
-                            </p>
-                            <span class="equipment-link">Ver detalhes da WF-019</span>
+                            <p>Instalação invisível com criptografia RF de nível militar, controlo remoto a 360° e longa
+                                duração da bateria — ideal para residências seguras e arrendamentos.</p>
+                            <span class="equipment-link">Ver detalhes WF-019</span>
                         </div>
                     </a>
 
-                    <a href="./products/product-026" class="equipment-item">
-                        <img data-src="./images/product-026.jpg" alt="Aparência da Fechadura Remota Invisível"
+                    <a href="./products/product-H2" class="equipment-item">
+                        <img src="./images/product-H2.jpg" data-src="./images/product-H2.jpg"
+                            alt="Fechadura inteligente com câmara de olho mágico WAFU H2" class="equipment-image lazy">
+                        <div class="equipment-description">
+                            <h3>WAFU H2 Fechadura Inteligente 7-em-1</h3>
+                            <p>Fechadura premium com olho mágico e câmara, reconhecimento facial 3D e veias palmares,
+                                mais impressão digital, palavra-passe, cartão, chave e App — para residências de alto
+                                nível.</p>
+                            <span class="equipment-link">Ver detalhes H2</span>
+                        </div>
+                    </a>
+
+                    <a href="./products/product-V2" class="equipment-item">
+                        <picture>
+                            <source srcset="./images/webp/product-V2.webp" type="image/webp">
+                            <img src="./images/V2/en/product-card.jpg" data-src="./images/V2/en/product-card.jpg"
+                                alt="WF-V2 fechadura inteligente de painel em alumínio" class="equipment-image lazy">
+                        </picture>
+                        <div class="equipment-description">
+                            <h3>WF-V2 Fechadura Inteligente em Alumínio de Corte Térmico</h3>
+                            <p>Corpo ultra-fino de 34 mm para portas em alumínio e corte térmico — instalação sem
+                                furação com desbloqueio por impressão digital, palavra-passe, cartão e mini programa
+                                WeChat.</p>
+                            <span class="equipment-link">Ver detalhes WF-V2</span>
+                        </div>
+                    </a>
+
+                    <a href="./products/product-F8" class="equipment-item">
+                        <img data-src="./images/product-F8.jpg" alt="Fechadura com maçaneta de impressão digital WF-F8"
                             class="equipment-image lazy">
                         <div class="equipment-description">
-                            <h3>WF-026 Fechadura Remota Invisível</h3>
-                            <p>
-                                Estrutura antirroubo aprimorada com controlo remoto criptografado por RF, eficiência
-                                energética estável e instalação totalmente oculta para máxima proteção da porta.
-                            </p>
-                            <span class="equipment-link">Ver detalhes da WF-026</span>
+                            <h3>WF-F8 Fechadura com Maçaneta de Impressão Digital</h3>
+                            <p>Maçaneta fina em liga de alumínio com 50 impressões digitais e 100 palavras-passe,
+                                partilha temporária de palavra-passe e instalação sem furação para casas e apartamentos.</p>
+                            <span class="equipment-link">Ver detalhes WF-F8</span>
                         </div>
                     </a>
-
-                    <a href="./products/product-X8" class="equipment-item">
-                        <img data-src="./images/product-X8.png" alt="Aparência da Fechadura com Olho Mágico Inteligente"
-                            class="equipment-image lazy">
-                        <div class="equipment-description">
-                            <h3>WF-X8 Fechadura Inteligente com Olho Mágico</h3>
-                            <p>
-                                Fechadura inteligente com olho mágico Wi‑Fi, desbloqueio instantâneo pelo telemóvel,
-                                reconhecimento de impressão digital em 0,3 segundos e dupla proteção de segurança para
-                                apartamentos modernos e casas inteligentes.
-                            </p>
-                            <span class="equipment-link">Ver detalhes da WF-X8</span>
-                        </div>
-                    </a>
-
-                    <a href="./products/product-Q7" class="equipment-item">
-                        <img data-src="./images/product-Q7.png"
-                            alt="Aparência da Fechadura de Maçaneta Esférica Inteligente" class="equipment-image lazy">
-                        <div class="equipment-description">
-                            <h3>WF-Q7 Fechadura Inteligente de Maçaneta Esférica</h3>
-                            <p>
-                                Maçaneta esférica forjada em peça única, desbloqueio por toque em múltiplos ângulos e
-                                chip biométrico de nível bancário — simples, rápida e segura para o uso diário.
-                            </p>
-                            <span class="equipment-link">Ver detalhes da WF-Q7</span>
-                        </div>
-                    </a>
-
                 </div>
 
                 <a href="./products" class="button button-primary" aria-label="Ver produtos">Ver Mais Produtos</a>
@@ -534,105 +565,82 @@
         <section class="faq-section">
             <h2 class="faq-title">Perguntas Frequentes</h2>
             <ul class="faq-list">
-
                 <li class="faq-item">
                     <button class="faq-question">
-                        1. Vocês oferecem serviços OEM e ODM?
+                        1. Oferecem serviços OEM e ODM?
                         <img src="./icons/down.svg" alt="Expandir" class="faq-icon">
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            Somos especializados em serviços completos OEM/ODM, incluindo design de hardware,
-                            personalização de software, embalagem e desenvolvimento de manuais para marcas globais.
-                        </p>
+                        <p>Sim. Oferecemos OEM/ODM completos: design de hardware, personalização de software, embalagem e manuais para marcas globais.</p>
                     </div>
                 </li>
-
                 <li class="faq-item">
                     <button class="faq-question">
-                        2. Que tipo de garantia suas fechaduras inteligentes oferecem?
+                        2. Que tipo de garantia oferecem as vossas fechaduras inteligentes?
                         <img src="./icons/down.svg" alt="Expandir" class="faq-icon">
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            1. Todos os produtos têm 1 ano de garantia;<br>
-                            2. Durante o período de garantia, nossa fábrica oferece substituição gratuita;<br>
-                            3. Após a garantia, fornecemos peças de reposição e manutenção com serviço pago;<br>
-                            4. Suporte técnico disponível durante todo o atendimento pós-venda.
-                        </p>
+                        <ol class="faq-answer-list">
+                            <li>Garantia de 1 ano em todos os produtos.</li>
+                            <li>Em garantia: substituição gratuita na fábrica.</li>
+                            <li>Fora de garantia: peças de reposição e manutenção pagos.</li>
+                            <li>Suporte técnico contínuo através do serviço pós-venda.</li>
+                        </ol>
                     </div>
                 </li>
-
                 <li class="faq-item">
                     <button class="faq-question">
-                        3. Qual é o prazo padrão para pedidos em grande quantidade?
+                        3. Qual é o prazo de entrega padrão para pedidos por grosso?
                         <img src="./icons/down.svg" alt="Expandir" class="faq-icon">
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            Pedidos de amostra ficam prontos para envio em até 3 dias.
-                            Pedidos em grande volume ficam prontos em cerca de uma a duas semanas.
-                        </p>
+                        <ul class="faq-answer-list">
+                            <li>Amostras: envio em até 3 dias.</li>
+                            <li>Pedidos por grosso: cerca de 1–2 semanas.</li>
+                        </ul>
                     </div>
                 </li>
-
                 <li class="faq-item">
                     <button class="faq-question">
-                        4. O que diferencia vocês de outros fornecedores?
+                        4. O que vos diferencia dos outros fornecedores?
                         <img src="./icons/down.svg" alt="Expandir" class="faq-icon">
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            Temos mais de 13 anos de desenvolvimento contínuo junto aos nossos clientes.
-                            Conhecemos as necessidades do mercado e de nossos parceiros.
-                            Contamos com equipamentos profissionais de produção e testes, além de fortes departamentos
-                            de QC e P&amp;D.
-                            Cada produto segue rigorosos padrões de qualidade.
-                            Compre de nós com total confiança.
-                        </p>
+                        <p>Mais de 13 anos de experiência B2B, equipamentos profissionais de produção e testes, departamentos de QC e P&amp;D dedicados — conhecemos o mercado e mantemos rigorosos padrões de qualidade.</p>
                     </div>
                 </li>
-
                 <li class="faq-item">
                     <button class="faq-question">
-                        5. Como sua fábrica garante a qualidade dos produtos?
+                        5. Como a vossa fábrica garante a qualidade do produto?
                         <img src="./icons/down.svg" alt="Expandir" class="faq-icon">
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            1. Fornecemos amostras para teste;<br>
-                            2. Após aprovação, a nossa equipa ajusta conforme necessário e inicia a produção;<br>
-                            3. Durante a produção, realizamos FQC, IQC, IPQC e OQC para controlo de qualidade;<br>
-                            4. Realizamos inspeção final antes do envio para evitar qualquer problema.
-                        </p>
+                        <ol class="faq-answer-list">
+                            <li>Fornecemos amostras para os vossos testes.</li>
+                            <li>Após aprovação, ajustamos e iniciamos a produção.</li>
+                            <li>Em produção: IQC, IPQC, FQC e OQC.</li>
+                            <li>Controlo final antes de cada envio.</li>
+                        </ol>
                     </div>
                 </li>
-
                 <li class="faq-item">
                     <button class="faq-question">
-                        6. Vocês aceitam pequenos pedidos de teste antes da produção em massa?
+                        6. Aceitam pedidos de teste antes da produção em série?
                         <img src="./icons/down.svg" alt="Expandir" class="faq-icon">
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            Sim. Aceitamos pedidos de amostra e pedidos piloto para que os parceiros avaliem a qualidade
-                            do produto e a resposta do mercado antes de ampliar a produção.
-                        </p>
+                        <p>Sim. Aceitamos pedidos de amostra e de prova, para que possam avaliar a qualidade e o mercado antes de aumentar os volumes.</p>
                     </div>
                 </li>
-
                 <li class="faq-item">
                     <button class="faq-question">
-                        7. Quais certificações seus produtos possuem?
+                        7. Que certificações possuem os vossos produtos?
                         <img src="./icons/down.svg" alt="Expandir" class="faq-icon">
                     </button>
                     <div class="faq-answer">
-                        <p>Todos os produtos passam por testes rigorosos e atendem aos padrões internacionais, incluindo
-                            CE, RoHS, FCC, UKCA e EN18031.</p>
-
+                        <p>CE, RoHS, FCC, UKCA e EN18031 — todos os produtos passam por testes rigorosos segundo estes padrões internacionais.</p>
                     </div>
                 </li>
-
             </ul>
         </section>
 
@@ -768,8 +776,7 @@
                         </div>
                         <div class="news-item-content">
                             <h3 class="news-item-title">
-                                As Fechaduras Inteligentes Invisíveis da WAFU Estreiam na Feira de Alta Tecnologia de
-                                Shenzhen
+                                A WAFU apresenta fechaduras inteligentes invisíveis na Feira de Alta Tecnologia de Shenzhen
                             </h3>
                             <p class="news-item-date">21 Abr 2026</p>
                             <p class="news-item-excerpt">
@@ -791,8 +798,7 @@
                                 alt="A WAFU Lock Industry participou na exposição" class="lazy">
                         </div>
                         <div class="news-item-content">
-                            <h3 class="news-item-title">A WAFU Lock Industry participou na Feira de Alta Tecnologia de
-                                Shenzhen</h3>
+                            <h3 class="news-item-title">A WAFU apresenta fechaduras remotas invisíveis na Feira de Alta Tecnologia de Shenzhen</h3>
                             <p class="news-item-date">04 Mar 2026</p>
                             <p class="news-item-excerpt">
                                 A Feira de Alta Tecnologia de Shenzhen foi oficialmente inaugurada no Centro de
@@ -819,6 +825,22 @@
             </div>
 
             <div class="news-list tech-articles-list">
+
+                <a href="./resource/invisible-lock-scene-linkage">
+                    <div class="news-item">
+                        <div class="news-item-content">
+                            <h3 class="news-item-title">
+                                Ligação de cenários em fechaduras invisíveis: do desbloqueio à ativação
+                            </h3>
+                            <p class="news-item-date">12 Jun 2026</p>
+                            <p class="news-item-excerpt">
+                                As fechaduras inteligentes tornam-se hubs AIoT para cenários domésticos e comerciais:
+                                perceção de intenção, políticas dinâmicas e ligação de ecossistema sem interrupções.
+                                Perspetivas competitivas 2026 para equipas B2B.
+                            </p>
+                        </div>
+                    </div>
+                </a>
 
                 <a href="./resource/invisible-lock-protocol-comparison">
                     <div class="news-item">
@@ -847,21 +869,6 @@
                                 A penetração das smart homes está a redefinir a trava invisível como nó de entrada do ecossistema.
                                 Análise de diferenças face a modelos tradicionais e motores de procura em cenários residenciais,
                                 arrendamento e comercial.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="./resource/invisible-lock-certification">
-                    <div class="news-item">
-                        <div class="news-item-content">
-                            <h3 class="news-item-title">
-                                Guia Internacional de Certificação de Fechaduras Invisíveis: CE, FCC e EN
-                            </h3>
-                            <p class="news-item-date">23 Mai 2026</p>
-                            <p class="news-item-excerpt">
-                                Guia prático para compras B2B sobre certificação internacional de fechaduras invisíveis:
-                                requisitos CE, FCC, EN 14846, RoHS e REACH, com verificação passo a passo de documentos.
                             </p>
                         </div>
                     </div>
@@ -999,9 +1006,8 @@
             </div>
         </div>
     </footer>
-    <script src="./js/email.min.js"></script>
-    <script src="./js/all.js"></script>
-    <script src="./js/question.js"></script>
+    <script src="./js/all.js?v=20260617" defer></script>
+    <script src="./js/analytics-deferred.js?v=20260609" defer></script>
 
 
 

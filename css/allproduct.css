@@ -1,3 +1,15 @@
+/* 产品页统一浅灰背景，避免纯白卡片与页面反差过大 */
+body:has(.product-all) {
+    background-color: #f5f6f8;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, sans-serif;
+    line-height: 1.5;
+    color: #333;
+}
+
+main:has(.product-all) {
+    background-color: #f5f6f8;
+}
+
 /* ===== 产品中心 - 全屏背景 ===== */
 .product-hero {
     position: relative;
@@ -78,7 +90,7 @@
 /* 新增：所有产品区域 */
 .all-products {
     padding: 60px 0;
-    background: #f7f7f7;
+    background: #f5f6f8;
 }
 
 .all-products .container {
@@ -116,7 +128,8 @@
     border-radius: 14px;
     overflow: hidden;
     padding: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e8ebef;
+    box-shadow: none;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -129,7 +142,7 @@
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    background: #eaeaea;
+    background: #fff;
 }
 
 .product-thumb {
@@ -156,12 +169,13 @@
     line-height: 1.4;
 }
 
+/* ===== 产品页 SEO 引导（低调、紧凑） ===== */
 /* 总容器 */
 .product-all {
     width: 100%;
     padding: 0 190px;
     box-sizing: border-box;
-    padding-top: 100px;
+    padding-top: 72px;
 }
 
 .product-title {
@@ -174,17 +188,15 @@
     padding-left: 6px;
 }
 
-/* 整体网格：每行两个 item */
+/* 产品列表网格：宽屏两列，窄屏自动单列 */
 .product-box {
     padding: 20px 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px;
-    /* 行间距和列间距，使两列之间有适当空隙 */
 }
 
-
-/* 单个 item：图片左、文本右的结构 */
+/* 单个 item：桌面端左图右文（与产品中心设计稿一致） */
 .product-item {
     display: flex;
     flex-direction: row;
@@ -192,39 +204,61 @@
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(175, 155, 155, 0.471);
-    min-height: 180px;
-    padding: 12px;
-    gap: 16px;
+    border: 1px solid #e8ecf0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    min-height: 0;
+    padding: 20px 24px;
+    gap: 20px;
     cursor: pointer;
     text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 左侧图片区域 */
+.product-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
 .item-imgbox {
-    min-width: 160px;
+    flex: 0 0 42%;
+    max-width: 42%;
+    min-width: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     border-radius: 8px;
-    background: #ffffff;
+    background: #fff;
     transition: transform 0.3s ease;
+    padding: 4px 8px;
 }
 
-.item-img {
-    width: 350px;
-    height: 350px;
+.item-imgbox picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.item-img,
+.item-imgbox img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
     transition: transform 0.5s ease;
     border-radius: 6px;
 }
 
-/* 右侧文字区域 */
 .item-textbox {
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     padding: 4px 0;
+    min-width: 0;
 }
 
 .item-name {
@@ -239,6 +273,50 @@
     color: #555;
     line-height: 1.5;
     margin: 0;
+    flex: 1;
+}
+
+/* 产品卡片 CTA 胶囊按钮（不依赖 components.css 加载顺序） */
+.product-item .card-link {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 7px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #1a73e8;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: rgba(26, 115, 232, 0.1);
+    border: 1px solid rgba(26, 115, 232, 0.3);
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.product-item .card-link::after {
+    content: " →";
+    font-weight: 700;
+}
+
+a.product-item:visited .card-link {
+    color: #1a73e8;
+    background: rgba(26, 115, 232, 0.1);
+    border-color: rgba(26, 115, 232, 0.3);
+}
+
+a.product-item:hover .card-link,
+a.product-item:focus-visible .card-link {
+    color: #fff;
+    background: #1a73e8;
+    border-color: #1a73e8;
+    box-shadow: 0 3px 10px rgba(26, 115, 232, 0.35);
+    text-decoration: none;
+}
+
+a.product-item:hover .card-link::after,
+a.product-item:focus-visible .card-link::after {
+    color: #fff;
 }
 
 /* 悬停放大效果：鼠标悬停整行，图片放大，图片盒子略微放大以增强视觉效果 */
@@ -254,7 +332,7 @@
 .breadcrumb-nav {
 
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: #f5f6f8;
     position: relative;
     z-index: 10;
     color: #000;
@@ -302,9 +380,53 @@
     line-height: 1;
 }
 
+/* breadcrumb-column + SEO 引导条（不依赖 components.css 也能正确显示） */
+.breadcrumb-nav .breadcrumb-column {
+    box-sizing: border-box;
+    max-width: none;
+    width: auto;
+    margin: 0 0 0 190px;
+    padding: 110px 0 0;
+}
+
+.breadcrumb-nav .breadcrumb-column .breadcrumb-inner {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    width: 100%;
+}
+
+.breadcrumb-nav .page-seo-bar {
+    margin: 8px 0 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #8a9199;
+    white-space: nowrap;
+}
+
+.breadcrumb-nav .page-seo-bar a,
+.breadcrumb-nav .page-seo-bar a:link,
+.breadcrumb-nav .page-seo-bar a:visited {
+    color: #3498db;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.35);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.breadcrumb-nav .page-seo-bar a:hover {
+    color: #2980b9;
+    border-bottom-color: #2980b9;
+}
+
 
 /* ========= 移动端适配 ========= */
 @media (max-width: 1400px) {
+    .breadcrumb-nav .breadcrumb-column {
+        margin-left: 20px;
+    }
+
     .breadcrumb-inner {
         margin-left: 20px;
     }
@@ -380,7 +502,7 @@
 
     .product-all {
         padding: 0 15px;
-        padding-top: 60px;
+        padding-top: 48px;
     }
 
     .product-title {
@@ -392,43 +514,61 @@
     }
 
     .product-box {
-        grid-template-columns: 1fr;
         gap: 20px;
         padding: 15px 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .product-all {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .product-box {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .product-item {
         flex-direction: column;
-        min-height: auto;
-        padding: 10px;
-        gap: 12px;
+        align-items: stretch;
+        gap: 16px;
     }
 
     .item-imgbox {
+        flex: none;
+        max-width: 100%;
         width: 100%;
-        min-width: auto;
-    }
-
-    .item-img {
-        width: 80%;
-        height: 500px;
-    }
-
-    .item-textbox {
-        padding: 0;
     }
 
     .item-name {
-        font-size: 1.05rem;
-        margin: 0 0 8px;
+        font-size: 1.2rem;
+        line-height: 1.35;
     }
 
     .item-desc {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .product-item .card-link {
+        align-self: flex-start;
     }
 }
 
 @media (max-width: 768px) {
+    .breadcrumb-nav .breadcrumb-column {
+        margin: 0;
+        padding: 16px 20px 0;
+        width: 100%;
+    }
+
+    .breadcrumb-nav .page-seo-bar {
+        white-space: normal;
+        font-size: 1rem;
+    }
+
     .product-hero {
         margin-top: -20px;
         height: 300px;
@@ -531,19 +671,32 @@
 
     .product-item {
         flex-direction: column;
-        min-height: auto;
-        padding: 10px;
-        gap: 12px;
+        align-items: stretch;
+        padding: 20px 0 24px;
+        gap: 14px;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #e2e5ea;
+    }
+
+    .product-box .product-item:last-child {
+        border-bottom: none;
     }
 
     .item-imgbox {
+        flex: none;
+        max-width: 100%;
         width: 100%;
-        min-width: auto;
+        padding: 0;
+        background: transparent;
     }
 
-    .item-img {
-        width: 80%;
-        height: 300px;
+    .item-img,
+    .item-imgbox img {
+        max-height: none;
+        width: 100%;
     }
 
     .item-textbox {
@@ -551,12 +704,19 @@
     }
 
     .item-name {
-        font-size: 1.05rem;
-        margin: 0 0 8px;
+        font-size: 1.15rem;
+        margin: 0 0 10px;
+        line-height: 1.35;
     }
 
     .item-desc {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .product-item .card-link {
+        align-self: flex-start;
+        margin-top: 12px;
     }
 }
 
@@ -616,12 +776,8 @@
     }
 
     .product-item {
-        padding: 8px;
-        gap: 10px;
-    }
-
-    .item-img {
-        height: 250px;
+        padding: 16px 0 20px;
+        gap: 12px;
     }
 
     .item-name {
@@ -630,6 +786,7 @@
 
     .item-desc {
         font-size: 0.85rem;
+        line-height: 1.55;
     }
 }
 
@@ -652,9 +809,15 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1024px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-box {
+        grid-template-columns: 1fr;
     }
 }
 

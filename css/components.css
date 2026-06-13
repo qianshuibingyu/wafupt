@@ -1,3 +1,55 @@
+/* ===== YouTube 点击加载（封面 + 点击嵌入，适配移动端 16:9） ===== */
+.video-facade {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #1a1a1a;
+}
+
+.video-facade img,
+.video-facade iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-facade img {
+  object-fit: cover;
+  display: block;
+}
+
+.video-facade-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 68px;
+  height: 48px;
+  margin: -24px 0 0 -34px;
+  background: rgba(255, 0, 0, 0.9);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.video-facade-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent #fff;
+}
+
 /* ===== 返回顶部 ===== */
 .back-top {
   position: fixed;
@@ -1258,4 +1310,215 @@ img.lazy.loaded {
     width: 22px;
     height: 22px;
   }
+}
+
+/* ===== 全站卡片 CTA（胶囊按钮，与首页产品区一致） ===== */
+.card-link,
+.equipment-link,
+.equipment-consult,
+a.card-link {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #1a73e8;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: rgba(26, 115, 232, 0.1);
+  border: 1px solid rgba(26, 115, 232, 0.3);
+  transition: all 0.3s ease;
+  align-self: center;
+  cursor: pointer;
+}
+
+.card-link::after,
+.equipment-link::after,
+.equipment-consult::after {
+  content: " →";
+  font-weight: 700;
+}
+
+.scene-card:hover .card-link,
+.solution-card-link:hover .card-link,
+.equipment-item:hover .card-link,
+.equipment-item:hover .equipment-link,
+.product-item:hover .card-link,
+a.product-item:hover .card-link,
+a.product-item:focus-visible .card-link,
+a.card-link:hover,
+.card-link:hover,
+.equipment-link:hover,
+.equipment-consult:hover {
+  color: #fff;
+  background: #1a73e8;
+  border-color: #1a73e8;
+  box-shadow: 0 3px 10px rgba(26, 115, 232, 0.35);
+  text-decoration: none;
+}
+
+/* 全站卡片容器统一样式 */
+.scene-card,
+.solution-card,
+.equipment-item {
+  border: 1px solid #e8ecf0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scene-card:hover,
+.solution-card-link:hover .solution-card,
+.equipment-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.scene-card .card-content,
+.solution-card .card-content,
+.equipment-item .equipment-description {
+  text-align: left;
+}
+
+.scene-card .card-link,
+.solution-card .card-link {
+  margin-top: auto;
+}
+
+/* ===== FAQ accordion animation (shared: index + question pages) ===== */
+.faq-section {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.faq-question {
+  font-family: inherit;
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: grid-template-rows 0.4s ease, opacity 0.35s ease, padding 0.4s ease;
+}
+
+.faq-answer > * {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.faq-item.active .faq-answer {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  padding: 4px 24px 22px;
+  border-top: 1px solid #eef2f7;
+}
+
+.faq-item.active {
+  border-color: #1a73e8;
+  background: linear-gradient(180deg, #eef5ff 0%, #fff 72%);
+  box-shadow: 0 4px 16px rgba(26, 115, 232, 0.12);
+}
+
+.faq-item.active:hover {
+  transform: none;
+  box-shadow: 0 4px 16px rgba(26, 115, 232, 0.16);
+}
+
+.faq-item.active .faq-question {
+  color: #1a73e8;
+  background: transparent;
+  border-bottom: 1px solid rgba(26, 115, 232, 0.22);
+}
+
+.faq-item.active .faq-answer {
+  background: transparent;
+  color: #5a6578;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  filter: brightness(0) saturate(100%) invert(32%) sepia(85%) saturate(1875%) hue-rotate(196deg) brightness(98%) contrast(95%);
+}
+
+.faq-answer ul,
+.faq-answer ol,
+.faq-answer-list {
+  margin: 0;
+  padding-left: 1.35em;
+  list-style: disc;
+  font-family: inherit;
+}
+
+.faq-answer ol,
+.faq-answer-list.faq-answer-list--ordered {
+  list-style: decimal;
+}
+
+.faq-answer li {
+  margin-bottom: 0.4em;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  font-weight: 400;
+}
+
+.faq-answer li:last-child {
+  margin-bottom: 0;
+}
+
+.faq-answer p + p {
+  margin-top: 0.75em;
+}
+
+.faq-answer p + ul,
+.faq-answer p + ol,
+.faq-answer ul + p,
+.faq-answer ol + p {
+  margin-top: 0.65em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer {
+    transition: none;
+  }
+
+  .faq-icon {
+    transition: none;
+  }
+}
+
+.about-text p a,
+.intro-text p a,
+.intro-text a,
+.about-body .about-paragraph a,
+main .content-inline-link,
+.intro-list a {
+  color: #3498db;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(52, 152, 219, 0.35);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.about-text p a:hover,
+.intro-text p a:hover,
+.intro-text a:hover,
+.about-body .about-paragraph a:hover,
+main .content-inline-link:hover,
+.intro-list a:hover {
+  color: #2980b9;
+  border-bottom-color: #2980b9;
+}
+
+.about-text p a:visited,
+.intro-text p a:visited,
+.intro-text a:visited,
+.about-body .about-paragraph a:visited,
+main .content-inline-link:visited,
+.intro-list a:visited {
+  color: #3498db;
 }

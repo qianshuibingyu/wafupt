@@ -15,40 +15,73 @@ body {
 }
 
 .prod-inner {
-    max-width: 1300px;
+    max-width: 1280px;
     width: 90%;
     margin: 0 auto;
-    display: flex;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
+    gap: 32px 40px;
+    align-items: start;
 }
 
 .prod-left {
-    flex: 1;
+    min-width: 0;
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    width: 100%;
 }
 
 .prod-img {
     width: 100%;
+    height: auto;
     border-radius: 12px;
 }
 
 .prod-right {
-    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 16px;
 }
 
 .prod-title {
-    font-size: 2rem;
+    font-size: clamp(1.65rem, 2.2vw, 2.1rem);
     font-weight: 700;
     color: #111;
-    margin: 0 0 10px;
+    margin: 0;
+    line-height: 1.3;
 }
 
 .prod-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #555;
-    margin-bottom: 20px;
+    margin: 0;
+    line-height: 1.55;
+}
+
+.prod-params {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.65;
+    font-size: 0.98rem;
+}
+
+.prod-params li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.prod-btns {
+    display: flex;
+    gap: 20px;
+    margin-top: 8px;
 }
 
 .price-label {
@@ -90,19 +123,6 @@ body {
     margin-left: 2px;
 }
 
-.prod-params {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 30px;
-    line-height: 1.8;
-}
-
-.prod-params li {
-    position: relative;
-    padding-left: 16px;
-    color: #444;
-}
-
 .prod-params li::before {
     content: '';
     position: absolute;
@@ -112,11 +132,6 @@ body {
     height: 6px;
     background: #3498db;
     border-radius: 50%;
-}
-
-.prod-btns {
-    display: flex;
-    gap: 20px;
 }
 
 .btn {
@@ -157,7 +172,7 @@ body {
 }
 
 .intro-inner {
-    max-width: 1300px;
+    max-width: 1200px;
     width: 90%;
     margin: 0 auto;
     background: #fff;
@@ -181,6 +196,68 @@ body {
 }
 
 .intro-txt strong {
+    color: #3498db;
+}
+
+.intro-hook {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #333;
+    border-left: 4px solid #3498db;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    background: #f8fbff;
+    border-radius: 0 8px 8px 0;
+}
+
+.intro-oem-block {
+    background: #f0f7ff;
+    border: 1px solid #d6e9f8;
+    border-radius: 10px;
+    padding: 8px 20px 16px;
+    margin-bottom: 8px;
+}
+
+.intro-oem-block .intro-subtitle {
+    margin-top: 12px;
+}
+
+.intro-subtitle {
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 28px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #e8f4fc;
+}
+
+.intro-list {
+    margin: 0 0 16px 0;
+    padding-left: 1.35rem;
+    line-height: 1.85;
+    color: #444;
+    list-style: disc;
+}
+
+.intro-list li {
+    margin-bottom: 8px;
+    display: list-item;
+}
+
+.intro-list a {
+    color: #3498db;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.35);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.intro-list a:hover {
+    color: #2980b9;
+    border-bottom-color: #2980b9;
+    text-decoration: none;
+}
+
+.intro-list a:visited {
     color: #3498db;
 }
 
@@ -248,26 +325,55 @@ body {
     line-height: 1.4;
 }
 
-/* 轮播图样式 */
+/* 轮播图 — 顶部对齐，尽量放大 */
 .s-carousel {
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     overflow: hidden;
+    background: transparent;
+    border: none;
+    border-radius: 0;
 }
 
 .s-carousel-inner {
+    position: relative;
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    flex-direction: row;
+    width: 100%;
+    transition: transform 0.45s ease;
+    will-change: transform;
 }
 
 .s-carousel-item {
-    min-width: 100%;
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
     box-sizing: border-box;
-    display: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.s-carousel-item.active {
+.s-carousel-item picture {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    line-height: 0;
+}
+
+.s-carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: min(680px, calc(100vh - 180px));
+    object-fit: contain;
+    object-position: top center;
     display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 1px solid #e8ebef;
 }
 
 .s-prev,
@@ -275,15 +381,21 @@ body {
     cursor: pointer;
     position: absolute;
     top: 50%;
+    z-index: 10;
     width: auto;
     padding: 16px;
     margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
+    transition: background-color 0.3s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.35), 0 1px 4px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.s-prev {
+    left: 0;
 }
 
 .s-next {
@@ -301,38 +413,49 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0 1rem 1rem;
 }
 
 .product-section-title {
-    margin: 50px 0;
-    font-size: 2.8rem;
+    margin: 28px 0 16px;
+    font-size: 1.75rem;
     font-weight: 700;
     text-align: center;
     color: #111;
 }
 
 .scenarios-title {
-    margin: 50px 0;
-    font-size: 2.8rem;
+    margin: 40px 0 24px;
+    font-size: 1.75rem;
     font-weight: 700;
     text-align: center;
     color: #111;
 }
 
 .image-gallery {
-    width: 85%;
+    width: 100%;
+    max-width: 520px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
+    gap: 12px;
+}
 
+.image-gallery picture {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    margin: 0;
 }
 
 .image-gallery img {
-    width: 750px;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    object-fit: contain;
     display: block;
-
+    margin: 0 auto;
 }
 
 .application-scenarios {
@@ -366,6 +489,7 @@ body {
     width: 100%;
     border-radius: 8px;
     height: 300px;
+    object-fit: cover;
 }
 
 .scenario-text {
@@ -451,7 +575,7 @@ body {
 }
 
 .breadcrumb-inner {
-    max-width: 1450px;
+    max-width: 1350px;
     /* 与分割线、底部文字同一 max-width */
     margin: 130px auto 0;
     /* 居中，上下留白 50px */
@@ -508,26 +632,87 @@ body {
     }
 
     .prod-inner {
+        display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 16px;
     }
 
-    .prod-left,
     .prod-right {
-        flex: none;
+        display: contents;
+    }
+
+    .prod-title {
+        order: 1;
+        padding: 0 15px;
+    }
+
+    .prod-subtitle {
+        order: 2;
+        padding: 0 15px;
+    }
+
+    .prod-left {
+        order: 3;
+        position: static;
+        top: auto;
         width: 100%;
         padding: 0 15px;
+        display: block;
+        height: auto;
+    }
+
+    .prod-params {
+        order: 4;
+        padding: 0 15px;
+    }
+
+    .prod-btns {
+        order: 5;
+        padding: 0 15px;
+    }
+
+    .s-carousel {
+        display: block;
+        flex: none;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2 / 3;
+        max-height: min(520px, 70vh);
+        overflow: hidden;
+    }
+
+    .s-carousel-inner {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        flex: none;
+    }
+
+    .s-carousel-item picture {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .s-carousel-item img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: min(520px, 70vh);
+        border-radius: 12px;
     }
 
     /* 文字左对齐更易读 */
     .prod-title {
         font-size: 1.6rem;
         text-align: left;
+        margin-bottom: 0;
     }
 
     .prod-subtitle {
         font-size: 1rem;
         text-align: left;
+        margin-bottom: 4px;
     }
 
     .prod-price {
@@ -551,27 +736,7 @@ body {
         max-width: none;
     }
 
-    /* --- 轮播图修复 --- */
-    .s-carousel {
-        overflow: hidden;
-    }
-
-    .s-carousel-inner {
-        display: flex;
-        width: 100%;
-    }
-
-    .s-carousel-item {
-        min-width: 100%;
-        display: block;
-    }
-
-    .s-carousel-item img {
-        width: 100%;
-        border-radius: 0;
-    }
-
-    /* 左右箭头隐藏（可手势滑动） */
+    /* 左右箭头（可手势滑动） */
     .s-prev,
     .s-next {
         display: block;
@@ -580,6 +745,7 @@ body {
         border-radius: 50%;
         top: 50%;
         transform: translateY(-50%);
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.35), 0 1px 4px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.18);
     }
 
     .s-prev {
@@ -608,12 +774,20 @@ body {
     /* --- 产品细节图 --- */
     .image-gallery {
         width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .image-gallery picture {
+        max-width: 100%;
     }
 
     .image-gallery img {
         width: 100%;
-        max-width: 750px;
-        margin: 0 auto 10px;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
     }
 
     /* --- 应用场景 --- */
@@ -706,6 +880,11 @@ body {
 
 /* ===== 平板 769-1024 ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
+    .prod-inner {
+        grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+        gap: 32px;
+    }
+
     .scenario-item {
         width: calc(33.333% - 15px);
     }
@@ -744,7 +923,7 @@ body {
 }
 
 .table-container {
-    max-width: 1300px;
+    max-width: 1200px;
     width: 90%;
     margin: 0 auto;
     background: #fff;
@@ -869,5 +1048,11 @@ body {
     
     .spec-table td:last-child {
         width: 60%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .s-carousel-inner {
+        transition: none;
     }
 }
