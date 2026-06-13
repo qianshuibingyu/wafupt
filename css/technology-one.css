@@ -192,6 +192,44 @@ body {
     align-self: stretch;
 }
 
+.wafu-article-cta {
+    margin: 40px 0 20px;
+    padding: 28px 24px;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+    border: 1px solid rgba(26, 115, 232, 0.2);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.wafu-article-cta .wafu-heading-3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.wafu-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.wafu-cta-actions .wafu-consult-btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.wafu-cta-btn-secondary {
+    background: #fff;
+    color: #1a73e8;
+    border: 1px solid #1a73e8;
+}
+
+.wafu-cta-btn-secondary:hover {
+    background: #1a73e8;
+    color: #fff;
+}
+
 /* ===== 文章底 ===== */
 .wafu-article-footer {
     border-top: 1px solid #dfdfdf;
