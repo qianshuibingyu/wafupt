@@ -352,54 +352,59 @@ body {
 }
 
 .wafu-article-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 24px;
     margin-top: 20px;
+    align-items: start;
 }
 
 .wafu-nav-prev,
 .wafu-nav-next {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px 8px;
-    flex: 0 1 calc(50% - 12px);
-    max-width: calc(50% - 12px);
+    align-items: flex-start;
+    gap: 8px;
     color: #0066cc;
     text-decoration: none;
     font-weight: 500;
-    line-height: 1.4;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .wafu-nav-prev {
+    grid-column: 1;
     justify-content: flex-start;
+    text-align: left;
 }
 
 .wafu-nav-next {
-    margin-left: auto;
+    grid-column: 2;
     justify-content: flex-end;
     text-align: right;
 }
 
 .wafu-nav-content {
-    display: contents;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
 }
 
-.wafu-nav-text {
-    flex: 0 0 100%;
-    width: 100%;
-    font-weight: 500;
-}
-
-.wafu-nav-prev .wafu-nav-text {
+.wafu-nav-prev .wafu-nav-content {
+    align-items: flex-start;
     text-align: left;
 }
 
-.wafu-nav-next .wafu-nav-text {
-    order: -1;
+.wafu-nav-next .wafu-nav-content {
+    align-items: flex-end;
     text-align: right;
+}
+
+.wafu-nav-text {
+    line-height: 1.45;
+    min-width: 0;
+    font-weight: 500;
 }
 
 .wafu-nav-label,
@@ -781,28 +786,20 @@ body {
 
     /* ---- 文章导航 ---- */
     .wafu-article-nav {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
     .wafu-nav-prev,
     .wafu-nav-next {
-        flex: 1 1 100%;
-        max-width: 100%;
+        grid-column: 1;
+        justify-content: flex-start !important;
+        text-align: left !important;
     }
 
-    .wafu-nav-prev {
-        justify-content: flex-start;
+    .wafu-nav-next .wafu-nav-content {
+        align-items: flex-start;
         text-align: left;
-    }
-
-    .wafu-nav-next {
-        justify-content: flex-end;
-        text-align: right;
-    }
-
-    .wafu-nav-next .wafu-nav-text {
-        text-align: right;
     }
 
     /* ---- 侧边栏卡片 ---- */

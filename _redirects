@@ -26,3 +26,5 @@ http://www.wafulockpt.com/* https://wafulockpt.com/:splat 301
 /resource/technology-thirteen.html /resource/invisible-lock-ODM 301
 /resource/technology-twelve /resource/invisible-lock-tech 301
 /resource/technology-twelve.html /resource/invisible-lock-tech 301
+
+/privacy.html /privacy 301

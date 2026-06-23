@@ -225,16 +225,76 @@
         observer.observe(section);
     }
 
+    function resetFloatKefuState() {
+        document.querySelectorAll('.kefu-item').forEach(item => {
+            item.classList.remove('is-open');
+        });
+    }
+
     function initFloatKefu() {
-        const wechatItem = document.querySelector('.kefu-item.wechat');
-        const qr = wechatItem?.querySelector('.qr-code[data-src]');
-        if (!wechatItem || !qr) return;
+        const items = document.querySelectorAll('.kefu-item');
+        if (!items.length) return;
 
-        const loadQr = () => activateLazyImage(qr);
+        const actions = {
+            wechat: 'https://wa.me/8615914193183?text=Hello',
+            phone: 'tel:+8615914193183',
+            email: 'mailto:wafutechnology@gmail.com'
+        };
 
-        wechatItem.addEventListener('pointerenter', loadQr, { once: true });
-        wechatItem.addEventListener('focusin', loadQr, { once: true });
-        wechatItem.addEventListener('touchstart', loadQr, { once: true, passive: true });
+        const isTouch = () => window.matchMedia('(hover: none), (max-width: 1024px)').matches;
+
+        items.forEach(item => {
+            const qr = item.querySelector('.qr-code[data-src]');
+            const loadQr = () => {
+                if (qr) activateLazyImage(qr);
+            };
+
+            item.addEventListener('pointerenter', loadQr, { once: true });
+            item.addEventListener('focusin', loadQr, { once: true });
+
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                const type = ['wechat', 'phone', 'email'].find(cls => item.classList.contains(cls));
+                if (!type) return;
+
+                if (isTouch() && actions[type]) {
+                    resetFloatKefuState();
+                    item.blur();
+                    if (type === 'wechat') {
+                        window.open(actions[type], '_blank', 'noopener,noreferrer');
+                    } else {
+                        window.location.href = actions[type];
+                    }
+                    return;
+                }
+
+                loadQr();
+
+                const wasOpen = item.classList.contains('is-open');
+                items.forEach(i => i.classList.remove('is-open'));
+                if (!wasOpen) item.classList.add('is-open');
+            });
+
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    item.click();
+                }
+            });
+        });
+
+        document.addEventListener('click', () => {
+            resetFloatKefuState();
+        });
+
+        window.addEventListener('pageshow', (e) => {
+            if (e.persisted) resetFloatKefuState();
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') resetFloatKefuState();
+        });
     }
 
     function initFaq() {
@@ -499,23 +559,13 @@
         loadSlideImage(0);
         startInterval();
     }
+
     /* ========== 功能2b：极简轮播（可多个实例，3秒自动切换，单向循环） ========== */
     function initSimpleCarousel() {
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const intervalMs = prefersReducedMotion ? 0 : 3000;
 
-        if (!window.moveSlide) {
-            window.moveSlide = function (delta) {
-                const carousel = document.querySelector('main.prod-detail .s-carousel') || document.querySelector('.s-carousel');
-                const api = carousel?._simpleCarousel;
-                if (!api) return;
-                delta > 0 ? api.next() : api.prev();
-            };
-        }
-
         document.querySelectorAll('.s-carousel').forEach(container => {
-            if (container._simpleCarousel) return;
-
             const inner = container.querySelector('.s-carousel-inner');
             const originals = [...container.querySelectorAll('.s-carousel-item')];
             const btnPrev = container.querySelector('.s-prev');
@@ -620,7 +670,6 @@
                 else startInterval();
             });
 
-            container._simpleCarousel = { next, prev };
             startInterval();
         });
     }

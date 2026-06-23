@@ -188,6 +188,61 @@ main:has(.product-all) {
     padding-left: 6px;
 }
 
+/* ===== 产品页技术资源引导 ===== */
+.product-guides {
+    padding-bottom: 64px;
+}
+
+.product-guides-lead {
+    margin: -8px 0 24px 6px;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.product-guides-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.product-guide-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 22px;
+    background: #fff;
+    border: 1px solid #e8ecf0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-guide-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-guide-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.4;
+}
+
+.product-guide-desc {
+    font-size: 0.92rem;
+    color: #666;
+    line-height: 1.55;
+    flex: 1;
+}
+
+.product-guides-cta {
+    margin-top: 28px;
+    text-align: center;
+}
+
 /* 产品列表网格：宽屏两列，窄屏自动单列 */
 .product-box {
     padding: 20px 0;
@@ -276,47 +331,10 @@ main:has(.product-all) {
     flex: 1;
 }
 
-/* 产品卡片 CTA 胶囊按钮（不依赖 components.css 加载顺序） */
-.product-item .card-link {
-    display: inline-block;
-    margin-top: 14px;
-    padding: 7px 16px;
-    border-radius: 20px;
-    text-decoration: none;
-    color: #1a73e8;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    background: rgba(26, 115, 232, 0.1);
-    border: 1px solid rgba(26, 115, 232, 0.3);
-    transition: all 0.3s ease;
+.product-item .card-link,
+.product-item .card-action-link {
+    margin-top: auto;
     align-self: flex-start;
-    cursor: pointer;
-}
-
-.product-item .card-link::after {
-    content: " →";
-    font-weight: 700;
-}
-
-a.product-item:visited .card-link {
-    color: #1a73e8;
-    background: rgba(26, 115, 232, 0.1);
-    border-color: rgba(26, 115, 232, 0.3);
-}
-
-a.product-item:hover .card-link,
-a.product-item:focus-visible .card-link {
-    color: #fff;
-    background: #1a73e8;
-    border-color: #1a73e8;
-    box-shadow: 0 3px 10px rgba(26, 115, 232, 0.35);
-    text-decoration: none;
-}
-
-a.product-item:hover .card-link::after,
-a.product-item:focus-visible .card-link::after {
-    color: #fff;
 }
 
 /* 悬停放大效果：鼠标悬停整行，图片放大，图片盒子略微放大以增强视觉效果 */
