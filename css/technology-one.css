@@ -78,6 +78,7 @@ body {
 .wafu-article-body a:link,
 .wafu-article-body a:visited {
     color: #1a73e8;
+    font-weight: 600;
     text-decoration: underline;
     text-decoration-color: rgba(26, 115, 232, 0.35);
     text-underline-offset: 2px;
@@ -86,8 +87,8 @@ body {
 
 .wafu-article-body a:hover,
 .wafu-article-body a:focus {
-    color: #0d47a1;
-    text-decoration-color: rgba(13, 71, 161, 0.55);
+    color: #1557b0;
+    text-decoration-color: rgba(21, 87, 176, 0.55);
 }
 
 .wafu-heading-2 {
@@ -972,4 +973,209 @@ body {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.wafu-image-box .wafu-image {
+    max-width: 72%;
+    object-fit: contain;
+}
+
+/* ===== 七步检查清单卡片 ===== */
+.wafu-checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0 12px;
+}
+
+.wafu-checklist-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.wafu-checklist-card__media {
+    background: #fff;
+    padding: 14px 12px;
+    min-height: 168px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e8edf3;
+}
+
+.wafu-checklist-card__media picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.wafu-checklist-card__media img {
+    display: block;
+    max-width: 100%;
+    max-height: 140px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.wafu-checklist-card__body {
+    padding: 14px 16px 16px;
+    background: #f8f9fb;
+}
+
+.wafu-checklist-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a2a6c;
+    margin: 0 0 6px;
+    line-height: 1.4;
+}
+
+.wafu-checklist-card__num {
+    display: inline-block;
+    min-width: 1.6em;
+    margin-right: 4px;
+    color: #1a73e8;
+    font-weight: 700;
+}
+
+.wafu-checklist-card__desc {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+    .wafu-checklist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .wafu-checklist-grid {
+        gap: 12px;
+        margin: 20px 0 10px;
+    }
+
+    .wafu-checklist-card__media {
+        min-height: 100px;
+        padding: 8px 6px;
+    }
+
+    .wafu-checklist-card__body {
+        padding: 10px 10px 12px;
+    }
+
+    .wafu-checklist-card__title {
+        font-size: 0.9rem;
+    }
+
+    .wafu-checklist-card__desc {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .wafu-checklist-grid {
+        gap: 10px;
+    }
+
+    .wafu-checklist-card__title {
+        font-size: 0.85rem;
+    }
+
+    .wafu-checklist-card__desc {
+        font-size: 0.75rem;
+    }
+}
+
+/* ===== 认证与专利展示 ===== */
+.wafu-cert-summary {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a2a6c;
+    margin: 0 0 20px;
+    letter-spacing: 0.02em;
+}
+
+.wafu-cert-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 0 28px;
+}
+
+.wafu-cert-item {
+    margin: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.wafu-cert-item picture {
+    display: block;
+    background: #f8f9fb;
+    padding: 10px;
+}
+
+.wafu-cert-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.wafu-cert-label {
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1a73e8;
+    text-align: center;
+    background: #f8f9fb;
+    border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 900px) {
+    .wafu-cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .wafu-cert-grid {
+        gap: 12px;
+    }
+
+    .wafu-cert-item picture {
+        padding: 8px;
+    }
+
+    .wafu-cert-label {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+        line-height: 1.35;
+    }
+}
+
+@media (max-width: 480px) {
+    .wafu-cert-grid {
+        gap: 10px;
+    }
+
+    .wafu-cert-label {
+        font-size: 0.75rem;
+    }
 }

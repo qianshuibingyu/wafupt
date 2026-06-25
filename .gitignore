@@ -15,6 +15,5 @@ npm-debug.log
 .DS_Store
 Thumbs.db
 
-# 不上传审计文档和脚本
-PT-EN-AUDIT*.md
-scripts/
+# 不上传对齐/审计文档
+PT-EN*.md
