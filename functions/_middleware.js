@@ -22,6 +22,8 @@ const LEGACY_REDIRECTS = {
   "/resource/technology-thirteen.html": "/resource/invisible-lock-ODM",
   "/resource/technology-twelve": "/resource/invisible-lock-tech",
   "/resource/technology-twelve.html": "/resource/invisible-lock-tech",
+  "/resource/b2b-invisible-lock-compatibility-deployment": "/resource/b2b-invisible-lock-compatibility-challenges",
+  "/resource/b2b-invisible-lock-compatibility-deployment.html": "/resource/b2b-invisible-lock-compatibility-challenges",
 };
 
 async function serve404(context, request, url) {
