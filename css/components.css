@@ -198,8 +198,11 @@
 }
 
 .wechat-popup {
-  width: 180px;
+  width: auto;
+  min-width: 180px;
+  max-width: 220px;
   text-align: center;
+  white-space: normal;
 }
 
 .wechat-popup .qr-code {
@@ -210,8 +213,18 @@
   object-fit: contain;
 }
 
+.wechat-popup p {
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.45;
+  font-size: 13px;
+}
+
 .phone-popup {
   line-height: 1.4;
+  white-space: normal;
+  max-width: 240px;
 }
 
 .kefu-item.wechat:hover .wechat-popup,
@@ -239,6 +252,8 @@
 
 .email-popup {
   line-height: 1.4;
+  white-space: normal;
+  max-width: 260px;
 }
 
 .float-kefu .kefu-item.wechat {
@@ -910,6 +925,10 @@ img.lazy.loaded {
 
 /* 平板端样式 */
 @media (max-width: 1024px) {
+  body.nav-open {
+    overflow: hidden;
+  }
+
   .nav-container {
     height: 80px;
     padding: 0 50px;

@@ -4,11 +4,18 @@ const EMAILJS = {
     templateId: 'template_u99zynh'
 };
 
-export async function onRequestPost({ request }) {
-    if (request.method === 'OPTIONS') {
-        return new Response(null, { status: 204 });
-    }
+export async function onRequestOptions() {
+    return new Response(null, {
+        status: 204,
+        headers: {
+            'Access-Control-Allow-Origin': 'https://wafulockpt.com',
+            'Access-Control-Allow-Methods': 'POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type'
+        }
+    });
+}
 
+export async function onRequestPost({ request }) {
     let data;
     try {
         data = await request.json();
@@ -68,7 +75,8 @@ function json(body, status) {
         status,
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
-            'Cache-Control': 'no-store'
+            'Cache-Control': 'no-store',
+            'Access-Control-Allow-Origin': 'https://wafulockpt.com'
         }
     });
 }

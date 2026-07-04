@@ -83,7 +83,7 @@
             if (form.dataset.contactReady === 'true') {
                 return Promise.resolve();
             }
-            if (typeof emailjs !== 'undefined' && typeof window.initContactForm === 'function') {
+            if (typeof window.initContactForm === 'function') {
                 window.initContactForm();
                 if (form.dataset.contactReady === 'true') {
                     return Promise.resolve();
@@ -91,8 +91,7 @@
             }
             if (scriptsPromise) return scriptsPromise;
 
-            scriptsPromise = loadScript('email.min.js')
-                .then(() => loadScript('contact-form.js'))
+            scriptsPromise = loadScript('contact-form.js')
                 .then(() => {
                     if (typeof window.initContactForm === 'function') {
                         window.initContactForm();
@@ -238,7 +237,7 @@
         const actions = {
             wechat: 'https://wa.me/8615914193183?text=Hello',
             phone: 'tel:+8615914193183',
-            email: 'mailto:wafutechnology@gmail.com'
+            email: 'mailto:wafutechnology@outlook.com'
         };
 
         const isTouch = () => window.matchMedia('(hover: none), (max-width: 1024px)').matches;
@@ -343,7 +342,7 @@
 
             link.addEventListener('click', function (e) {
                 // 只在移动端处理
-                if (window.innerWidth <= 958) {
+                if (window.innerWidth <= 1024) {
                     const linkRect = this.getBoundingClientRect();
                     const clickX = e.clientX - linkRect.left;
                     const linkWidth = linkRect.width;
@@ -400,7 +399,7 @@
             const dropdownMenu = item.querySelector('.dropdown-menu');
             if (dropdownMenu) {
                 dropdownMenu.addEventListener('click', function (e) {
-                    if (window.innerWidth <= 768) {
+                    if (window.innerWidth <= 1024) {
                         e.stopPropagation();
                         // 点击子菜单项时关闭菜单（可选）
                         if (e.target.classList.contains('dropdown-link')) {
@@ -415,7 +414,7 @@
 
         // 点击页面其他地方关闭所有菜单
         document.addEventListener('click', function (e) {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 1024) {
                 // 检查点击的是否是导航相关元素
                 const clickedInNav =
                     navList.contains(e.target) ||
@@ -432,7 +431,7 @@
 
         // 窗口大小改变时重置
         window.addEventListener('resize', function () {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 1024) {
                 closeAllMenus();
             }
         });

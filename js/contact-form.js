@@ -1,11 +1,23 @@
 (function () {
+    function trackConversion() {
+        if (window.WafuAnalytics && typeof window.WafuAnalytics.trackConversion === 'function') {
+            return window.WafuAnalytics.trackConversion();
+        }
+        if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+                send_to: 'AW-17790114591/ujr9CP-_iN4bEJ-2_qJC',
+                value: 1.0,
+                currency: 'CNY'
+            });
+        }
+        return Promise.resolve();
+    }
+
     function initContactForm() {
         var form = document.getElementById('contactForm');
         if (!form || form.dataset.contactReady === 'true') return true;
-        if (typeof emailjs === 'undefined') return false;
 
         form.dataset.contactReady = 'true';
-        emailjs.init('kiY7Ni8dk8ID8Mn47');
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -34,23 +46,18 @@
                 submitBtn.textContent = 'A enviar...';
             }
 
-            emailjs.send('service_vs616cb', 'template_u99zynh', {
-                from_name: name,
-                from_email: email,
-                name: name,
-                phone: phone,
-                product: product,
-                scenario: scenario,
-                message: message
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: name, phone: phone, email: email, product: product, scenario: scenario, message: message })
+            }).then(function (response) {
+                return response.json().then(function (data) {
+                    if (!response.ok) throw new Error(data.error || 'Falha no envio');
+                    return data;
+                });
             }).then(function () {
-                if (typeof gtag === 'function') {
-                    gtag('event', 'conversion', {
-                        send_to: 'AW-17790114591/ujr9CP-_iN4bEJ-2_qJC',
-                        value: 1.0,
-                        currency: 'CNY'
-                    });
-                }
-
+                return trackConversion();
+            }).then(function () {
                 alert('As informações foram enviadas. Entraremos em contacto o mais breve possível.');
                 form.reset();
             }).catch(function (err) {
@@ -71,7 +78,7 @@
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initContactForm);
-    } else if (typeof emailjs !== 'undefined') {
+    } else {
         initContactForm();
     }
 })();

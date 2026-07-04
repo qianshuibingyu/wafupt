@@ -27,4 +27,7 @@ http://www.wafulockpt.com/* https://wafulockpt.com/:splat 301
 /resource/technology-twelve /resource/invisible-lock-tech 301
 /resource/technology-twelve.html /resource/invisible-lock-tech 301
 
+/resource/b2b-invisible-lock-compatibility-deployment /resource/b2b-invisible-lock-compatibility-challenges 301
+/resource/b2b-invisible-lock-compatibility-deployment.html /resource/b2b-invisible-lock-compatibility-challenges 301
+
 /privacy.html /privacy 301

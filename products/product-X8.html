@@ -8,8 +8,15 @@
 
     <meta name="robots" content="index,follow,max-image-preview:large">
     <link rel="canonical" href="https://wafulockpt.com/products/product-X8">
+<link rel="alternate" hreflang="en" href="https://wafuen.com/products/product-X8">
+<link rel="alternate" hreflang="de" href="https://wafulockde.com/products/product-X8">
 <link rel="alternate" hreflang="pt" href="https://wafulockpt.com/products/product-X8">
-<link rel="alternate" hreflang="x-default" href="https://wafulockpt.com/products/product-X8">
+<link rel="alternate" hreflang="es" href="https://wafulockes.com/products/product-X8">
+<link rel="alternate" hreflang="fr" href="https://wafulockfr.com/products/product-X8">
+<link rel="alternate" hreflang="it" href="https://wafulockit.com/products/product-X8">
+<link rel="alternate" hreflang="ru" href="https://wafulockru.com/products/product-X8">
+<link rel="alternate" hreflang="zh-CN" href="https://wafulock.cn/products/product-X8">
+<link rel="alternate" hreflang="x-default" href="https://wafuen.com/products/product-X8">
 
     <meta property="og:site_name" content="WAFU Smart Lock">
     <meta property="og:type" content="website">
@@ -60,64 +67,25 @@
 
 
 <!-- Google Ads Global Tag -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-17790114591"></script>
-  <script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790114591"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'AW-17790114591');
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-      emailjs.init('kiY7Ni8dk8ID8Mn47');
-
-      const form = document.getElementById('contactForm');
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const product = document.getElementById('product').value.trim();
-        const scenario = document.getElementById('scenario').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        if (!name || !phone) {
-          alert('Por favor, preencha o nome/nome da empresa e o número de telefone.');
-          return;
-        }
-
-        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          alert('Por favor, insira um endereço de e-mail válido ou deixe em branco.');
-          return;
-        }
-
-        emailjs.send('service_vs616cb', 'template_u99zynh', {
-          from_name: name,
-          from_email: email,
-          name,
-          phone,
-          product,
-          scenario,
-          message
-        }).then(() => {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-17790114591/ujr9CP-_iN4bEJ-2_qJC',
-            'value': 1.0,
-            'currency': 'CNY'
-          });
-
-          alert('As informações foram enviadas. Entraremos em contacto o mais breve possível.');
-          form.reset();
-
-        }).catch(() => {
-          alert('Falha no envio. Por favor, tente novamente mais tarde.');
-        });
-      });
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
     });
-  </script></head>
+    gtag('config', 'AW-17790114591', {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false
+    });
+</script>
+</head>
 
 <body>
   <nav class="navbar">
@@ -190,7 +158,7 @@
                         <li><a href="https://wafulockfr.com/" class="dropdown-link">Français</a></li>
                         <li><a href="https://wafulockit.com/" class="dropdown-link">Italiano</a></li>
                         <li><a href="https://wafulockru.com/" class="dropdown-link">Русский</a></li>
-                                  <li><span class="dropdown-link dropdown-link--soon" aria-disabled="true">中文（敬请期待）</span></li>
+                                  <li><a href="https://wafulock.cn/" class="dropdown-link" hreflang="zh-CN">Chinês</a></li>
                     </ul>
         </li>
 
@@ -674,7 +642,7 @@
                     <li><a href="https://wafulockfr.com/" hreflang="fr">Français</a></li>
                     <li><a href="https://wafulockit.com/" hreflang="it">Italiano</a></li>
                     <li><a href="https://wafulockru.com/" hreflang="ru">Русский</a></li>
-                                    <li><span class="footer-lang-soon" aria-disabled="true">中文（敬请期待）</span></li>
+                                    <li><a href="https://wafulock.cn/" hreflang="zh-CN">Chinês</a></li>
                 </ul>
             </section>
 
@@ -721,9 +689,7 @@
       </div>
     </div>
   </footer>
-  <script src="../js/all.js" defer></script>
+  <script src="../js/contact-form.js"></script>
+    <script src="../js/all.js" defer></script>
     <script src="../js/analytics-deferred.js" defer></script>
-  <script src="../js/email.min.js"></script>
-
-
-</body></html>
+  </body></html>
