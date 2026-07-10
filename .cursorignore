@@ -1,0 +1,29 @@
+# 图片媒体资源（完全不索引）
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+**/*.svg
+**/*.webp
+**/*.ico
+**/*.bmp
+**/*.mp4
+**/*.mov
+
+# 文档压缩日志
+**/*.pdf
+**/*.zip
+**/*.log
+**/*.bak
+**/*.tmp
+**/*.css
+**/*.js
+
+# 版本控制、依赖目录（最吃扫描Token，必须屏蔽）
+**/.git/
+**/node_modules/
+
+# 系统垃圾文件
+**/.DS_Store
+**/Thumbs.db
+**/.vscode/
