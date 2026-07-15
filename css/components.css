@@ -1,4 +1,4 @@
-﻿/* ===== YouTube 点击加载（封面 + 点击嵌入，适配移动端 16:9） ===== */
+/* ===== YouTube 点击加载（封面 + 点击嵌入，适配移动端 16:9） ===== */
 .video-facade {
   position: relative;
   width: 100%;
@@ -50,7 +50,7 @@
   border-color: transparent transparent transparent #fff;
 }
 
-/* ===== 分享按钮（全站复用） ===== */
+/* ===== 分享按钮（圆形） ===== */
 .wafu-share-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -143,7 +143,7 @@
   gap: 12px;
   /* 关键：不让它撑开页面 */
   max-width: 48px;
-  /* 只等于一个按钮宽 */
+  /* 允许弹出层溢出 */
   overflow: visible;
   pointer-events: none;
   /* 防止内部元素意外撑开 */
@@ -235,7 +235,7 @@
   visibility: visible;
 }
 
-/* 触屏设备不用 :hover 展示弹出层，避免点击后返回页面弹出层/残影卡住 */
+/* 触屏设备：禁用 :hover 粘滞，改为点击/点按展开或收起 */
 @media (hover: none) {
   .kefu-item.wechat:hover .wechat-popup,
   .kefu-item.phone:hover .phone-popup,
@@ -993,7 +993,7 @@ img.lazy.loaded {
     display: block !important;
   }
 
-  /* 关键：在移动端禁用hover效果 */
+  /* 当悬停父级导航项时显示下拉菜单 */
   .nav-item.dropdown:hover>.dropdown-menu {
     display: none !important;
   }
@@ -1686,7 +1686,7 @@ main .content-inline-link:visited,
   color: #3498db;
 }
 
-/* ===== 面包屑 + SEO 引导条统一对齐 ===== */
+/* ===== 面包屑 + SEO 结构化导航 ===== */
 .breadcrumb-column {
   box-sizing: border-box;
 }
@@ -1694,7 +1694,7 @@ main .content-inline-link:visited,
 .breadcrumb-nav:has(.breadcrumb-column) .breadcrumb-column {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 110px 5% 0;
+  padding: 50px 5% 0;
 }
 
 .breadcrumb-nav:has(.breadcrumb-column) .breadcrumb-inner {
@@ -1704,36 +1704,55 @@ main .content-inline-link:visited,
   width: 100% !important;
 }
 
-.breadcrumb-nav .page-seo-bar {
-  margin: 8px 0 0;
+/* SEO 相关链接条：通用样式（可放在面包屑或 main 底部） */
+.page-seo-bar {
+  margin: 0;
   padding: 0;
   font-family: inherit;
   font-size: 1.2rem;
   line-height: 1.5;
   color: #8a9199;
-  white-space: nowrap;
-  max-width: none;
+  white-space: normal;
+  overflow-wrap: break-word;
+  width: 120%;
+  box-sizing: border-box;
+  /* 删掉文字居中，默认左对齐 */
+  text-align: left;
 }
 
-.breadcrumb-nav .page-seo-bar a {
+.page-seo-bar a {
   color: #3498db;
   text-decoration: none;
   border-bottom: 1px solid rgba(52, 152, 219, 0.35);
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.breadcrumb-nav .page-seo-bar a:link,
-.breadcrumb-nav .page-seo-bar a:visited {
+.page-seo-bar a:link,
+.page-seo-bar a:visited {
   color: #3498db;
   text-decoration: none;
 }
 
-.breadcrumb-nav .page-seo-bar a:hover {
+.page-seo-bar a:hover {
   color: #2980b9;
   border-bottom-color: #2980b9;
 }
 
-/* Inline internal links — brand blue, contrast on body text (#555) */
+/* 仍放在面包屑内的页面（如产品列表） */
+.breadcrumb-nav .page-seo-bar {
+  margin: 8px 0 0;
+}
+
+/* 挪到 main 底部的页面（如资源中心）：与内容区同宽，避免顶栏过宽 */
+main > .page-seo-bar {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 8px 0 48px;
+  box-sizing: border-box;
+}
+
+/* 正文内链样式：品牌蓝，保证在正文灰字上的对比度 */
 .breadcrumb-item:link,
 .breadcrumb-item:visited {
   color: #000;
@@ -1746,7 +1765,7 @@ main .content-inline-link:visited,
   text-decoration: none;
 }
 
-/* products 页 */
+/* 产品列表页面包屑 */
 body:has(main .product-all) .breadcrumb-nav .breadcrumb-column {
   max-width: none;
   width: auto;
@@ -1754,12 +1773,19 @@ body:has(main .product-all) .breadcrumb-nav .breadcrumb-column {
   padding: 110px 0 0;
 }
 
-/* technology 列表页 */
+/* 技术/资讯列表页面包屑 */
 body:has(main .news-list) .breadcrumb-nav .breadcrumb-column {
   max-width: 1400px;
   width: 90%;
   margin: 0 0 0 120px;
   padding: 110px 0 0;
+}
+body:has(.resource-hero) .breadcrumb-nav .breadcrumb-column {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px 5% 0;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1400px) {
@@ -1790,8 +1816,9 @@ body:has(main .news-list) .breadcrumb-nav .breadcrumb-column {
     width: 100%;
   }
 
-  .breadcrumb-nav .page-seo-bar {
-    white-space: normal;
-    font-size: 1rem;
+
+
+  main > .page-seo-bar {
+    width: calc(100% - 40px);
   }
 }
