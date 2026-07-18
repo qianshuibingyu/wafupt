@@ -526,6 +526,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://wafuen.com/news/news-six"/>
   </url>
   <url>
+    <loc>https://wafulockpt.com/news/japanese-clients-visit</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wafuen.com/news/japanese-clients-visit"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wafulockde.com/news/japanese-clients-visit"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://wafulockpt.com/news/japanese-clients-visit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://wafulockes.com/news/japanese-clients-visit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wafulockfr.com/news/japanese-clients-visit"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://wafulockit.com/news/japanese-clients-visit"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://wafulockru.com/news/japanese-clients-visit"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wafulock.cn/news/japanese-clients-visit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wafuen.com/news/japanese-clients-visit"/>
+  </url>
+  <url>
     <loc>https://wafulockpt.com/news/news-ten</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
