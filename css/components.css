@@ -1991,3 +1991,74 @@ body:has(.resource-hero) .breadcrumb-nav .breadcrumb-column {
     flex: 0 0 220px;
   }
 }
+
+/* About 布局兜底：防止 CDN/浏览器缓存旧 index.css 导致桌面左右颠倒 */
+        @media (min-width:959px){
+            .about-container{display:grid!important;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr)!important;grid-template-rows:auto auto!important;gap:0 26px!important;max-width:1480px;width:94%;margin:0 auto}
+            .about-video-col{grid-column:1!important;grid-row:1/span 2!important}
+            .about-title{grid-column:2!important;grid-row:1!important}
+            .about-body{grid-column:2!important;grid-row:2!important}
+        }
+@media (max-width:958px){
+            .about-container{display:flex!important;flex-direction:column!important}
+        }
+
+/* Standard five-column footer: compact, centred mobile arrangement. */
+@media (max-width: 640px) {
+  footer.footer .footer-content {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px;
+    padding: 0 20px;
+  }
+
+  footer.footer .footer-content > .footer-col {
+    min-width: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  footer.footer .footer-content > .footer-col:nth-child(1),
+  footer.footer .footer-content > .footer-col:nth-child(4),
+  footer.footer .footer-content > .footer-col:nth-child(5) {
+    grid-column: 1 / -1 !important;
+  }
+
+  footer.footer .footer-content > .footer-col:nth-child(2),
+  footer.footer .footer-content > .footer-col:nth-child(3) {
+    grid-column: auto !important;
+  }
+
+  footer.footer .footer-list,
+  footer.footer .footer-contact {
+    margin: 0;
+    text-align: center;
+  }
+
+  footer.footer .footer-title,
+  footer.footer .footer-text,
+  footer.footer .footer-socials,
+  footer.footer .footer-list,
+  footer.footer .footer-contact,
+  footer.footer .footer-list li,
+  footer.footer .footer-contact li {
+    text-align: center;
+  }
+
+  footer.footer .footer-socials {
+    justify-content: center;
+  }
+
+  footer.footer .footer-content > .footer-col:nth-child(4) .footer-list {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 32px;
+    row-gap: 2px;
+  }
+
+  footer.footer .footer-contact-item {
+    justify-content: center;
+    text-align: center;
+  }
+}

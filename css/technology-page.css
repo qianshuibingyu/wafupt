@@ -1,0 +1,1803 @@
+/* ===== 全局基础 ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+}
+
+/* ===== 布局框架 ===== */
+.wafu-tech-article {
+    width: 100%;
+    padding: 30px 200px;
+    display: flex;
+    gap: 25px;
+}
+
+.wafu-main-content {
+    flex: 1 1 70%;
+    min-width: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+    border: 1px solid #f0f0f0;
+    padding: 40px;
+}
+
+.wafu-side-bar {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ===== 文章头 ===== */
+.wafu-article-title {
+    font-size: 2rem;
+    margin: 0 0 10px;
+    line-height: 1.3;
+    color: #333;
+}
+
+.wafu-article-meta {
+    font-size: .9rem;
+    color: #666;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.wafu-article-tags {
+    display: flex;
+    gap: 6px;
+}
+
+.wafu-tag {
+    font-style: normal;
+    background: #f0f6ff;
+    color: #007bff;
+    font-size: .8rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ===== 正文 ===== */
+.wafu-article-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.wafu-heading-2 {
+    margin: 30px 0 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+.wafu-list {
+    padding-left: 20px;
+    margin: 0 0 15px;
+}
+
+.wafu-list-item {
+    margin-bottom: 8px;
+}
+
+.wafu-image-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 24px auto;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+}
+
+.wafu-image-box picture {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.wafu-image {
+    display: block;
+    max-width: 72%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.wafu-image-caption {
+    font-size: .9rem;
+    color: #666;
+    margin-top: 12px;
+    text-align: center;
+    width: 100%;
+}
+
+.wafu-image-box .wafu-comparison-table {
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+    margin: 0;
+}
+
+.wafu-article-cta {
+    margin: 40px 0 20px;
+    padding: 28px 24px;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+    border: 1px solid rgba(26, 115, 232, 0.2);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.wafu-article-cta .wafu-heading-3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.wafu-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.wafu-cta-actions .wafu-consult-btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.wafu-cta-btn-secondary {
+    background: #fff;
+    color: #1a73e8;
+    border: 1px solid #1a73e8;
+}
+
+.wafu-cta-btn-secondary:hover {
+    background: #1a73e8;
+    color: #fff;
+}
+
+/* ===== 文章底 ===== */
+.wafu-comparison-table {
+    overflow-x: auto;
+    margin: 20px 0;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wafu-comparison-table table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+    table-layout: fixed;
+}
+
+.wafu-comparison-table th {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    color: #333;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.wafu-comparison-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    color: #555;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.wafu-comparison-table tr:hover {
+    background-color: #fafafa;
+}
+
+.wafu-article-footer {
+    border-top: 1px solid #dfdfdf;
+    margin-top: 25px;
+    padding-top: 25px;
+}
+
+.wafu-share-section {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.wafu-share-title {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.wafu-share-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.wafu-share-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f5f7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background .3s;
+}
+
+
+/* 圆形图标按钮基础样式 */
+.share-round {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform .3s ease;
+}
+
+.share-round:hover {
+    transform: translateY(-2px);
+}
+
+.share-round.twitter {
+    background: #000000;
+}
+
+.share-round.twitter .icon-twitter {
+    width: 20px;
+    height: 20px;
+    background: url(../icons/X-select.svg) no-repeat center / contain;
+}
+
+.share-round.facebook {
+    background: #1877f2;
+}
+
+.share-round.facebook .icon-facebook {
+    width: 20px;
+    height: 20px;
+    background: url(../icons/facebook.svg) no-repeat center / contain;
+}
+
+.wafu-share-btn:hover {
+    background: #e9ecef;
+}
+
+.wafu-related-tags {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.wafu-related-tags-title {
+    flex: 0 0 auto;
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 700;
+    color: #333;
+}
+
+.wafu-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    align-self: flex-start;
+    gap: 10px;
+    flex: 1 1 200px;
+    min-width: 0;
+}
+
+.wafu-tag-item {
+    display: inline-block;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    height: auto;
+    background: #f0f0f0;
+    color: #333;
+    font-size: .9rem;
+    padding: 6px 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all .3s;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.wafu-tag-item:hover {
+    background: #1a6dcc;
+    color: #fff;
+}
+
+.wafu-article-nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+.wafu-nav-prev,
+.wafu-nav-next {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 400;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+a.wafu-nav-prev,
+a.wafu-nav-next {
+    color: inherit;
+}
+
+.wafu-nav-prev {
+    grid-column: 1;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.wafu-nav-next {
+    grid-column: 2;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+span.wafu-nav-prev,
+span.wafu-nav-next {
+    color: #999;
+    cursor: default;
+}
+
+span.wafu-nav-prev .wafu-nav-label,
+span.wafu-nav-prev .wafu-nav-text,
+span.wafu-nav-next .wafu-nav-label,
+span.wafu-nav-next .wafu-nav-text {
+    color: #999;
+    text-decoration: none;
+}
+
+span.wafu-nav-prev .wafu-nav-arrow,
+span.wafu-nav-next .wafu-nav-arrow {
+    color: #666;
+}
+
+a.wafu-nav-prev .wafu-nav-text,
+a.wafu-nav-next .wafu-nav-text {
+    color: var(--wafu-link, #1a73e8);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a.wafu-nav-prev:hover .wafu-nav-text,
+a.wafu-nav-next:hover .wafu-nav-text {
+    color: var(--wafu-link-hover, #1557b0);
+}
+
+a.wafu-nav-prev:hover .wafu-nav-arrow,
+a.wafu-nav-next:hover .wafu-nav-arrow {
+    color: var(--wafu-link-hover, #1557b0);
+}
+
+a.wafu-nav-prev .wafu-nav-label,
+a.wafu-nav-next .wafu-nav-label {
+    color: #666;
+    text-decoration: none;
+}
+
+.wafu-nav-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+}
+
+.wafu-nav-prev .wafu-nav-content {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.wafu-nav-next .wafu-nav-content {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.wafu-nav-prev .wafu-nav-heading,
+.wafu-nav-next .wafu-nav-heading {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+.wafu-nav-prev .wafu-nav-heading {
+    justify-content: flex-start;
+}
+
+.wafu-nav-next .wafu-nav-heading {
+    justify-content: flex-end;
+}
+
+.wafu-nav-text {
+    line-height: 1.45;
+    min-width: 0;
+}
+
+.wafu-nav-arrow {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.45;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.wafu-nav-label {
+    font-size: 0.9rem;
+    color: #666;
+    white-space: nowrap;
+}
+
+/* ===== 侧边栏通用卡片 ===== */
+.wafu-about-card,
+.wafu-related-articles,
+.wafu-hot-products,
+.wafu-consult-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+    border: 1px solid #f0f0f0;
+}
+
+.wafu-side-title {
+    font-size: 1.2rem;
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+/* ===== 品牌区 ===== */
+.wafu-brand-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    display: block;
+    border: 2px solid #f0f0f0;
+}
+
+.wafu-brand-name {
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.wafu-brand-desc {
+    font-size: .9rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.wafu-more-link {
+    padding: 8px 20px;
+    background: #1a6dcc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: .9rem;
+    transition: background .3s;
+    margin: 0 auto;
+    display: block;
+    width: max-content;
+}
+
+.wafu-more-link:hover {
+    background: #1559a8;
+}
+
+/* ===== 相关文章 ===== */
+.wafu-related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wafu-related-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.wafu-related-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.wafu-related-link {
+    display: block;
+    font-size: .9rem;
+    color: #333;
+    text-decoration: none;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    transition: color .3s;
+}
+
+.wafu-related-link:hover {
+    color: #1a6dcc;
+}
+
+.wafu-related-date {
+    font-size: .8rem;
+    color: #999;
+}
+
+/* ===== 热门产品 ===== */
+.wafu-product-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.wafu-product-link {
+    padding: 8px 0;
+    color: #555;
+    font-size: .9rem;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: color .3s;
+}
+
+.wafu-product-link:last-child {
+    border-bottom: none;
+}
+
+.wafu-product-link:hover {
+    color: #1a6dcc;
+}
+
+/* ===== 咨询卡片 ===== */
+.wafu-consult-card {
+    background: linear-gradient(135deg, #4a9df5 0%, #1a6dcc 100%);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(26, 109, 204, .3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #4a9df5;
+}
+
+.wafu-consult-title {
+    font-size: 1.4rem;
+    margin: 0 0 15px;
+    font-weight: 600;
+}
+
+.wafu-consult-desc {
+    font-size: .9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    opacity: .9;
+}
+
+.wafu-consult-btn {
+    display: inline-block;
+    background: #fff;
+    color: #1a6dcc;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: .95rem;
+    margin-bottom: 20px;
+    transition: all .3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+    text-decoration: none;
+}
+
+.wafu-consult-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, .15);
+}
+
+.wafu-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: .85rem;
+    opacity: .9;
+}
+
+.wafu-contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* ===== 面包屑导航 ===== */
+.breadcrumb-nav {
+
+    width: 100%;
+    background-color: #f5f7fa;
+
+    position: relative;
+    z-index: 10;
+    color: #000;
+    /* 默认文本颜色，未选中项为黑色 */
+}
+
+.breadcrumb-inner {
+
+    margin-top: 120px;
+    width: 50%;
+    max-width: 1400px;
+    margin-left: 200px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+    color: #000;
+    /* 未选中项为黑色 */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item:hover,
+.breadcrumb-item:focus {
+    color: #1a73e8;
+    /* 移入时变为蓝色 */
+    outline: none;
+    text-decoration: none;
+}
+
+.breadcrumb-current {
+    text-decoration: none;
+    color: #1a73e8;
+    /* 当前项为蓝色 */
+    font-weight: 500;
+}
+
+.breadcrumb-separator {
+    color: #999;
+    user-select: none;
+    line-height: 1;
+}
+
+/* =========================================================
+   移动端补充样式（全站 kebab-case 命名统一）
+   ========================================================= */
+
+@media (max-width: 1200px) {
+    .wafu-tech-article {
+        padding: 0 100px;
+    }
+
+    .breadcrumb-inner {
+        margin-bottom: 20px;
+        margin-left: 100px;
+        width: 70%;
+    }
+}
+
+@media (max-width: 992px) {
+    .wafu-tech-article {
+        padding: 0 50px;
+    }
+
+    .breadcrumb-inner {
+        margin-left: 50px;
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* ---- 布局 ---- */
+    .wafu-tech-article {
+        flex-direction: column;
+        padding: 0 20px;
+        margin: 20px 0;
+    }
+
+    .wafu-main-content {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .wafu-side-bar {
+        width: 100%;
+    }
+
+    /* ---- 面包屑 ---- */
+    .breadcrumb-inner {
+        margin-top: 0;
+        margin-left: 20px;
+        width: calc(100% - 40px);
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+
+    /* ---- 标题与正文 ---- */
+    .wafu-article-title {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .wafu-article-meta {
+        font-size: 0.85rem;
+        justify-content: center;
+    }
+
+    .wafu-article-body {
+        font-size: 0.95rem;
+    }
+
+    .wafu-heading-2 {
+        font-size: 1.3rem;
+        margin-top: 20px;
+    }
+
+    /* ---- 图片 ---- */
+    .wafu-image-box {
+        margin: 15px 0;
+        padding: 8px;
+    }
+
+    .wafu-image {
+        max-width: 82% !important;
+        max-height: 300px;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    .wafu-checklist-card__media {
+        min-height: 120px;
+        padding: 10px;
+    }
+
+    .wafu-checklist-card__media img {
+        max-height: 100px;
+    }
+
+    .wafu-cert-item img {
+        max-height: 180px;
+        margin: 0 auto;
+        object-fit: contain;
+    }
+
+    .wafu-image-caption {
+        font-size: 0.85rem;
+    }
+
+    .wafu-comparison-table table {
+        font-size: 12px;
+    }
+
+    .wafu-comparison-table th,
+    .wafu-comparison-table td {
+        padding: 8px;
+    }
+
+    /* ---- 分享/标签 ---- */
+    .wafu-share-section {
+        justify-content: center;
+    }
+
+    .wafu-share-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .wafu-related-tags {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .wafu-tag-list {
+        justify-content: flex-start;
+        gap: 8px;
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .wafu-tag-item {
+        padding: 5px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* ---- 文章导航 ---- */
+    .wafu-article-nav {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .wafu-nav-prev,
+    .wafu-nav-next {
+        grid-column: 1;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    .wafu-nav-next .wafu-nav-content {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    /* ---- 侧边栏卡片 ---- */
+    .wafu-about-card,
+    .wafu-related-articles,
+    .wafu-hot-products {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .wafu-brand-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .wafu-side-title {
+        font-size: 1.1rem;
+    }
+
+    /* ---- 咨询卡片 ---- */
+    .wafu-consult-card {
+        padding: 20px 15px;
+    }
+
+    .wafu-consult-title {
+        font-size: 1.2rem;
+    }
+
+    .wafu-consult-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .wafu-contact-info {
+        font-size: 0.8rem;
+    }
+
+    /* ---- 圆形分享按钮 ---- */
+    .share-round {
+        width: 36px;
+        height: 36px;
+    }
+
+    .share-round .icon-weibo,
+    .share-round .icon-facebook {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* 超小屏 */
+@media (max-width: 480px) {
+    .wafu-image {
+        max-width: 78% !important;
+        max-height: 260px;
+        object-fit: contain;
+    }
+
+    .wafu-checklist-card__media img {
+        max-height: 88px;
+    }
+
+    .wafu-cert-item img {
+        max-height: 160px;
+    }
+
+    .wafu-tech-article {
+        padding: 0 15px;
+        margin: 15px 0;
+    }
+
+    .wafu-main-content {
+        padding: 15px;
+    }
+
+    .breadcrumb-inner {
+        margin-top: 0;
+
+        margin-left: 15px;
+        width: calc(100% - 30px);
+        font-size: 0.8rem;
+
+    }
+
+    .wafu-article-title {
+        font-size: 1.4rem;
+    }
+
+    .wafu-article-meta {
+        font-size: 0.8rem;
+    }
+
+    .wafu-article-body {
+        font-size: 0.9rem;
+    }
+
+    .wafu-heading-2 {
+        font-size: 1.2rem;
+    }
+
+    .wafu-image-box {
+        margin: 10px 0;
+        padding: 8px;
+    }
+
+    .wafu-share-buttons {
+        gap: 8px;
+    }
+
+    .wafu-tag-item {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+    }
+
+    .wafu-about-card,
+    .wafu-related-articles,
+    .wafu-hot-products {
+        padding: 12px;
+    }
+
+    .wafu-brand-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .wafu-side-title {
+        font-size: 1.1rem;
+    }
+
+    .wafu-consult-card {
+        padding: 15px 12px;
+    }
+
+    .wafu-consult-btn {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
+}
+
+/* 横屏手机 */
+@media (max-width: 768px) and (orientation: landscape) {
+    .wafu-tech-article {
+        flex-direction: row;
+    }
+
+    .wafu-main-content {
+        width: 65%;
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .wafu-side-bar {
+        width: 35%;
+    }
+
+    .breadcrumb-inner {
+        margin-top: 0;
+    }
+}
+
+/* 平板 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .wafu-tech-article {
+        padding: 0 50px;
+    }
+
+    .breadcrumb-inner {
+        margin-left: 50px;
+        width: 80%;
+    }
+
+    .wafu-main-content {
+        width: 65%;
+    }
+
+    .wafu-side-bar {
+        width: 35%;
+    }
+}
+
+/* 通用图片防溢出 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wafu-image-box .wafu-image {
+    max-width: 72%;
+    object-fit: contain;
+}
+
+/* ===== 正文链接（技术文章 — 全站统一色，含 :visited 防紫色） ===== */
+.wafu-main-content .wafu-article-body a,
+.wafu-main-content .wafu-article-body a:link,
+.wafu-main-content .wafu-article-body a:visited,
+.wafu-article-body a,
+.wafu-article-body a:link,
+.wafu-article-body a:visited {
+    color: var(--wafu-link, #1a73e8);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+}
+
+.wafu-main-content .wafu-article-body a:hover,
+.wafu-article-body a:hover {
+    color: var(--wafu-link-hover, #1557b0);
+}
+
+/* ===== 七步检查清单卡片 ===== */
+.wafu-checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0 12px;
+    align-items: stretch;
+}
+
+.wafu-checklist-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #f8f9fb;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.wafu-checklist-card__media {
+    background: #fff;
+    padding: 14px 12px;
+    min-height: 168px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e8edf3;
+}
+
+.wafu-checklist-card__media picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.wafu-checklist-card__media img {
+    display: block;
+    max-width: 100%;
+    max-height: 140px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.wafu-checklist-card__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 14px 16px 16px;
+    background: #f8f9fb;
+}
+
+.wafu-checklist-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a2a6c;
+    margin: 0 0 6px;
+    line-height: 1.4;
+}
+
+.wafu-checklist-card__num {
+    display: inline-block;
+    min-width: 1.6em;
+    margin-right: 4px;
+    color: #1a73e8;
+    font-weight: 700;
+}
+
+.wafu-checklist-card__desc {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+    .wafu-checklist-grid:not(.wafu-checklist-grid--five) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .wafu-checklist-grid {
+        gap: 12px;
+        margin: 20px 0 10px;
+    }
+
+    .wafu-checklist-card__media {
+        min-height: 100px;
+        padding: 8px 6px;
+    }
+
+    .wafu-checklist-card__body {
+        padding: 10px 10px 12px;
+    }
+
+    .wafu-checklist-card__title {
+        font-size: 0.9rem;
+    }
+
+    .wafu-checklist-card__desc {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .wafu-checklist-grid {
+        gap: 10px;
+    }
+
+    .wafu-checklist-card__title {
+        font-size: 0.85rem;
+    }
+
+    .wafu-checklist-card__desc {
+        font-size: 0.75rem;
+    }
+}
+
+/* 5 张指标卡：紧凑布局 */
+.wafu-article-body > p:has(+ .wafu-checklist-grid--five) {
+    margin-bottom: 8px;
+}
+
+.wafu-checklist-grid--five {
+    margin: 10px 0 6px;
+    gap: 10px;
+    max-width: none;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.wafu-checklist-grid--five + .wafu-heading-2 {
+    margin-top: 16px;
+}
+
+.wafu-checklist-grid--five .wafu-checklist-card {
+    height: auto;
+    min-height: 0;
+}
+
+.wafu-checklist-grid--five .wafu-checklist-card__body {
+    padding: 10px 12px;
+}
+
+.wafu-checklist-grid--five .wafu-checklist-card__title {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.wafu-checklist-grid--five .wafu-checklist-card__desc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+@media (min-width: 769px) {
+    .wafu-checklist-grid--five .wafu-checklist-card:nth-child(1),
+    .wafu-checklist-grid--five .wafu-checklist-card:nth-child(2),
+    .wafu-checklist-grid--five .wafu-checklist-card:nth-child(3),
+    .wafu-checklist-grid--five .wafu-checklist-card:nth-child(4),
+    .wafu-checklist-grid--five .wafu-checklist-card:nth-child(5) {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .wafu-checklist-grid--five {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .wafu-checklist-grid--five {
+        max-width: none;
+        grid-template-columns: 1fr;
+        margin: 8px 0 4px;
+        gap: 8px;
+    }
+}
+
+/* ===== 认证与专利展示 ===== */
+.wafu-cert-summary {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a2a6c;
+    margin: 0 0 20px;
+    letter-spacing: 0.02em;
+}
+
+.wafu-cert-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 0 28px;
+}
+
+.wafu-cert-item {
+    margin: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.wafu-cert-item picture {
+    display: block;
+    background: #f8f9fb;
+    padding: 10px;
+}
+
+.wafu-cert-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.wafu-cert-label {
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1a73e8;
+    text-align: center;
+    background: #f8f9fb;
+    border-top: 1px solid #e0e0e0;
+    height:100%;
+}
+
+@media (max-width: 900px) {
+    .wafu-cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .wafu-cert-grid {
+        gap: 12px;
+    }
+
+    .wafu-cert-item picture {
+        padding: 8px;
+    }
+
+    .wafu-cert-label {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+        line-height: 1.35;
+    }
+}
+
+@media (max-width: 480px) {
+    .wafu-cert-grid {
+        gap: 10px;
+    }
+
+    .wafu-cert-label {
+        font-size: 0.75rem;
+    }
+}
+
+/* ===== Technisches Diagramm-Platzhalter (durch finale Assets ersetzen) ===== */
+.wafu-image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    width: 72%;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px dashed #e0e0e0;
+    border-radius: 8px;
+    padding: 24px 16px;
+    text-align: center;
+}
+
+.wafu-image-placeholder__label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1a73e8;
+    margin-bottom: 8px;
+}
+
+.wafu-image-placeholder__desc {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ===== Topic Cluster (B2B-Kompatibilität) ===== */
+.wafu-topic-cluster {
+    background: linear-gradient(135deg, #f4f8ff 0%, #eef4fc 100%);
+    border: 1px solid #c8daf5;
+    border-left: 4px solid #1a6dcc;
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 28px 0 32px;
+}
+
+.wafu-topic-cluster--sidebar {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-left: 4px solid #1a6dcc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 0 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+}
+
+.wafu-topic-cluster-eyebrow {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #1a6dcc;
+    margin: 0 0 8px;
+}
+
+.wafu-topic-cluster-heading {
+    margin: 0 0 10px;
+    color: #1a2a6c;
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+.wafu-topic-cluster-lead {
+    font-size: .92rem;
+    color: #555;
+    line-height: 1.55;
+    margin: 0 0 16px;
+}
+
+.wafu-topic-cluster-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wafu-topic-cluster-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 10px 12px;
+    background: #fff;
+    border: 1px solid #e4ecf7;
+    border-radius: 8px;
+}
+
+.wafu-topic-cluster-item.is-current {
+    background: #1a6dcc;
+    border-color: #1a6dcc;
+}
+
+.wafu-topic-cluster-item.is-current .wafu-topic-cluster-role,
+.wafu-topic-cluster-item.is-current .wafu-topic-cluster-title {
+    color: #fff;
+}
+
+.wafu-topic-cluster-role {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #1a6dcc;
+    line-height: 1.35;
+}
+
+.wafu-topic-cluster-link,
+.wafu-topic-cluster-title {
+    font-size: .92rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: #222;
+    text-decoration: none;
+}
+
+.wafu-topic-cluster-link:hover,
+.wafu-topic-cluster-link:focus {
+    color: #1a6dcc;
+    text-decoration: underline;
+}
+
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 10px;
+}
+
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-link,
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-title {
+    font-size: .88rem;
+}
+
+@media (max-width: 640px) {
+    .wafu-topic-cluster-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+}
+
+/* ===== Article table of contents ===== */
+.wafu-toc {
+    margin: 30px 0 36px;
+    padding: 22px;
+    border: 1px solid #d9e6f5;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f8fbff 0%, #eef5ff 100%);
+    box-shadow: 0 10px 26px rgba(26, 86, 160, .08);
+}
+
+.wafu-toc .wafu-heading-2 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 16px;
+    padding: 0;
+    border: 0;
+    color: #1d3d67;
+    font-size: 1.12rem;
+}
+
+.wafu-toc .wafu-heading-2::before {
+    width: 4px;
+    height: 1.2em;
+    border-radius: 99px;
+    background: #1a6dcc;
+    content: '';
+}
+
+.wafu-toc .wafu-ordered-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: toc-item;
+}
+
+.wafu-toc .wafu-list-item {
+    display: flex;
+    align-items: stretch;
+    min-width: 0;
+    margin: 0;
+    counter-increment: toc-item;
+}
+
+.wafu-toc .wafu-list-item::before {
+    display: grid;
+    flex: 0 0 31px;
+    width: 31px;
+    height: 31px;
+    place-items: center;
+    margin: 9px 8px 0 0;
+    border-radius: 50%;
+    background: #e4f0ff;
+    color: #1c65b4;
+    font-size: .78rem;
+    font-weight: 800;
+    content: counter(toc-item, decimal-leading-zero);
+    transition: background .2s ease, color .2s ease;
+    z-index: 1;
+}
+
+.wafu-toc .wafu-list-item a {
+    display: flex;
+    width: 100%;
+    min-height: 49px;
+    align-items: center;
+    padding: 9px 12px;
+    border: 1px solid #dce7f3;
+    border-radius: 9px;
+    background: #fff;
+    color: #28486f;
+    font-size: .93rem;
+    font-weight: 650;
+    line-height: 1.42;
+    text-decoration: none;
+    transition: border-color .2s ease, box-shadow .2s ease, color .2s ease, transform .2s ease;
+}
+
+.wafu-toc .wafu-list-item:hover a,
+.wafu-toc .wafu-list-item a:focus-visible {
+    border-color: #6d9ed3;
+    box-shadow: 0 5px 14px rgba(25, 91, 166, .13);
+    color: #14559e;
+    outline: 0;
+    transform: translateY(-1px);
+}
+
+.wafu-toc .wafu-list-item:hover::before,
+.wafu-toc .wafu-list-item:focus-within::before {
+    background: #1a6dcc;
+    color: #fff;
+}
+
+@media (max-width: 640px) {
+    .wafu-toc {
+        margin: 24px 0 30px;
+        padding: 16px;
+    }
+
+    .wafu-toc .wafu-ordered-list {
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+
+    .wafu-toc .wafu-list-item a {
+        min-height: 46px;
+        font-size: .91rem;
+    }
+}
+
+/* Smart-Lock OEM After-Sales-Support article */
+.wafu-after-sales-toc {
+    margin: 28px 0 34px;
+    padding: 22px;
+    border: 1px solid #dbe5f2;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f8fbff 0%, #eef5ff 100%);
+}
+
+.wafu-after-sales-toc-label {
+    margin: 0 0 14px;
+    color: #1557b0;
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.wafu-after-sales-toc ol {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wafu-after-sales-toc li {
+    margin: 0;
+}
+
+.wafu-after-sales-toc a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 10px 12px;
+    border: 1px solid #e0e8f2;
+    border-radius: 9px;
+    background: #fff;
+    color: #263d5b;
+    font-size: .94rem;
+    line-height: 1.45;
+    text-decoration: none;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.wafu-after-sales-toc a:hover {
+    border-color: #4d86c9;
+    box-shadow: 0 5px 14px rgba(35, 92, 160, .12);
+    transform: translateY(-1px);
+}
+
+.wafu-after-sales-toc-index {
+    flex: 0 0 auto;
+    color: #276db5;
+    font-size: .82rem;
+    font-weight: 800;
+}
+
+.wafu-question-groups {
+    display: grid;
+    gap: 12px;
+    margin: 20px 0 28px;
+}
+
+.wafu-question-group {
+    overflow: hidden;
+    border: 1px solid #dce5ef;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.wafu-question-group summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 17px;
+    color: #203b60;
+    font-weight: 700;
+    line-height: 1.45;
+    cursor: pointer;
+    list-style: none;
+}
+
+.wafu-question-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.wafu-question-group summary::after {
+    content: '+';
+    margin-left: 0;
+    color: #276db5;
+    font-size: 1.45rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.wafu-question-group[open] summary {
+    border-bottom: 1px solid #e6edf5;
+    background: #f7faff;
+}
+
+.wafu-question-group[open] summary::after {
+    content: '−';
+}
+
+.wafu-question-group-count {
+    margin-left: auto;
+    color: #6c7d92;
+    font-size: .82rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.wafu-question-group ol {
+    margin: 0;
+    padding: 14px 22px 16px 42px;
+    color: #40546e;
+    line-height: 1.8;
+}
+
+.wafu-question-group li {
+    margin: 0 0 8px;
+    padding-left: 2px;
+}
+
+.wafu-question-group li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .wafu-after-sales-toc {
+        margin: 20px 0 28px;
+        padding: 16px;
+    }
+
+    .wafu-after-sales-toc ol {
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+
+    .wafu-after-sales-toc a {
+        min-height: 44px;
+        padding: 9px 10px;
+        font-size: .9rem;
+    }
+
+    .wafu-question-group summary {
+        padding: 14px;
+        font-size: .96rem;
+    }
+
+    .wafu-question-group ol {
+        padding: 12px 16px 14px 34px;
+        font-size: .94rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        padding: 0 24px !important;
+    }
+
+    .footer-col,
+    .footer-col:first-child,
+    .footer-col:nth-child(5) {
+        grid-column: auto !important;
+        padding: 0 !important;
+        text-align: left !important;
+    }
+
+    .footer-col:first-child {
+        text-align: center !important;
+    }
+
+    .footer-socials {
+        justify-content: center !important;
+    }
+
+    .footer-col .footer-title {
+        font-size: 18px !important;
+    }
+
+    .footer-list a {
+        min-height: 0 !important;
+        padding: 5px 0 !important;
+        justify-content: flex-start !important;
+    }
+
+    .footer-contact-item {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+}
+@media (max-width: 640px) {
+  .wafu-after-sales-page .wafu-side-bar {
+    display: none;
+  }
+}
