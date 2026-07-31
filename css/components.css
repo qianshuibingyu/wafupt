@@ -2062,3 +2062,21 @@ body:has(.resource-hero) .breadcrumb-nav .breadcrumb-column {
     text-align: center;
   }
 }
+
+/* Unified floating-contact design: muted channel colors with shared chrome. */
+.float-kefu .kefu-item {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 6px 16px rgba(25, 42, 62, 0.18);
+}
+.float-kefu .kefu-item.whatsapp,
+.float-kefu .kefu-item.wechat { background-color: #2F8A62; }
+.float-kefu .kefu-item.email { background-color: #3D6E9F; }
+.float-kefu .kefu-item.phone { background-color: #5B6472; }
+.float-kefu .kefu-item:hover,
+.float-kefu .kefu-item.whatsapp:hover,
+.float-kefu .kefu-item.wechat:hover,
+.float-kefu .kefu-item.email:hover,
+.float-kefu .kefu-item.phone:hover {
+  filter: brightness(0.9);
+  box-shadow: 0 8px 20px rgba(25, 42, 62, 0.26);
+}
