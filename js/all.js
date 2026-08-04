@@ -177,10 +177,33 @@
             }
         }
 
+        if (!img.dataset.layoutReady && !img.hasAttribute('width') && !img.hasAttribute('height')) {
+            const rect = img.getBoundingClientRect();
+            if (rect.width > 0 && rect.height < 1) {
+                img.dataset.layoutReady = 'pending';
+                const preload = new Image();
+                preload.onload = () => {
+                    if (preload.naturalWidth && preload.naturalHeight) {
+                        img.style.aspectRatio = `${preload.naturalWidth} / ${preload.naturalHeight}`;
+                    }
+                    img.dataset.layoutReady = 'true';
+                    activateLazyImage(img);
+                };
+                preload.onerror = () => {
+                    img.dataset.layoutReady = 'true';
+                    activateLazyImage(img);
+                };
+                preload.src = src;
+                return;
+            }
+        }
+
         img.src = src;
         img.removeAttribute('data-src');
         img.removeAttribute('data-mobile-src');
-        img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        }, { once: true });
     }
 
     function initDeferredSectionMedia() {

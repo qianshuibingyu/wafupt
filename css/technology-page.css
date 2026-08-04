@@ -1801,3 +1801,10 @@ img {
     display: none;
   }
 }
+/* ===== Article table consistency ===== */
+.wafu-article-body > table,
+.wafu-article-body .wafu-comparison-table table { width: 100%; border: 1px solid #cfd6df; border-collapse: collapse; table-layout: auto; }
+.wafu-article-body > table th, .wafu-article-body > table td,
+.wafu-article-body .wafu-comparison-table th, .wafu-article-body .wafu-comparison-table td { border: 1px solid #cfd6df; padding: 12px; vertical-align: top; overflow-wrap: anywhere; word-break: normal; }
+.wafu-article-body > table th, .wafu-article-body .wafu-comparison-table th { background: #f5f7fa; color: #333; font-weight: 600; }
+@media (min-width: 769px) { .wafu-article-body .wafu-comparison-table table { min-width: 680px; } }
