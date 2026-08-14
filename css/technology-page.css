@@ -1758,43 +1758,6 @@ img {
         font-size: .94rem;
     }
 
-    .footer-content {
-        grid-template-columns: 1fr !important;
-        gap: 28px !important;
-        padding: 0 24px !important;
-    }
-
-    .footer-col,
-    .footer-col:first-child,
-    .footer-col:nth-child(5) {
-        grid-column: auto !important;
-        padding: 0 !important;
-        text-align: left !important;
-    }
-
-    .footer-col:first-child {
-        text-align: center !important;
-    }
-
-    .footer-socials {
-        justify-content: center !important;
-    }
-
-    .footer-col .footer-title {
-        font-size: 18px !important;
-    }
-
-    .footer-list a {
-        min-height: 0 !important;
-        padding: 5px 0 !important;
-        justify-content: flex-start !important;
-    }
-
-    .footer-contact-item {
-        flex-direction: row !important;
-        align-items: flex-start !important;
-        text-align: left !important;
-    }
 }
 @media (max-width: 640px) {
   .wafu-after-sales-page .wafu-side-bar {
