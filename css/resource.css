@@ -271,3 +271,13 @@
         gap: 6px;
     }
 }
+
+/* Resource/article pills */
+.resource-article-links { width: min(1200px, 92%); margin: 28px auto 0; padding: 24px 0 56px; border-top: 1px solid #e5e7eb; }
+.resource-article-links-title { margin: 0 0 12px; color: #263238; font-size: 1.05rem; }
+.article-pills, .technology-pills { display: flex; flex-wrap: wrap; gap: 9px; }
+.article-pills a, .technology-pills a { display: inline-flex; align-items: center; min-height: 36px; max-width: 100%; padding: 7px 15px; border: 1px solid rgba(26,115,232,.25); border-radius: 999px; background: #f2f7ff; color: #1769c2; line-height: 1.3; text-decoration: none; overflow-wrap: anywhere; box-sizing: border-box; }
+.article-pills a:hover, .article-pills a:focus-visible, .technology-pills a:hover, .technology-pills a:focus-visible { color: #fff; background: #1a73e8; border-color: #1a73e8; }
+.page-seo-article { display: inline-flex; align-items: center; min-height: 36px; max-width: 100%; padding: 7px 15px; border: 1px solid rgba(26,115,232,.25); border-radius: 999px; background: #f2f7ff; color: #1769c2; line-height: 1.3; text-decoration: none; overflow-wrap: anywhere; box-sizing: border-box; }
+.page-seo-article:hover, .page-seo-article:focus-visible { color: #fff; background: #1a73e8; border-color: #1a73e8; }
+.breadcrumb-nav .page-seo-bar { white-space: normal; overflow-wrap: anywhere; width: 100%; max-width: 100%; box-sizing: border-box; }

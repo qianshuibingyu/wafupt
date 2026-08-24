@@ -924,7 +924,13 @@ img.lazy.loaded {
 }
 
 /* 平板端样式 */
-@media (max-width: 1024px) {
+/* Keep the full navigation usable in medium-width review windows as well as on phones. */
+@media (max-width: 1200px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   body.nav-open {
     overflow: hidden;
   }

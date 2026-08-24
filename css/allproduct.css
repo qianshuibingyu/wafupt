@@ -848,3 +848,13 @@ main:has(.product-all) {
         padding-top: 70%;
     }
 }
+
+.product-guides { padding-bottom: 100px; }
+.product-guides-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.product-guide-item { display: inline-flex; align-items: center; min-height: 38px; max-width: 100%; padding: 8px 15px; border: 1px solid rgba(26,115,232,.24); border-radius: 999px; background: #f2f7ff; color: #1769c2; font-size: .94rem; line-height: 1.3; text-decoration: none; overflow-wrap: anywhere; box-sizing: border-box; }
+.product-guide-item:hover, .product-guide-item:focus-visible { color: #fff; background: #1a73e8; border-color: #1a73e8; }
+.product-guide-title, .product-guide-desc, .product-guide-item .card-link { display: none; }
+.product-guide-item:nth-child(n+7) { display: none; }
+.product-guide-item .product-guide-title { display: inline; }
+
+html, body { overflow-x: hidden; }

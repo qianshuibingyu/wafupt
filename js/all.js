@@ -8,6 +8,40 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+        const navList = document.getElementById('navList');
+        if (navList) {
+            const prefix = window.location.pathname.split('/').length > 2 ? '../' : './';
+            const topItems = Array.from(navList.children);
+            const hasTopLink = (selector) => topItems.some((item) => item.querySelector(selector));
+            const contactItem = topItems.find((item) => item.querySelector(':scope > .nav-link[href$="/contact"], :scope > .nav-link[href="./contact"], :scope > .nav-link[href="../contact"]'));
+            if (!hasTopLink(':scope > .nav-link[href$="/news"], :scope > .nav-link[href="./news"], :scope > .nav-link[href="../news"]')) {
+                const newsItem = document.createElement('li');
+                newsItem.className = 'nav-item';
+                newsItem.innerHTML = `<a href="${prefix}news" class="nav-link">Centro de Notícias</a>`;
+                navList.insertBefore(newsItem, contactItem || null);
+            }
+            if (!topItems.some((item) => /^(Idioma|Language)$/.test(item.querySelector(':scope > .nav-link')?.textContent.trim()))) {
+                const languageItem = document.createElement('li');
+                languageItem.className = 'nav-item dropdown';
+                const path = window.location.pathname.replace(/^\//, '').replace(/\.html$/, '');
+                languageItem.innerHTML = `<span class="nav-link">Idioma</span><ul class="dropdown-menu"><li><a href="https://wafuen.com/${path}" class="dropdown-link">English</a></li><li><a href="https://wafulockes.com/${path}" class="dropdown-link">Español</a></li><li><a href="https://wafulockpt.com/${path}" class="dropdown-link">Português</a></li><li><a href="https://wafulockde.com/${path}" class="dropdown-link">Deutsch</a></li><li><a href="https://wafulockfr.com/${path}" class="dropdown-link">Français</a></li><li><a href="https://wafulockit.com/${path}" class="dropdown-link">Italiano</a></li><li><a href="https://wafulockru.com/${path}" class="dropdown-link">Русский</a></li><li><a href="https://wafulock.cn/${path}" class="dropdown-link" hreflang="zh-CN">简体中文</a></li></ul>`;
+                navList.insertBefore(languageItem, contactItem || null);
+            }
+            if (!hasTopLink(':scope > .nav-link[href$="/contact"], :scope > .nav-link[href="./contact"], :scope > .nav-link[href="../contact"]')) {
+                const contact = document.createElement('li');
+                contact.className = 'nav-item';
+                contact.innerHTML = `<a href="${prefix}contact" class="nav-link">Contacte-nos</a>`;
+                navList.appendChild(contact);
+            }
+        }
+        const articlePrev = document.querySelector('.wafu-nav-prev.wafu-nav-disabled');
+        if (articlePrev && /\/resource\/smart-lock-oem-sample-approval-change-control(?:\.html)?$/.test(window.location.pathname)) {
+            const link = document.createElement('a');
+            link.className = 'wafu-nav-prev';
+            link.href = './wf-010-wf-019-wf-026-invisible-smart-lock-distributor-portfolio';
+            link.innerHTML = '<span class="wafu-nav-arrow">❮</span><span class="wafu-nav-content"><span class="wafu-nav-label">Anterior</span><span class="wafu-nav-text">Linha de produtos WF-010, WF-019 e WF-026</span></span>';
+            articlePrev.replaceWith(link);
+        }
         const isDesktop = window.matchMedia('(min-width: 959px)').matches;
         const isProductPage = !!document.querySelector('main.prod-detail');
 
