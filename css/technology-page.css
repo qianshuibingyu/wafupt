@@ -265,23 +265,23 @@ body {
 }
 
 .share-round.twitter {
-    background: #000000;
+    background: #000000 url(../icons/X-select.svg) no-repeat center / 20px 20px;
 }
 
 .share-round.twitter .icon-twitter {
     width: 20px;
     height: 20px;
-    background: url(../icons/X-select.svg) no-repeat center / contain;
+    background: none;
 }
 
 .share-round.facebook {
-    background: #1877f2;
+    background: #1877f2 url(../icons/facebook.svg) no-repeat center / 20px 20px;
 }
 
 .share-round.facebook .icon-facebook {
     width: 20px;
     height: 20px;
-    background: url(../icons/facebook.svg) no-repeat center / contain;
+    background: none;
 }
 
 .wafu-share-btn:hover {

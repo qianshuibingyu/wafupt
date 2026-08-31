@@ -75,23 +75,23 @@
 }
 
 .share-round.twitter {
-  background: #000;
+  background: #000 url(../icons/X-select.svg) no-repeat center / 20px 20px;
 }
 
 .share-round.twitter .icon-twitter {
   width: 20px;
   height: 20px;
-  background: url(../icons/X-select.svg) no-repeat center / contain;
+  background: none;
 }
 
 .share-round.facebook {
-  background: #1877f2;
+  background: #1877f2 url(../icons/facebook.svg) no-repeat center / 20px 20px;
 }
 
 .share-round.facebook .icon-facebook {
   width: 20px;
   height: 20px;
-  background: url(../icons/facebook.svg) no-repeat center / contain;
+  background: none;
 }
 
 .share-round.whatsapp {
@@ -512,10 +512,16 @@
 }
 
 .nav-logo img {
+  width: 90px;
   height: 90px;
-  width: auto;
+  max-width: none;
+  object-fit: contain;
   display: block;
   transition: height 0.3s;
+}
+
+.nav-logo {
+  flex: 0 0 90px;
 }
 
 /* 汉堡菜单按钮 - 移动端显示 */
