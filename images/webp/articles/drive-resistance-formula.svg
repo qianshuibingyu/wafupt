@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="180" viewBox="0 0 1800 180" role="img" aria-labelledby="formula-title formula-desc">
+  <title id="formula-title">Total drive resistance formula</title>
+  <desc id="formula-desc">Total drive resistance approximately equals latch friction plus seal force plus door offset plus internal resistance plus installation error.</desc>
+  <rect width="1800" height="180" fill="#ffffff"/>
+  <text x="900" y="118" text-anchor="middle" fill="#1f2937" font-family="Arial, Helvetica, sans-serif" font-size="61" font-weight="600">
+    <tspan>R</tspan><tspan baseline-shift="sub" font-size="38">total</tspan>
+    <tspan> ≈ F</tspan><tspan baseline-shift="sub" font-size="38">latch_friction</tspan>
+    <tspan> + F</tspan><tspan baseline-shift="sub" font-size="38">seal</tspan>
+    <tspan> + F</tspan><tspan baseline-shift="sub" font-size="38">door_offset</tspan>
+    <tspan> + R</tspan><tspan baseline-shift="sub" font-size="38">internal</tspan>
+    <tspan> + R</tspan><tspan baseline-shift="sub" font-size="38">installation</tspan>
+  </text>
+</svg>

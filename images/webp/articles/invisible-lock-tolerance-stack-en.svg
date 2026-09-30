@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f7f9f8"/>
+  <rect x="70" y="70" width="1060" height="535" rx="10" fill="#fff" stroke="#24343b" stroke-width="3"/>
+  <text x="95" y="112" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="26" font-weight="700" fill="#24343b">EFFECTIVE CLEARANCE: TURN SMALL ERRORS INTO A FIELD DECISION</text>
+  <text x="95" y="143" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="17" fill="#60747a">As clearance shrinks, smooth latch entry becomes edge friction</text>
+  <g transform="translate(130 190)">
+    <rect x="0" y="0" width="410" height="100" fill="#d9e4e2" stroke="#24343b" stroke-width="4"/>
+    <rect x="410" y="0" width="80" height="100" fill="#f0cfa7" stroke="#24343b" stroke-width="4"/>
+    <rect x="490" y="22" width="260" height="56" fill="#9aa9ad" stroke="#24343b" stroke-width="4"/>
+    <path d="M 750 48 L 850 48" stroke="#e08d32" stroke-width="10" marker-end="url(#a)"/>
+    <text x="120" y="58" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="21" fill="#24343b">DOOR LEAF</text>
+    <text x="420" y="132" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="18" fill="#24343b">FRAME</text>
+    <text x="560" y="58" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="19" fill="#24343b">STRIKE ENTRY</text>
+    <text x="815" y="35" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="18" fill="#b66516">REMAINING CLEARANCE</text>
+    <path d="M 110 150 L 250 150" stroke="#c55245" stroke-width="6" marker-end="url(#b)"/>
+    <text x="0" y="190" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="18" fill="#a33e35">DOOR SAG</text>
+    <path d="M 300 150 L 400 150" stroke="#c55245" stroke-width="6" marker-end="url(#b)"/>
+    <text x="290" y="190" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="18" fill="#a33e35">MOUNTING ERROR</text>
+    <path d="M 520 150 L 620 150" stroke="#3c716b" stroke-width="6" marker-end="url(#a)"/>
+    <text x="520" y="190" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="18" fill="#3c716b">SEAL COMPRESSION</text>
+  </g>
+  <rect x="180" y="475" width="840" height="70" rx="6" fill="#eef3f1" stroke="#24343b" stroke-width="2"/>
+  <text x="220" y="520" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="25" fill="#24343b">C_effective = C_frame − sag − error − seal</text>
+  <text x="220" y="550" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="16" fill="#60747a">Gate: stable clearance and no continuous rubbing before cycle testing</text>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#e08d32"/></marker><marker id="b" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c55245"/></marker></defs>
+</svg>

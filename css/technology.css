@@ -137,6 +137,46 @@
     color: #3498db;
 }
 
+/* Keep the newest direct links visually consistent with the older list items. */
+.news-list > .news-link {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.news-list > .news-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.news-list .news-txt > h2,
+.news-list .news-txt > h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 8px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.news-list .news-txt > time,
+.news-list .news-txt > .news-date {
+    display: block;
+    font-size: .9rem;
+    color: #888;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.news-list .news-txt > p:not(.news-desc) {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+}
+
 /* =========================================================
    移动端补充样式（面包屑 + hero + 新闻列表）
    ========================================================= */

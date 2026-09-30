@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="180" viewBox="0 0 1800 180" role="img" aria-labelledby="formula-title formula-desc">
+  <title id="formula-title">Effective clearance formula</title>
+  <desc id="formula-desc">C effective equals C frame minus C door sag minus C installation error minus C seal compression.</desc>
+  <rect width="1800" height="180" fill="#ffffff"/>
+  <text x="900" y="118" text-anchor="middle" fill="#1f2937" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="600">
+    <tspan>C</tspan><tspan baseline-shift="sub" font-size="42">effective</tspan>
+    <tspan> = C</tspan><tspan baseline-shift="sub" font-size="42">frame</tspan>
+    <tspan> - C</tspan><tspan baseline-shift="sub" font-size="42">door_sag</tspan>
+    <tspan> - C</tspan><tspan baseline-shift="sub" font-size="42">installation_error</tspan>
+    <tspan> - C</tspan><tspan baseline-shift="sub" font-size="42">seal_compression</tspan>
+  </text>
+</svg>

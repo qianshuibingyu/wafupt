@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="180" viewBox="0 0 1200 180" role="img" aria-labelledby="formula-title formula-desc">
+  <title id="formula-title">Torque relation formula</title>
+  <desc id="formula-desc">Required torque approximately equals resistance multiplied by lever arm divided by efficiency.</desc>
+  <rect width="1200" height="180" fill="#ffffff"/>
+  <text x="600" y="118" text-anchor="middle" fill="#1f2937" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="600">
+    T<tspan baseline-shift="sub" font-size="44">required</tspan>
+    <tspan> ≈ F</tspan><tspan baseline-shift="sub" font-size="44">resistance</tspan>
+    <tspan> × r / η</tspan>
+  </text>
+</svg>

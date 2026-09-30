@@ -631,6 +631,7 @@
             const total = originals.length;
             const firstClone = originals[0].cloneNode(true);
             firstClone.classList.add('s-carousel-clone');
+            firstClone.classList.remove('active');
             firstClone.setAttribute('aria-hidden', 'true');
             inner.appendChild(firstClone);
 

@@ -111,8 +111,8 @@ body {
 
 .wafu-image {
     display: block;
-    max-width: 72%;
-    width: auto;
+    max-width: 100%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     border-radius: 8px;
@@ -518,8 +518,9 @@ a.wafu-nav-next .wafu-nav-label {
 
 .wafu-more-link {
     padding: 8px 20px;
-    background: #1a6dcc;
-    color: #fff;
+    background: #c9272c;
+    border: 1px solid #c9272c;
+    color: #fff !important;
     text-decoration: none;
     border-radius: 4px;
     font-size: .9rem;
@@ -529,8 +530,16 @@ a.wafu-nav-next .wafu-nav-label {
     width: max-content;
 }
 
-.wafu-more-link:hover {
-    background: #1559a8;
+.wafu-more-link:hover,
+.wafu-more-link:focus-visible {
+    background: #a91f24;
+    border-color: #a91f24;
+    color: #fff !important;
+}
+
+.wafu-more-link:focus-visible {
+    outline: 2px solid rgba(201, 39, 44, .35);
+    outline-offset: 2px;
 }
 
 /* ===== 相关文章 ===== */
@@ -788,8 +797,8 @@ a.wafu-nav-next .wafu-nav-label {
     }
 
     .wafu-image {
-        max-width: 82% !important;
-        max-height: 300px;
+        max-width: 100% !important;
+        max-height: none;
         object-fit: contain;
         margin: 0 auto;
     }
@@ -920,8 +929,8 @@ a.wafu-nav-next .wafu-nav-label {
 /* 超小屏 */
 @media (max-width: 480px) {
     .wafu-image {
-        max-width: 78% !important;
-        max-height: 260px;
+        max-width: 100% !important;
+        max-height: none;
         object-fit: contain;
     }
 
@@ -1054,7 +1063,7 @@ img {
 }
 
 .wafu-image-box .wafu-image {
-    max-width: 72%;
+    max-width: 100%;
     object-fit: contain;
 }
 
@@ -1119,7 +1128,7 @@ img {
     display: block;
     max-width: 100%;
     max-height: 140px;
-    width: auto;
+    width: 100%;
     height: auto;
     object-fit: contain;
     border-radius: 4px;
@@ -1771,3 +1780,23 @@ img {
 .wafu-article-body .wafu-comparison-table th, .wafu-article-body .wafu-comparison-table td { border: 1px solid #cfd6df; padding: 12px; vertical-align: top; overflow-wrap: anywhere; word-break: normal; }
 .wafu-article-body > table th, .wafu-article-body .wafu-comparison-table th { background: #f5f7fa; color: #333; font-weight: 600; }
 @media (min-width: 769px) { .wafu-article-body .wafu-comparison-table table { min-width: 680px; } }
+
+
+.wafu-formula-box {
+    margin: 24px auto;
+    text-align: center;
+}
+
+.wafu-formula-image {
+    display: block;
+    width: min(100%, 900px);
+    height: auto;
+    margin: 0 auto;
+}
+
+.wafu-inline-formula {
+    display: inline-block;
+    width: min(100%, 600px);
+    height: auto;
+    vertical-align: middle;
+}

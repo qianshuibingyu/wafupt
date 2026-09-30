@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f7f9f8"/>
+  <rect x="70" y="70" width="1060" height="535" rx="10" fill="#fff" stroke="#24343b" stroke-width="3"/>
+  <text x="95" y="112" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="26" font-weight="700" fill="#24343b">驱动负载验证：四种状态，最后才做放行判断</text>
+  <text x="95" y="143" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="17" fill="#60747a">每次动作都要记录状态、失败原因、调整项和复测结果</text>
+  <g font-family="Arial,sans-serif" font-size="18" fill="#24343b">
+    <rect x="110" y="165" width="220" height="150" rx="8" fill="#eef3f1" stroke="#24343b" stroke-width="3"/><text x="135" y="205">01 开门空载</text><text x="135" y="232" font-size="15" fill="#60747a">确认电机与锁舌本体</text><path d="M160 270 L270 270" stroke="#3c716b" stroke-width="8"/><circle cx="155" cy="270" r="12" fill="#3c716b"/><text x="135" y="300" font-size="14" fill="#3c716b">基准动作</text>
+    <rect x="360" y="165" width="220" height="150" rx="8" fill="#eef3f1" stroke="#24343b" stroke-width="3"/><text x="385" y="205">02 正常闭门</text><text x="385" y="232" font-size="15" fill="#60747a">模拟现场日常闭合</text><rect x="410" y="255" width="120" height="30" fill="#9aa9ad"/><path d="M420 270 L510 270" stroke="#e08d32" stroke-width="8"/><text x="385" y="300" font-size="14" fill="#b66516">锁舌一次进入并回收</text>
+    <rect x="610" y="165" width="220" height="150" rx="8" fill="#fff1df" stroke="#24343b" stroke-width="3"/><text x="635" y="205">03 高阻力边界</text><text x="635" y="232" font-size="15" fill="#60747a">压紧密封条 / 轻推门扇</text><path d="M660 270 L780 270" stroke="#c55245" stroke-width="8"/><path d="M720 240 L720 300" stroke="#c55245" stroke-width="4"/><text x="635" y="300" font-size="14" fill="#a33e35">记录电流、声音、人工干预</text>
+    <rect x="860" y="165" width="220" height="150" rx="8" fill="#f7e6e4" stroke="#24343b" stroke-width="3"/><text x="885" y="205">04 偏移 / 低电量</text><text x="885" y="232" font-size="15" fill="#60747a">模拟最容易失败的边界</text><path d="M910 262 L1030 282" stroke="#c55245" stroke-width="8"/><text x="885" y="300" font-size="14" fill="#a33e35">验证应急路径与恢复动作</text>
+  </g>
+  <path d="M170 390 H970" stroke="#24343b" stroke-width="4" marker-end="url(#arr)"/>
+  <g font-family="Arial,'Microsoft YaHei',sans-serif" font-size="20" fill="#24343b"><text x="145" y="440">测量基线</text><text x="350" y="440">代表性安装</text><text x="555" y="440">连续循环</text><text x="775" y="440">低电量 / 应急</text></g>
+  <rect x="180" y="500" width="840" height="55" rx="5" fill="#eef3f1" stroke="#24343b" stroke-width="2"/>
+  <text x="295" y="536" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="21" fill="#24343b">记录状态 · 失败原因 · 调整项 · 复测结果</text>
+  <rect x="180" y="570" width="840" height="42" rx="5" fill="#e7f2ee" stroke="#3c716b" stroke-width="2"/><text x="380" y="598" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="18" font-weight="700" fill="#3c716b">放行：无持续推拉 · 无异常卡滞 · 资料齐全</text>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#24343b"/></marker></defs>
+</svg>
