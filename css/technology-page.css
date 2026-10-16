@@ -517,9 +517,9 @@ a.wafu-nav-next .wafu-nav-label {
 }
 
 .wafu-more-link {
-    padding: 8px 20px;
-    background: #c9272c;
-    border: 1px solid #c9272c;
+    padding: 8px 10px;
+    background: #1a6dcc;
+    border: 1px solid #1a6dcc;
     color: #fff !important;
     text-decoration: none;
     border-radius: 4px;
@@ -527,18 +527,20 @@ a.wafu-nav-next .wafu-nav-label {
     transition: background .3s;
     margin: 0 auto;
     display: block;
-    width: max-content;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
 }
 
 .wafu-more-link:hover,
 .wafu-more-link:focus-visible {
-    background: #a91f24;
-    border-color: #a91f24;
+    background: #1558a6;
+    border-color: #1558a6;
     color: #fff !important;
 }
 
 .wafu-more-link:focus-visible {
-    outline: 2px solid rgba(201, 39, 44, .35);
+    outline: 2px solid rgba(26, 109, 204, .35);
     outline-offset: 2px;
 }
 
@@ -568,6 +570,9 @@ a.wafu-nav-next .wafu-nav-label {
     text-decoration: none;
     line-height: 1.4;
     margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: color .3s;
 }
 
@@ -587,6 +592,7 @@ a.wafu-nav-next .wafu-nav-label {
 }
 
 .wafu-product-link {
+    display: block;
     padding: 8px 0;
     color: #555;
     font-size: .9rem;
@@ -1799,4 +1805,37 @@ img {
     width: min(100%, 600px);
     height: auto;
     vertical-align: middle;
+}
+/* Article and sidebar proportions stay stable across the shared language layout. */
+@media (min-width: 769px) {
+    .wafu-tech-article {
+        display: grid;
+        grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .wafu-main-content,
+    .wafu-side-bar {
+        width: auto;
+    }
+
+    .wafu-side-bar {
+        align-self: start;
+    }
+}
+
+@media (max-width: 768px) {
+    .wafu-tech-article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wafu-main-content,
+    .wafu-side-bar {
+        width: 100%;
+    }
+
+    .wafu-side-bar {
+        flex: none;
+    }
 }
